@@ -1,0 +1,68 @@
+.title {
+  padding: 5px 19px;
+  display: block;
+  border-bottom: #ccc solid 1px;
+  background: #5390f7;
+  color: #fff; }
+
+.wrap {
+  padding: 20px; }
+
+#elements {
+  height: 85vh;
+  border-right: 1px solid #dcd4d4;
+  padding-right: 0px;
+  padding-left: 0px; }
+  #elements #pages {
+    height: 50%; }
+  #elements #components {
+    height: 50%;
+    border-top: 1px solid #dcd4d4; }
+
+#canvas {
+  height: 85vh;
+  overflow-y: scroll; }
+  #canvas #skin {
+    width: 58%;
+    height: 700px;
+    background-size: contain;
+    background-position: 50% 0%;
+    margin: 0 auto;
+    margin-top: 20px; }
+  #canvas #device {
+    border: none;
+    outline: navajowhite;
+    color: #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 101px;
+    padding: 0 5px; }
+
+#options {
+  height: 85vh;
+  border-left: 1px solid #dcd4d4; }
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80); }
+
+.gu-hide {
+  display: none !important; }
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important; }
+
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20); }
+
+/*# sourceMappingURL=canvas.component.css.map */

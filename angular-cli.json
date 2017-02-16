@@ -64,5 +64,10 @@
       "pipe": true,
       "service": true
     }
-  }
+  },
+
+  "styles": [
+    "styles.css",
+    "../node_modules/font-awesome/css/font-awesome.min.css"
+  ]
 }

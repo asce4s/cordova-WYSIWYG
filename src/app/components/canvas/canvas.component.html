@@ -1,0 +1,43 @@
+<div class="row">
+  <section class="col-md-3" id="elements">
+
+    <section id="pages">
+      <span class="title">Components</span>
+      <div class="wrap">
+        <div [dragula]='"first-bag"' >
+          <app-small-btn></app-small-btn>
+          <app-navbar></app-navbar>
+        </div>
+
+      </div>
+    </section>
+    <section id="components">
+      <span class="title">Pages</span>
+      <div class="wrap">
+
+      </div>
+    </section>
+
+  </section>
+  <section class="col-md-6" id="canvas">
+    <span class="title">
+      <label>Device</label>
+      <select [(ngModel)]="device" (change)="skinChange()" id="device">
+        <option selected="selected">Android</option>
+        <option>Apple</option>
+
+      </select>
+    </span>
+
+    <div id="skin" [ngStyle]="{'background-image': 'url(' + skin + ')','padding': '57px 28px 127px 25px'}"  [dragula]='"first-bag"' >
+
+
+    </div>
+
+  </section>
+  <section class="col-md-3" id="options">
+
+  </section>
+</div>
+
+
