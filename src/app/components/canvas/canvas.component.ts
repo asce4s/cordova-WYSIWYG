@@ -11,7 +11,7 @@ import { DragulaService } from 'ng2-dragula/ng2-dragula';
 })
 export class CanvasComponent implements OnInit {
 
-  private skin=require('../../assets/img/android-skin.png');
+  private skin=require('../../../assets/img/android-skin.png');
 
   device="Android";
 
@@ -24,12 +24,13 @@ export class CanvasComponent implements OnInit {
       copySortSource: true,
     });
 
+
     dragulaService.drop.subscribe((value) => {
       this.getOptions(value);
     });
 
     renderer.listenGlobal('document', 'click', (event) => {
-      console.log(event);
+      //console.log(event);
     });
 
   }
@@ -37,17 +38,16 @@ export class CanvasComponent implements OnInit {
 
 
   private getOptions(value){
-    console.log(value[1].localName);
 
-    if(value[1].localName=="app-small-btn"){
-      $('#options').html("button options here");
-      $(value[1]).attr("click","xxx()")
+    var key=value[1].accessKey;
+    console.log(key);
+
+    if(key=="download"){
+      $(value[1]).replaceWith('<button class="button">Button</button>');
 
     }
 
-    if(value[1].localName=="app-navbar"){
-      $('#options').html("navbar options here");
-    }
+
   }
 
   xxx(){

@@ -8,9 +8,15 @@ import { CanvasComponent } from './components/canvas/canvas.component';
 import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SmallBtnComponent } from './components/elements/small-btn/small-btn.component';
 import {DragulaModule} from "ng2-dragula";
-import { NavbarComponent } from './components/elements/navbar/navbar.component';
+
+import {NavbarComponent} from './components/elements/navbar.component';
+import {RangeComponent} from './components/elements/range.component';
+import {SmallButtonComponent} from './components/elements/small-button.component';
+import {SwitchComponent} from './components/elements/switch.component';
+
+
+
 
 
 @NgModule({
@@ -21,8 +27,12 @@ import { NavbarComponent } from './components/elements/navbar/navbar.component';
     HeaderComponent,
     HeaderComponent,
     FooterComponent,
-    SmallBtnComponent,
-    NavbarComponent
+    NavbarComponent,
+    RangeComponent,
+    SmallButtonComponent,
+    SwitchComponent
+
+
   ],
   imports: [
     BrowserModule,

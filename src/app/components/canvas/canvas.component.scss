@@ -1,21 +1,7 @@
 @import '../canvas/../../../assets/scss/variable';
 @import '../canvas/../../../assets/scss/common';
 
-#elements {
-  height: 85vh;
-  border-right: 1px solid $borders;
-  padding-right: 0px;
-  padding-left: 0px;
 
-  #pages {
-    height: 50%;
-  }
-  #components {
-    height: 50%;
-    border-top: 1px solid $borders;
-  }
-
-}
 
 #canvas {
 
@@ -43,12 +29,36 @@
 
   }
 
+  #designArea{
+    height: 513px;
+    background: #fff;
+  }
+
 }
 
 #options {
   height:85vh;
   border-left: 1px solid $borders;
 }
+
+#elements {
+  height: 85vh;
+  border-right: 1px solid $borders;
+  padding-right: 0px;
+  padding-left: 0px;
+
+  #pages {
+    height: 50%;
+    overflow-y: scroll;
+  }
+  #components {
+    height: 50%;
+    border-top: 1px solid $borders;
+    overflow-y: scroll;
+  }
+
+}
+
 
 .gu-mirror {
   position: fixed !important;

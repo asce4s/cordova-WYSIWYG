@@ -8,17 +8,6 @@
 .wrap {
   padding: 20px; }
 
-#elements {
-  height: 85vh;
-  border-right: 1px solid #dcd4d4;
-  padding-right: 0px;
-  padding-left: 0px; }
-  #elements #pages {
-    height: 50%; }
-  #elements #components {
-    height: 50%;
-    border-top: 1px solid #dcd4d4; }
-
 #canvas {
   height: 85vh;
   overflow-y: scroll; }
@@ -38,10 +27,26 @@
     appearance: none;
     width: 101px;
     padding: 0 5px; }
+  #canvas #designArea {
+    height: 513px;
+    background: #fff; }
 
 #options {
   height: 85vh;
   border-left: 1px solid #dcd4d4; }
+
+#elements {
+  height: 85vh;
+  border-right: 1px solid #dcd4d4;
+  padding-right: 0px;
+  padding-left: 0px; }
+  #elements #pages {
+    height: 50%;
+    overflow-y: scroll; }
+  #elements #components {
+    height: 50%;
+    border-top: 1px solid #dcd4d4;
+    overflow-y: scroll; }
 
 .gu-mirror {
   position: fixed !important;
