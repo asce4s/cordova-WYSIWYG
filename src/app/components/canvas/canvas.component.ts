@@ -4,6 +4,7 @@ import {DragulaService} from 'ng2-dragula/ng2-dragula';
 import {ElementProviderService} from "../../services/element-provider.service";
 import {Button} from "../../interfaces/button";
 import {BUTTON} from "../../data-containers/button-data";
+import {SWITCH} from "../../data-containers/switch-data";
 
 
 
@@ -25,14 +26,14 @@ export class CanvasComponent implements OnInit {
 
   constructor(private dragulaService: DragulaService, private _elRef: ElementRef, private _elprovider: ElementProviderService) {
     dragulaService.setOptions('first-bag', {
-      removeOnSpill: true,
+      removeOnSpill: false,
       copy: function (el,handle) {
         return el.localName=="fa";
       },
       copySortSource: true,
     });
 
-    
+
    dragulaService.drop.subscribe((value) => {
         this.getOptions(value);
 
@@ -65,9 +66,9 @@ export class CanvasComponent implements OnInit {
 
     let key = value[1].accessKey;
     if (key == "switch") {
-      /*this.genElement(value[1],this._elprovider.getSwitch(),function(){
+      this.genElement(value[1],this._elprovider.getSwitch(),SWITCH,function(){
 
-      })*/
+      });
     }
 
     if (key == "button") {
@@ -113,7 +114,7 @@ export class CanvasComponent implements OnInit {
     let length = 10;
     let chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let result = '';
-    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+    for (let i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
   }
 
