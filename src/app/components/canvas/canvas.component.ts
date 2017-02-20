@@ -26,7 +26,7 @@ export class CanvasComponent implements OnInit {
 
   constructor(private dragulaService: DragulaService, private _elRef: ElementRef, private _elprovider: ElementProviderService) {
     dragulaService.setOptions('first-bag', {
-      removeOnSpill: false,
+      removeOnSpill: true,
       copy: function (el,handle) {
         return el.localName=="fa";
       },
