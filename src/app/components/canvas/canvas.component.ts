@@ -26,20 +26,19 @@ export class CanvasComponent implements OnInit {
   constructor(private dragulaService: DragulaService, private _elRef: ElementRef, private _elprovider: ElementProviderService) {
     dragulaService.setOptions('first-bag', {
       removeOnSpill: true,
-      copy: true,
+      copy: function (el,handle) {
+        return el.localName=="fa";
+      },
       copySortSource: true,
     });
 
-
-    dragulaService.drop.subscribe((value) => {
-
-
+    
+   dragulaService.drop.subscribe((value) => {
         this.getOptions(value);
 
-
-
-
     });
+
+
 
   }
 
@@ -79,7 +78,7 @@ export class CanvasComponent implements OnInit {
           id:event.toElement.id,
         }
         this.selectedButton=x;
-        console.log(event)
+        //console.log(event)
       })
     }
 
@@ -102,6 +101,7 @@ export class CanvasComponent implements OnInit {
       this._elRef.nativeElement.querySelector('#'+id).addEventListener('click',func);
     }else {
       this._elRef.nativeElement.querySelector('#' + rElement.id).removeEventListener('click');
+      console.log("dsfds");
       this._elRef.nativeElement.querySelector('#'+ rElement.id).addEventListener('click',func);
     }
 
