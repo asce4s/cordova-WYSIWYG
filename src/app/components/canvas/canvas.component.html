@@ -6,7 +6,8 @@
       <span class="title">Components</span>
       <div class="wrap">
         <div [dragula]='"first-bag"'>
-          <fa name="download" size="2x" accesskey="download"></fa>
+          <fa name="twitch" size="2x" accesskey="switch"></fa>
+          <fa name="book" size="2x" accesskey="button"></fa>
 
         </div>
 
@@ -41,6 +42,9 @@
 
   </section>
   <section class="col-md-3" id="options">
+
+    <input type="text" [(ngModel)]="selectedButton.id">
+
 
   </section>
 </div>
