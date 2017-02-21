@@ -6,14 +6,16 @@ import {Button} from "../../interfaces/button";
 import {BUTTON} from "../../data/button-data";
 import {SWITCH} from "../../data/switch-data";
 import {COMPONENTS} from "../../data/component-data";
-
+import {ButtonService} from "../../services/button.service";
+import {forEach} from "@angular/router/src/utils/collection";
 
 
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.css'],
-  providers: [ElementProviderService],
+  providers: [ElementProviderService,ButtonService],
+
 
 })
 export class CanvasComponent implements OnInit {
@@ -23,34 +25,35 @@ export class CanvasComponent implements OnInit {
   private components;
   private componentSprite;
 
-  public selectedButton:Button={
-    id:""
-  };
+  private selectedButton: Button ;
+  private x;
 
 
-  constructor(private dragulaService: DragulaService, private _elRef: ElementRef, private _elprovider: ElementProviderService) {
+  constructor(private dragulaService: DragulaService,
+              private _elRef: ElementRef,
+              private _elprovider: ElementProviderService,
+              private _buttonService: ButtonService) {
 
-    this.components=COMPONENTS;
+
 
     dragulaService.setOptions('first-bag', {
       revertOnSpill: true,
-      copy: function (el,handle) {
-        return el.localName=="li";
+      copy: function (el, handle) {
+        return el.localName == "li";
       },
       copySortSource: true,
-      accepts:function (el,handle) {
-        return handle.id=="designArea";
+      accepts: function (el, handle) {
+        return handle.id == "designArea";
       }
     });
 
 
-   dragulaService.drop.subscribe((value) => {
+    dragulaService.drop.subscribe((value) => {
 
-       this.getOptions(value);
+      this.getOptions(value);
 
 
     });
-
 
 
   }
@@ -58,16 +61,17 @@ export class CanvasComponent implements OnInit {
 
   ngOnInit() {
     this.skin = require('../../../assets/img/android-skin.png');
-    this.componentSprite=require('../../../assets/img/components-sprite.png');
+    this.componentSprite = require('../../../assets/img/components-sprite.png');
 
     let containerHeight = $('#elements').innerHeight();
     $('#pages,#components').height(containerHeight / 2);
 
-
-
+    this.components = COMPONENTS;
+this.x=this._buttonService.getStyles();
 
 
   }
+
 
 
   skinChange() {
@@ -76,49 +80,74 @@ export class CanvasComponent implements OnInit {
     } else {
       this.skin = require('../../../assets/img/iphone-skin.png');
     }
+
+    console.log(this._buttonService.getStyles())
   }
 
   private getOptions(value) {
 
     let key = value[1].accessKey;
     if (key == "switch") {
-      this.genElement(value[1],this._elprovider.getSwitch(),SWITCH,function(){
+    //  this.genElement(value[1], this._elprovider.getSwitch(), function () {
 
-      });
+     // });
     }
 
     if (key == "button") {
 
-      this.genElement(value[1],this._elprovider.getButton(),BUTTON ,(event)=> {
+      this.genElement(value[1], this._elprovider.getButton(),
 
-        var x:Button={
-          id:event.toElement.id,
-        }
-        this.selectedButton=x;
-        //console.log(event)
+        (id)=>{
+          var x:Button={
+            id:id,
+            link:"x"+id,
+            text:{
+              text:"",
+              size:"",
+              align:"",
+              color:""
+            },
+            style:{
+              width:"",
+              height:"",
+              background:"",
+              radius:"",
+              class:""
+
+            }
+          }
+
+          console.log(x);
+
+          this._buttonService.add(x);
+
+        },
+
+        (event) => {
+        this.selectedButton=this._buttonService.get(event.toElement.id);
+
       })
     }
 
 
-
-
-
-
   }
 
-  private genElement(rElement,nElement,dataArray,func){
+  private genElement(rElement, nElement,elFunc, clickfunc) {
     let newEl = $(nElement);
     let id = this.genID();
-    if(rElement.localName=="li") {
+    if (rElement.localName == "li") {
 
       newEl.attr('id', id);
       $(rElement).replaceWith(newEl);
 
-      dataArray.push({id: id});
-      this._elRef.nativeElement.querySelector('#'+id).addEventListener('click',func);
-    }else {
+      elFunc(id);
+
+
+
+      this._elRef.nativeElement.querySelector('#' + id).addEventListener('click', clickfunc);
+    } else {
       this._elRef.nativeElement.querySelector('#' + rElement.id).removeEventListener('click');
-      this._elRef.nativeElement.querySelector('#'+ rElement.id).addEventListener('click',func);
+      this._elRef.nativeElement.querySelector('#' + rElement.id).addEventListener('click', clickfunc);
     }
 
   }

@@ -23,7 +23,9 @@
 
 #options {
   height: 85vh;
-  border-left: 1px solid #dcd4d4; }
+  border-left: 1px solid #dcd4d4;
+  padding-top: 20px;
+  overflow-y: scroll; }
 
 #elements {
   height: 85vh;
@@ -51,5 +53,8 @@
   font-size: 12px;
   zoom: 0.9;
   margin: 10px; }
+
+hr {
+  border-top: 1px solid #131111; }
 
 /*# sourceMappingURL=canvas.component.css.map */
