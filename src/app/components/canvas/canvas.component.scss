@@ -52,10 +52,28 @@
     height: 50%;
     border-top: 1px solid $borders;
     overflow-y: scroll;
+
+    .wrap{
+      padding: 0;
+    }
+
+  }
+
+  ul,li{list-style: none}
+
+  ul{
+    padding-left: 10px;
+    padding-top: 10px;
   }
 
 }
 
 
-
+.component {
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  zoom: 0.9;
+  margin: 10px;
+}
 

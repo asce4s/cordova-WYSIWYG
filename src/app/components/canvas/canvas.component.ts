@@ -3,8 +3,9 @@ import * as $ from 'jquery';
 import {DragulaService} from 'ng2-dragula/ng2-dragula';
 import {ElementProviderService} from "../../services/element-provider.service";
 import {Button} from "../../interfaces/button";
-import {BUTTON} from "../../data-containers/button-data";
-import {SWITCH} from "../../data-containers/switch-data";
+import {BUTTON} from "../../data/button-data";
+import {SWITCH} from "../../data/switch-data";
+import {COMPONENTS} from "../../data/component-data";
 
 
 
@@ -19,23 +20,34 @@ export class CanvasComponent implements OnInit {
 
   private skin;
   private device = "Android";
+  private components;
+  private componentSprite;
+
   public selectedButton:Button={
     id:""
   };
 
 
   constructor(private dragulaService: DragulaService, private _elRef: ElementRef, private _elprovider: ElementProviderService) {
+
+    this.components=COMPONENTS;
+
     dragulaService.setOptions('first-bag', {
-      removeOnSpill: true,
+      revertOnSpill: true,
       copy: function (el,handle) {
-        return el.localName=="fa";
+        return el.localName=="li";
       },
       copySortSource: true,
+      accepts:function (el,handle) {
+        return handle.id=="designArea";
+      }
     });
 
 
    dragulaService.drop.subscribe((value) => {
-        this.getOptions(value);
+
+       this.getOptions(value);
+
 
     });
 
@@ -46,8 +58,12 @@ export class CanvasComponent implements OnInit {
 
   ngOnInit() {
     this.skin = require('../../../assets/img/android-skin.png');
+    this.componentSprite=require('../../../assets/img/components-sprite.png');
+
     let containerHeight = $('#elements').innerHeight();
     $('#pages,#components').height(containerHeight / 2);
+
+
 
 
 
@@ -93,7 +109,7 @@ export class CanvasComponent implements OnInit {
   private genElement(rElement,nElement,dataArray,func){
     let newEl = $(nElement);
     let id = this.genID();
-    if(rElement.localName=="fa") {
+    if(rElement.localName=="li") {
 
       newEl.attr('id', id);
       $(rElement).replaceWith(newEl);
@@ -102,7 +118,6 @@ export class CanvasComponent implements OnInit {
       this._elRef.nativeElement.querySelector('#'+id).addEventListener('click',func);
     }else {
       this._elRef.nativeElement.querySelector('#' + rElement.id).removeEventListener('click');
-      console.log("dsfds");
       this._elRef.nativeElement.querySelector('#'+ rElement.id).addEventListener('click',func);
     }
 
