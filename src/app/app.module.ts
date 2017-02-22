@@ -14,6 +14,8 @@ import {NavbarComponent} from './components/elements/navbar.component';
 import {RangeComponent} from './components/elements/range.component';
 import {SmallButtonComponent} from './components/elements/small-button.component';
 import {SwitchComponent} from './components/elements/switch.component';
+import { ButtonComponent } from './components/options/button/button.component';
+import {ColorPickerModule} from "angular2-color-picker";
 
 
 
@@ -30,7 +32,8 @@ import {SwitchComponent} from './components/elements/switch.component';
     NavbarComponent,
     RangeComponent,
     SmallButtonComponent,
-    SwitchComponent
+    SwitchComponent,
+    ButtonComponent
 
 
   ],
@@ -40,6 +43,7 @@ import {SwitchComponent} from './components/elements/switch.component';
     HttpModule,
     Angular2FontAwesomeModule,
     DragulaModule,
+    ColorPickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

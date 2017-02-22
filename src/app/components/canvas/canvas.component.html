@@ -53,108 +53,13 @@
   </section>
   <section class="col-md-3" id="options">
 
-    <form class="form-horizontal" *ngIf="selectedButton">
-      <div class="form-group">
-        <label class="col-sm-3 control-label">ID</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.id" name="id" disabled>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Link</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.link" name="link">
-        </div>
-      </div>
-
-      <hr>
-      <h4>Text</h4>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Text</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.text.text" name="text">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Size</label>
-        <div class="col-sm-9">
-          <div class="col-sm-8 input-group">
-            <input type="text" class="form-control" [(ngModel)]="selectedButton.text.size" name="size">
-            <div class="input-group-addon">px</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Align</label>
-        <div class="col-sm-9">
-          <select [(ngModel)]="selectedButton.text.align" class="form-control" name="align">
-            <option value="left">Left</option>
-            <option value="right">Right</option>
-            <option value="center">Center</option>
-            <option value="justify">Justify</option>
-          </select>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Color</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.text.color" name="color">
-        </div>
-      </div>
-
-      <hr>
-      <h4>Style</h4>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Width</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.style.width" name="width">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Height</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.style.height" name="height">
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Background</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.style.background" name="background">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Radius</label>
-        <div class="col-sm-9">
-          <div class="col-sm-8 input-group">
-            <input type="text" class="form-control" [(ngModel)]="selectedButton.style.radius" name="radius">
-            <div class="input-group-addon">px</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Classes</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" [(ngModel)]="selectedButton.style.class" name="class">
-        </div>
-      </div>
-
-
-    </form>
+   <button-options *ngIf="selectedButton" [selectedButton]="selectedButton"></button-options>
 
 
   </section>
+
+</div>
+<div id="styles">
 
 </div>
 

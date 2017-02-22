@@ -30,7 +30,7 @@ export class ButtonService {
         'background:' + button.style.background + ';' +
         'width:' + button.style.width + ';' +
         'height:' + button.style.height + ';' +
-        'border-radius:' + button.style.radius + ';' +
+        'border-radius:' + button.style.radius + 'px;' +
         'text-align:'+button.text.align+';'+
         'color:'+button.text.color+';'+
         'font-size:'+button.text.size+';'+

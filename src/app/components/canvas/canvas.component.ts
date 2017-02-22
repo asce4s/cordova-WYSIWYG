@@ -3,18 +3,16 @@ import * as $ from 'jquery';
 import {DragulaService} from 'ng2-dragula/ng2-dragula';
 import {ElementProviderService} from "../../services/element-provider.service";
 import {Button} from "../../interfaces/button";
-import {BUTTON} from "../../data/button-data";
-import {SWITCH} from "../../data/switch-data";
 import {COMPONENTS} from "../../data/component-data";
 import {ButtonService} from "../../services/button.service";
-import {forEach} from "@angular/router/src/utils/collection";
+
 
 
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.css'],
-  providers: [ElementProviderService,ButtonService],
+  providers: [ElementProviderService, ButtonService],
 
 
 })
@@ -25,15 +23,14 @@ export class CanvasComponent implements OnInit {
   private components;
   private componentSprite;
 
-  private selectedButton: Button ;
-  private x;
+  private selectedButton: Button;
+
 
 
   constructor(private dragulaService: DragulaService,
               private _elRef: ElementRef,
               private _elprovider: ElementProviderService,
               private _buttonService: ButtonService) {
-
 
 
     dragulaService.setOptions('first-bag', {
@@ -59,6 +56,8 @@ export class CanvasComponent implements OnInit {
   }
 
 
+
+
   ngOnInit() {
     this.skin = require('../../../assets/img/android-skin.png');
     this.componentSprite = require('../../../assets/img/components-sprite.png');
@@ -67,11 +66,9 @@ export class CanvasComponent implements OnInit {
     $('#pages,#components').height(containerHeight / 2);
 
     this.components = COMPONENTS;
-this.x=this._buttonService.getStyles();
 
 
   }
-
 
 
   skinChange() {
@@ -81,58 +78,59 @@ this.x=this._buttonService.getStyles();
       this.skin = require('../../../assets/img/iphone-skin.png');
     }
 
-    console.log(this._buttonService.getStyles())
   }
 
   private getOptions(value) {
 
     let key = value[1].accessKey;
     if (key == "switch") {
-    //  this.genElement(value[1], this._elprovider.getSwitch(), function () {
+      //  this.genElement(value[1], this._elprovider.getSwitch(), function () {
 
-     // });
+      // });
     }
 
     if (key == "button") {
 
       this.genElement(value[1], this._elprovider.getButton(),
 
-        (id)=>{
-          var x:Button={
-            id:id,
-            link:"x"+id,
-            text:{
-              text:"",
-              size:"",
-              align:"",
-              color:""
+        (id) => {
+
+          let el=$("#"+id);
+          let x: Button = {
+            id: id,
+            link: "#",
+            text: {
+              text: el.html(),
+              size: el.css('font-size'),
+              align: el.css('text-align'),
+              color: el.css('color')
             },
-            style:{
-              width:"",
-              height:"",
-              background:"",
-              radius:"",
-              class:""
+            style: {
+              width:el.css('width'),
+              height: el.css('height'),
+              background: el.css('background-color'),
+              radius: el.css('border-radius'),
+              class: ""
 
             }
           }
 
-          console.log(x);
-
           this._buttonService.add(x);
+          this.selectedButton=x;
 
         },
 
         (event) => {
-        this.selectedButton=this._buttonService.get(event.toElement.id);
+          this.selectedButton = this._buttonService.get(event.toElement.id);
 
-      })
+
+        })
     }
 
 
   }
 
-  private genElement(rElement, nElement,elFunc, clickfunc) {
+  private genElement(rElement, nElement, elFunc, clickfunc) {
     let newEl = $(nElement);
     let id = this.genID();
     if (rElement.localName == "li") {
@@ -141,7 +139,6 @@ this.x=this._buttonService.getStyles();
       $(rElement).replaceWith(newEl);
 
       elFunc(id);
-
 
 
       this._elRef.nativeElement.querySelector('#' + id).addEventListener('click', clickfunc);
@@ -160,6 +157,10 @@ this.x=this._buttonService.getStyles();
     let result = '';
     for (let i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
+  }
+
+  private rgbToHex(rgb){
+    return '#' + rgb.substr(4, rgb.indexOf(')') - 4).split(',').map((color) => parseInt(color).toString(16)).join('');
   }
 
 }

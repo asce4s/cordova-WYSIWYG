@@ -25,7 +25,8 @@
   height: 85vh;
   border-left: 1px solid #dcd4d4;
   padding-top: 20px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 #elements {
   height: 85vh;
@@ -38,7 +39,8 @@
   #elements #components {
     height: 50%;
     border-top: 1px solid #dcd4d4;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    overflow-x: hidden; }
     #elements #components .wrap {
       padding: 0; }
   #elements ul, #elements li {
