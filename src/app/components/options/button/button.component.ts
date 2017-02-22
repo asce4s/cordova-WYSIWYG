@@ -20,12 +20,23 @@ export class ButtonComponent implements OnInit {
     $("#styles").html('<style>' +
       this._buttonService.getStyles()+
       '</style>');
-
+    this.addClasses();
   }
 
   public setButtonText(){
     $('#'+this.selectedButton.id).html(this.selectedButton.text.text);
   }
 
+  public addClasses(){
+    $('#'+this.selectedButton.id).addClass(this.selectedButton.style.class);
+  }
+
+  public addButtonType(){
+    let type=this.selectedButton.type;
+    if(type!="default")
+      $('#'+this.selectedButton.id).addClass(type)
+    else
+      $('#'+this.selectedButton.id).removeClass("button--material")
+  }
 
 }

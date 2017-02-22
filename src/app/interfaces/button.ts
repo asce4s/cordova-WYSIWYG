@@ -15,5 +15,6 @@ export interface Button {
     class:any
 
   }
+  type:any
 }
 

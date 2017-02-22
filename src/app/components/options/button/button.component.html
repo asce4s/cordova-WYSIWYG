@@ -1,4 +1,4 @@
-<form class="form-horizontal"   (input)=" formChange()">
+<form class="form-horizontal" (input)=" formChange()">
 
   <div class="form-group">
     <label class="col-sm-4 control-label">ID</label>
@@ -20,7 +20,8 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Text</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.text" name="text" (keyup)="setButtonText()">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.text" name="text"
+             (keyup)="setButtonText()">
     </div>
   </div>
 
@@ -49,12 +50,31 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Color</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.color" name="color">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.color" name="color"
+
+             [(colorPicker)]="selectedButton.text.color"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedButton.text.color"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+      >
     </div>
   </div>
 
   <hr>
   <h4>Style</h4>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Style</label>
+    <div class="col-sm-8">
+      <select [(ngModel)]="selectedButton.type" class="form-control" name="align" (change)="addButtonType()">
+        <option value="default">Default</option>
+        <option value="button--material">Material</option>
+
+    </select>
+    </div>
+  </div>
 
   <div class="form-group">
     <label class="col-sm-4 control-label">Width</label>
@@ -84,7 +104,6 @@
              [cpWidth]="'160px'"
 
 
-
       >
     </div>
   </div>
@@ -104,7 +123,6 @@
       <input type="text" class="form-control" [(ngModel)]="selectedButton.style.class" name="class">
     </div>
   </div>
-
 
 
 </form>
