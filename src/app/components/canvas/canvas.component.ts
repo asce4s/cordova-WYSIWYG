@@ -112,7 +112,8 @@ export class CanvasComponent implements OnInit {
               radius: el.css('border-radius'),
               class: ""
 
-            }
+            },
+            type:"default"
           }
 
           this._buttonService.add(x);
