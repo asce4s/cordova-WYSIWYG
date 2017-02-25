@@ -1,10 +1,11 @@
-import {Component, OnInit, Renderer, ElementRef} from '@angular/core';
+import {Component, OnInit, Renderer, ElementRef, ViewChild} from '@angular/core';
 import * as $ from 'jquery';
 import {DragulaService} from 'ng2-dragula/ng2-dragula';
 import {ElementProviderService} from "../../services/element-provider.service";
 import {Button} from "../../interfaces/button";
 import {COMPONENTS} from "../../data/component-data";
 import {ButtonService} from "../../services/button.service";
+import {ModalDirective} from "ng2-bootstrap";
 
 
 
@@ -13,6 +14,7 @@ import {ButtonService} from "../../services/button.service";
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.css'],
   providers: [ElementProviderService, ButtonService],
+
 
 
 })
@@ -24,8 +26,8 @@ export class CanvasComponent implements OnInit {
   private componentSprite;
 
   private selectedButton: Button;
-
-
+  text:string ;
+  @ViewChild('lgModal') public lgModel:ModalDirective;
 
   constructor(private dragulaService: DragulaService,
               private _elRef: ElementRef,
@@ -113,17 +115,20 @@ export class CanvasComponent implements OnInit {
               class: ""
 
             },
-            type:"default"
+            type:"default",
+            script:"var btn_"+id+" = $('#"+id+"');"
           }
 
           this._buttonService.add(x);
           this.selectedButton=x;
+          this.text=x.script;
 
         },
 
         (event) => {
-          this.selectedButton = this._buttonService.get(event.toElement.id);
 
+          this.selectedButton = this._buttonService.get(event.toElement.id);
+          this.text=this.selectedButton.script;
 
         })
     }
@@ -158,6 +163,13 @@ export class CanvasComponent implements OnInit {
     let result = '';
     for (let i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
+  }
+
+  public showEventLoader(event){
+    console.log(event);
+    if(event){
+       this.lgModel.show();
+    }
   }
 
   private rgbToHex(rgb){

@@ -13,8 +13,8 @@ export interface Button {
     background:any,
     radius:any,
     class:any
-
   }
-  type:any
+  type:any,
+  script:any
 }
 

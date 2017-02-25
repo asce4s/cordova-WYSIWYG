@@ -8,6 +8,12 @@
 .wrap {
   padding: 20px; }
 
+.modal {
+  display: none; }
+
+html, body {
+  overflow-y: hidden; }
+
 body, html {
   height: 100%; }
 

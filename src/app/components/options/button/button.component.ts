@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {Button} from "../../../interfaces/button";
 import {ButtonService} from "../../../services/button.service";
+
 import * as $ from 'jquery';
 @Component({
   selector: 'button-options',
   templateUrl: './button.component.html',
-  inputs:['selectedButton']
+  inputs:['selectedButton'],
+
+
+
+
 })
 export class ButtonComponent implements OnInit {
 
@@ -15,6 +20,8 @@ export class ButtonComponent implements OnInit {
   }
 
   private selectedButton: Button;
+  @Output() modelShow: EventEmitter<any> = new EventEmitter();
+
 
   public formChange(){
     $("#styles").html('<style>' +
@@ -39,4 +46,7 @@ export class ButtonComponent implements OnInit {
       $('#'+this.selectedButton.id).removeClass("button--material")
   }
 
+  public eventLoad(){
+    this.modelShow.emit(true);
+  }
 }

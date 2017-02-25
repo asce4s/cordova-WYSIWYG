@@ -16,7 +16,8 @@ import {SmallButtonComponent} from './components/elements/small-button.component
 import {SwitchComponent} from './components/elements/switch.component';
 import { ButtonComponent } from './components/options/button/button.component';
 import {ColorPickerModule} from "angular2-color-picker";
-
+import {Ng2BootstrapModule, ModalModule} from "ng2-bootstrap";
+import { AceEditorDirective } from 'ng2-ace-editor';
 
 
 
@@ -33,7 +34,8 @@ import {ColorPickerModule} from "angular2-color-picker";
     RangeComponent,
     SmallButtonComponent,
     SwitchComponent,
-    ButtonComponent
+    ButtonComponent,
+    AceEditorDirective
 
 
   ],
@@ -43,7 +45,10 @@ import {ColorPickerModule} from "angular2-color-picker";
     HttpModule,
     Angular2FontAwesomeModule,
     DragulaModule,
-    ColorPickerModule
+    ColorPickerModule,
+    ModalModule.forRoot(),
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
