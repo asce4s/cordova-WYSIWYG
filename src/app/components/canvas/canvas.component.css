@@ -23,7 +23,10 @@
 
 #options {
   height: 85vh;
-  border-left: 1px solid #dcd4d4; }
+  border-left: 1px solid #dcd4d4;
+  padding-top: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 #elements {
   height: 85vh;
@@ -36,7 +39,8 @@
   #elements #components {
     height: 50%;
     border-top: 1px solid #dcd4d4;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    overflow-x: hidden; }
     #elements #components .wrap {
       padding: 0; }
   #elements ul, #elements li {
@@ -47,9 +51,14 @@
 
 .component {
   display: inline-block;
-  text-align: center;
+  /*text-align: center;*/
   font-size: 12px;
   zoom: 0.9;
-  margin: 10px; }
+  margin: 10px;
+  width: 42% !important;
+  padding-left: 10px; }
+
+hr {
+  border-top: 1px solid #131111; }
 
 /*# sourceMappingURL=canvas.component.css.map */

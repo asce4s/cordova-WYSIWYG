@@ -1,11 +1,11 @@
-import {Component, OnInit, Renderer, ElementRef} from '@angular/core';
+import {Component, OnInit, Renderer, ElementRef, ViewChild} from '@angular/core';
 import * as $ from 'jquery';
 import {DragulaService} from 'ng2-dragula/ng2-dragula';
 import {ElementProviderService} from "../../services/element-provider.service";
 import {Button} from "../../interfaces/button";
-import {BUTTON} from "../../data/button-data";
-import {SWITCH} from "../../data/switch-data";
 import {COMPONENTS} from "../../data/component-data";
+import {ButtonService} from "../../services/button.service";
+import {ModalDirective} from "ng2-bootstrap";
 
 
 
@@ -13,7 +13,9 @@ import {COMPONENTS} from "../../data/component-data";
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.css'],
-  providers: [ElementProviderService],
+  providers: [ElementProviderService, ButtonService],
+
+
 
 })
 export class CanvasComponent implements OnInit {
@@ -23,48 +25,49 @@ export class CanvasComponent implements OnInit {
   private components;
   private componentSprite;
 
-  public selectedButton:Button={
-    id:""
-  };
+  private selectedButton: Button;
+  text:string ;
+  @ViewChild('lgModal') public lgModel:ModalDirective;
 
+  constructor(private dragulaService: DragulaService,
+              private _elRef: ElementRef,
+              private _elprovider: ElementProviderService,
+              private _buttonService: ButtonService) {
 
-  constructor(private dragulaService: DragulaService, private _elRef: ElementRef, private _elprovider: ElementProviderService) {
-
-    this.components=COMPONENTS;
 
     dragulaService.setOptions('first-bag', {
       revertOnSpill: true,
-      copy: function (el,handle) {
-        return el.localName=="li";
+      copy: function (el, handle) {
+        return el.localName == "li";
       },
       copySortSource: true,
-      accepts:function (el,handle) {
-        return handle.id=="designArea";
+      accepts: function (el, handle) {
+        return handle.id == "designArea";
       }
     });
 
 
-   dragulaService.drop.subscribe((value) => {
+    dragulaService.drop.subscribe((value) => {
 
-       this.getOptions(value);
+      this.getOptions(value);
 
 
     });
-
 
 
   }
 
 
+
+
   ngOnInit() {
     this.skin = require('../../../assets/img/android-skin.png');
-    this.componentSprite=require('../../../assets/img/components-sprite.png');
+    this.componentSprite = require('../../../assets/img/components-sprite.png');
 
     let containerHeight = $('#elements').innerHeight();
     $('#pages,#components').height(containerHeight / 2);
 
-
-
+    this.components = COMPONENTS;
 
 
   }
@@ -76,49 +79,78 @@ export class CanvasComponent implements OnInit {
     } else {
       this.skin = require('../../../assets/img/iphone-skin.png');
     }
+
   }
 
   private getOptions(value) {
 
     let key = value[1].accessKey;
     if (key == "switch") {
-      this.genElement(value[1],this._elprovider.getSwitch(),SWITCH,function(){
+      //  this.genElement(value[1], this._elprovider.getSwitch(), function () {
 
-      });
+      // });
     }
 
     if (key == "button") {
 
-      this.genElement(value[1],this._elprovider.getButton(),BUTTON ,(event)=> {
+      this.genElement(value[1], this._elprovider.getButton(),
 
-        var x:Button={
-          id:event.toElement.id,
-        }
-        this.selectedButton=x;
-        //console.log(event)
-      })
+        (id) => {
+
+          let el=$("#"+id);
+          let x: Button = {
+            id: id,
+            link: "#",
+            text: {
+              text: el.html(),
+              size: el.css('font-size'),
+              align: el.css('text-align'),
+              color: el.css('color')
+            },
+            style: {
+              width:el.css('width'),
+              height: el.css('height'),
+              background: el.css('background-color'),
+              radius: el.css('border-radius'),
+              class: ""
+
+            },
+            type:"default",
+            script:"var btn_"+id+" = $('#"+id+"');"
+          }
+
+          this._buttonService.add(x);
+          this.selectedButton=x;
+          this.text=x.script;
+
+        },
+
+        (event) => {
+
+          this.selectedButton = this._buttonService.get(event.toElement.id);
+          this.text=this.selectedButton.script;
+
+        })
     }
-
-
-
-
 
 
   }
 
-  private genElement(rElement,nElement,dataArray,func){
+  private genElement(rElement, nElement, elFunc, clickfunc) {
     let newEl = $(nElement);
     let id = this.genID();
-    if(rElement.localName=="li") {
+    if (rElement.localName == "li") {
 
       newEl.attr('id', id);
       $(rElement).replaceWith(newEl);
 
-      dataArray.push({id: id});
-      this._elRef.nativeElement.querySelector('#'+id).addEventListener('click',func);
-    }else {
+      elFunc(id);
+
+
+      this._elRef.nativeElement.querySelector('#' + id).addEventListener('click', clickfunc);
+    } else {
       this._elRef.nativeElement.querySelector('#' + rElement.id).removeEventListener('click');
-      this._elRef.nativeElement.querySelector('#'+ rElement.id).addEventListener('click',func);
+      this._elRef.nativeElement.querySelector('#' + rElement.id).addEventListener('click', clickfunc);
     }
 
   }
@@ -131,6 +163,17 @@ export class CanvasComponent implements OnInit {
     let result = '';
     for (let i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
+  }
+
+  public showEventLoader(event){
+    console.log(event);
+    if(event){
+       this.lgModel.show();
+    }
+  }
+
+  private rgbToHex(rgb){
+    return '#' + rgb.substr(4, rgb.indexOf(')') - 4).split(',').map((color) => parseInt(color).toString(16)).join('');
   }
 
 }

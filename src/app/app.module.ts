@@ -10,11 +10,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {DragulaModule} from "ng2-dragula";
 
-import {NavbarComponent} from './components/elements/navbar.component';
-import {RangeComponent} from './components/elements/range.component';
-import {SmallButtonComponent} from './components/elements/small-button.component';
-import {SwitchComponent} from './components/elements/switch.component';
 
+import { ButtonComponent } from './components/options/button/button.component';
+import {ColorPickerModule} from "angular2-color-picker";
+import {Ng2BootstrapModule, ModalModule} from "ng2-bootstrap";
+import { AceEditorDirective } from 'ng2-ace-editor';
 
 
 
@@ -27,10 +27,8 @@ import {SwitchComponent} from './components/elements/switch.component';
     HeaderComponent,
     HeaderComponent,
     FooterComponent,
-    NavbarComponent,
-    RangeComponent,
-    SmallButtonComponent,
-    SwitchComponent
+    ButtonComponent,
+    AceEditorDirective
 
 
   ],
@@ -40,6 +38,10 @@ import {SwitchComponent} from './components/elements/switch.component';
     HttpModule,
     Angular2FontAwesomeModule,
     DragulaModule,
+    ColorPickerModule,
+    ModalModule.forRoot(),
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

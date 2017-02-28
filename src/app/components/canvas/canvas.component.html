@@ -5,9 +5,9 @@
     <section id="components">
       <span class="title">Components</span>
       <div class="wrap">
-        <div >
+        <div>
 
-          <ul [dragula]='"first-bag"' >
+          <ul [dragula]='"first-bag"'>
 
             <li *ngFor="let component of components" class="component" accessKey="{{component.id}}"
                 [ngStyle]="{background:'url('+componentSprite+') '+component.background,width: component.width,
@@ -15,7 +15,6 @@
             >
               {{component.name}}
             </li>
-
 
 
           </ul>
@@ -54,10 +53,37 @@
   </section>
   <section class="col-md-3" id="options">
 
-    <input type="text" [(ngModel)]="selectedButton.id">
+   <button-options *ngIf="selectedButton" [selectedButton]="selectedButton" (modelShow)="showEventLoader($event)"></button-options>
 
 
   </section>
+
 </div>
+<div id="styles">
+
+</div>
+
+
+<div bsModal #lgModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Add Custom Scripts</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div ace-editor
+             [(text)]="text"
+             [mode]="'javascript'"
+             style="min-height: 400px; width:100%; overflow: auto;"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
