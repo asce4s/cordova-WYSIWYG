@@ -1,24 +1,19 @@
-export interface Button {
+export interface Select {
   id:string,
-  link:any,
   text:{
-    text:any,
     size:any,
     align:any,
-    color:any
+    color:any,
   },
   style:{
     width:any,
     height:any,
-    background:any,
-    radius:any,
     padding:any,
     margin:any,
-    borderColor:any,
-    borderThickness:any,
     class:any
+  },
+  options:{
+    //I'll take care of this
   }
-  type:any,
   script:any
 }
-

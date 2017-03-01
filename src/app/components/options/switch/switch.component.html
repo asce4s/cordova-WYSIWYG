@@ -3,16 +3,10 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">ID</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.id" name="id" disabled>
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.id" name="id" disabled>
     </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-sm-4 control-label">Link</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.link" name="link">
-    </div>
-  </div>
 
   <hr>
   <h4>Text</h4>
@@ -20,8 +14,8 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Text</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.text" name="text"
-             (keyup)="setButtonText()">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.text.text" name="text"
+             (keyup)="setSwitchText()">
     </div>
   </div>
 
@@ -29,15 +23,15 @@
     <label class="col-sm-4 control-label">Size</label>
     <div class="col-sm-8">
 
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.size" name="size">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.text.size" name="size">
 
     </div>
   </div>
 
-  <div class="form-group">
+  <!--<div class="form-group">
     <label class="col-sm-4 control-label">Align</label>
     <div class="col-sm-8">
-      <select [(ngModel)]="selectedButton.text.align" class="form-control " name="align" (change)=" formChange()">
+      <select [(ngModel)]="selectedSwitch.text.align" class="form-control " name="align" (change)=" formChange()">
         <option value="left">Left</option>
         <option value="right">Right</option>
         <option value="center" selected="selected">Center</option>
@@ -45,17 +39,17 @@
       </select>
     </div>
   </div>
-
+-->
 
   <div class="form-group">
     <label class="col-sm-4 control-label">Color</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.color" name="color"
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.text.color" name="color"
 
-             [(colorPicker)]="selectedButton.text.color"
+             [(colorPicker)]="selectedSwitch.text.color"
              [cpPosition]="'bottom'"
              [cpPositionOffset]="'10%'"
-             [value]="selectedButton.text.color"
+             [value]="selectedSwitch.text.color"
              (colorPickerChange)="formChange()"
              [cpWidth]="'160px'"
       >
@@ -65,41 +59,29 @@
   <hr>
   <h4>Styles</h4>
 
-  <div class="form-group">
+  <!--<div class="form-group">
     <label class="col-sm-4 control-label">Style</label>
     <div class="col-sm-8">
-      <select [(ngModel)]="selectedButton.type" class="form-control" name="align" (change)="addButtonType()">
+      <select [(ngModel)]="selectedSwitch.type" class="form-control" name="align" (change)="addButtonType()">
         <option value="default">Default</option>
         <option value="button--material">Material</option>
 
       </select>
     </div>
   </div>
+-->
 
-  <div class="form-group">
-    <label class="col-sm-4 control-label">Width</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.width" name="width">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-4 control-label">Height</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.height" name="height">
-    </div>
-  </div>
 
 
   <div class="form-group">
     <label class="col-sm-4 control-label">Background</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.background"
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.background"
              name="background"
-             [(colorPicker)]="selectedButton.style.background"
+             [(colorPicker)]="selectedSwitch.style.background"
              [cpPosition]="'bottom'"
              [cpPositionOffset]="'10%'"
-             [value]="selectedButton.style.background"
+             [value]="selectedSwitch.style.background"
              (colorPickerChange)="formChange()"
              [cpWidth]="'160px'"
 
@@ -109,10 +91,28 @@
   </div>
 
   <div class="form-group">
+    <label class="col-sm-4 control-label">Switch Color</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.switchBg"
+             name="swbackground"
+             [(colorPicker)]="selectedSwitch.style.switchBg"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedSwitch.style.switchBg"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+
+
+      >
+    </div>
+  </div>
+
+
+  <div class="form-group">
     <label class="col-sm-4 control-label">Padding</label>
     <div class="col-sm-8">
 
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.padding" name="padding">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.padding" name="padding">
 
     </div>
   </div>
@@ -121,7 +121,7 @@
     <label class="col-sm-4 control-label">Margin</label>
     <div class="col-sm-8">
 
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.margin" name="margin">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.margin" name="margin">
 
     </div>
   </div>
@@ -129,12 +129,12 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Border Color</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.borderColor"
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.borderColor"
              name="borderColor"
-             [(colorPicker)]="selectedButton.style.borderColor"
+             [(colorPicker)]="selectedSwitch.style.borderColor"
              [cpPosition]="'bottom'"
              [cpPositionOffset]="'10%'"
-             [value]="selectedButton.style.borderColor"
+             [value]="selectedSwitch.style.borderColor"
              (colorPickerChange)="formChange()"
              [cpWidth]="'160px'"
 
@@ -147,7 +147,7 @@
     <label class="col-sm-4 control-label">Border Width</label>
     <div class="col-sm-8">
 
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.borderThickness" name="borderWidth">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.borderThickness" name="borderWidth">
 
     </div>
   </div>
@@ -156,7 +156,7 @@
     <label class="col-sm-4 control-label">Radius</label>
     <div class="col-sm-8">
 
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.radius" name="radius">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.radius" name="radius">
 
     </div>
   </div>
@@ -164,7 +164,7 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Classes</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.class" name="class">
+      <input type="text" class="form-control" [(ngModel)]="selectedSwitch.style.class" name="class">
     </div>
   </div>
 

@@ -1,24 +1,21 @@
-export interface Button {
+export interface Paragraph {
   id:string,
-  link:any,
   text:{
     text:any,
     size:any,
     align:any,
-    color:any
+    color:any,
+    lineHeight:any
   },
   style:{
     width:any,
     height:any,
-    background:any,
-    radius:any,
     padding:any,
     margin:any,
     borderColor:any,
     borderThickness:any,
+    overflow:any,
     class:any
   }
-  type:any,
   script:any
 }
-

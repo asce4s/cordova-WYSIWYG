@@ -2,8 +2,8 @@
   height: 85vh;
   overflow-y: scroll; }
   #canvas #skin {
-    width: 58%;
-    height: 700px;
+    width: 350px;
+    height: 675px;
     background-size: contain;
     background-position: 50% 0%;
     margin: 0 auto;
@@ -18,7 +18,7 @@
     width: 101px;
     padding: 0 5px; }
   #canvas #designArea {
-    height: 513px;
+    height: 490px;
     background: #fff; }
 
 #options {

@@ -34,6 +34,10 @@ export class ButtonService {
         'text-align:'+button.text.align+';'+
         'color:'+button.text.color+';'+
         'font-size:'+button.text.size+';'+
+        'padding:'+button.style.padding+';'+
+        'margin:'+button.style.margin+';'+
+          'border:'+button.style.borderThickness+' solid '+button.style.borderColor+';'
+
         '}'
     })
 

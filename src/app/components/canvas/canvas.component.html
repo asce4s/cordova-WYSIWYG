@@ -44,7 +44,7 @@
 
     <div id="skin" [ngStyle]="{'background-image': 'url(' + skin + ')','padding': '57px 28px 127px 25px'}">
 
-      <div id="designArea" [dragula]='"first-bag"'>
+      <div id="designArea" [dragula]='"first-bag"' style="padding: 10px">
 
       </div>
 
@@ -54,7 +54,7 @@
   <section class="col-md-3" id="options">
 
    <button-options *ngIf="selectedButton" [selectedButton]="selectedButton" (modelShow)="showEventLoader($event)"></button-options>
-
+    <switch-options *ngIf="selectedSwitch" [selectedSwitch]="selectedSwitch" (modelShow)="showEventLoader($event)"></switch-options>
 
   </section>
 

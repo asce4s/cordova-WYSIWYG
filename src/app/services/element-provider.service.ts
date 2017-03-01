@@ -254,7 +254,7 @@ export class ElementProviderService {
   }
 
   getSwitchInList() {
-    return ` <ul class="list">
+    return ` 
               <li class="list__item">
                 <div class="list__item__center">
                   Label
@@ -268,7 +268,7 @@ export class ElementProviderService {
                   </label>
                 </div>
               </li>
-             </ul>`
+            `
   }
 
   getListItemWithChevron() {

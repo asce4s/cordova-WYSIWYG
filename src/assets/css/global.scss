@@ -1,7 +1,9 @@
 @import "../scss/variable";
 @import "../scss/common";
 
-body,html{height:100%}
+body,html{height:100%;
+
+}
 .gu-mirror {
   position: fixed !important;
   margin: 0 !important;
@@ -25,4 +27,13 @@ body,html{height:100%}
   filter: alpha(opacity=20);
 }
 
+.form-horizontal .control-label{
+  text-align:left;
+  font-weight:normal;
+  color: #888888;
+}
+
+form-control {
+  border: 1px solid rgba(204, 204, 204, 0.42);
+}
 
