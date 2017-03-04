@@ -1,0 +1,28 @@
+<!--Main pain for the pages-->
+<div class="page-container">
+  <div (click)="openAddPageDialog()" id="addPage">Add Page <span>+</span></div>
+  <div>
+    <ul>
+      <li *ngFor="let page of pages" (click)="selectPage(page)" [ngClass]="{selected: selectedPage == page}">
+        <a>
+          <span class="pageCaret"></span>
+          <span>{{page}}</span>
+          <span [ngClass]="{hide: selectedPage != page}">delete</span>
+          <span [ngClass]="{hide: selectedPage != page}">edit</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--This is the dialog box for adding pages-->
+<div [@modalDialog]="modal" class="addPageDialog">
+  <span (click)="hideAddPageDialog()">close</span>
+  <div>
+    <label for="pageName">Page Name</label>
+    <input type="text" id="pageName" [(ngModel)]="newPageName">
+    <!--<label for="pageID">Page ID</label>-->
+    <!--<input type="text" id="pageID" [(ngModel)]="binding" value="{{newPageName}}">-->
+    <button (click) ="addPage()" class="btn btn-default">Create page</button>
+  </div>
+</div>

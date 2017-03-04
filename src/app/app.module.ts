@@ -15,6 +15,8 @@ import { ButtonComponent } from './components/options/button/button.component';
 import {ColorPickerModule} from "angular2-color-picker";
 import {Ng2BootstrapModule, ModalModule} from "ng2-bootstrap";
 import { AceEditorDirective } from 'ng2-ace-editor';
+import { PagesComponent } from './components/pages/pages.component';
+
 
 
 
@@ -28,7 +30,9 @@ import { AceEditorDirective } from 'ng2-ace-editor';
     HeaderComponent,
     FooterComponent,
     ButtonComponent,
-    AceEditorDirective
+    AceEditorDirective,
+    PagesComponent,
+
 
 
   ],
