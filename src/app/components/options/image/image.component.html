@@ -1,0 +1,114 @@
+<form class="form-horizontal" (input)=" formChange()">
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">ID</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.id" name="id" disabled>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Link</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.link" name="link">
+        </div>
+    </div>
+
+    <hr>
+    <h4>Styles</h4>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Style</label>
+        <div class="col-sm-8">
+            <select [(ngModel)]="selectedImage.type" class="form-control" name="align" (change)="addImageType()">
+                <option value="default">Default</option>
+                <option value="button--material">Material</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Width</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.width" name="width">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Height</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.height" name="height">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Padding</label>
+        <div class="col-sm-8">
+
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.padding" name="padding">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Margin</label>
+        <div class="col-sm-8">
+
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.margin" name="margin">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Border Color</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.borderColor"
+                   name="borderColor"
+                   [(colorPicker)]="selectedImage.style.borderColor"
+                   [cpPosition]="'bottom'"
+                   [cpPositionOffset]="'10%'"
+                   [value]="selectedImage.style.borderColor"
+                   (colorPickerChange)="formChange()"
+                   [cpWidth]="'160px'"
+
+
+            >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Border Width</label>
+        <div class="col-sm-8">
+
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.borderThickness" name="borderWidth">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Radius</label>
+        <div class="col-sm-8">
+
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.radius" name="radius">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Classes</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [(ngModel)]="selectedImage.style.class" name="class">
+        </div>
+    </div>
+
+    <hr>
+
+
+</form>
+<div class="form-group" style="text-align: center;">
+
+    <button class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</button>
+
+</div>

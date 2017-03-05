@@ -1,0 +1,115 @@
+<form class="form-horizontal" (input)=" formChange()">
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">ID</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.id" name="id" disabled>
+    </div>
+  </div>
+
+  <hr>
+  <h4>Text</h4>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Text</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.text.text" name="text"
+             (keyup)="setNavbarText()">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Size</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.text.size" name="size">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Align</label>
+    <div class="col-sm-8">
+      <select [(ngModel)]="selectedNavbar.text.align" class="form-control " name="align" (change)=" formChange()">
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        <option value="center" selected="selected">Center</option>
+        <option value="justify">Justify</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Color</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.text.color" name="color"
+
+             [(colorPicker)]="selectedNavbar.text.color"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedNavbar.text.color"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+      >
+    </div>
+  </div>
+
+  <hr>
+  <h4>Styles</h4>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Style</label>
+    <div class="col-sm-8">
+      <select [(ngModel)]="selectedNavbar.type" class="form-control" name="align" (change)="addNavbarType()">
+        <option value="default">Default</option>
+        <option value="button--material">Material</option>
+
+      </select>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Background</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.style.background"
+             name="background"
+             [(colorPicker)]="selectedNavbar.style.background"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedNavbar.style.background"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+
+
+      >
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Margin</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.style.margin" name="margin">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Classes</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.style.class" name="class">
+    </div>
+  </div>
+
+  <hr>
+
+
+</form>
+<div class="form-group" style="text-align: center;">
+
+  <button class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</button>
+
+</div>

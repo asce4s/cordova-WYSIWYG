@@ -17,6 +17,11 @@ import {Ng2BootstrapModule, ModalModule} from "ng2-bootstrap";
 import { AceEditorDirective } from 'ng2-ace-editor';
 import { SwitchComponent } from './components/options/switch/switch.component';
 import { ImageComponent } from './components/options/image/image.component';
+import { CheckboxComponent } from './components/options/checkbox/checkbox.component';
+import { NavbarComponent } from './components/options/navbar/navbar.component';
+import { ParagraphComponent } from './components/options/paragraph/paragraph.component';
+import { RadioComponent } from './components/options/radio/radio.component';
+import { SelectComponent } from './components/options/select/select.component';
 
 
 
@@ -32,7 +37,12 @@ import { ImageComponent } from './components/options/image/image.component';
     ButtonComponent,
     AceEditorDirective,
     SwitchComponent,
-    ImageComponent
+    ImageComponent,
+    CheckboxComponent,
+    NavbarComponent,
+    ParagraphComponent,
+    RadioComponent,
+    SelectComponent
 
 
   ],
