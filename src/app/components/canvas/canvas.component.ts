@@ -10,13 +10,11 @@ import {Switch} from "../../interfaces/switch";
 import {SwitchService} from "../../services/switch.service";
 
 
-
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.css'],
-  providers: [ElementProviderService, ButtonService,SwitchService],
-
+  providers: [ElementProviderService, ButtonService, SwitchService],
 
 
 })
@@ -30,15 +28,14 @@ export class CanvasComponent implements OnInit {
   private selectedButton: Button;
   private selectedSwitch: Switch;
 
-  text:string ;
-  @ViewChild('lgModal') public lgModel:ModalDirective;
+  text: string;
+  @ViewChild('lgModal') public lgModel: ModalDirective;
 
   constructor(private dragulaService: DragulaService,
               private _elRef: ElementRef,
               private _elprovider: ElementProviderService,
               private _buttonService: ButtonService,
-              private _switchService: SwitchService,
-  ) {
+              private _switchService: SwitchService,) {
 
 
     dragulaService.setOptions('first-bag', {
@@ -60,14 +57,10 @@ export class CanvasComponent implements OnInit {
       this.getOptions(value);
 
 
-
-
     });
 
 
   }
-
-
 
 
   ngOnInit() {
@@ -96,39 +89,40 @@ export class CanvasComponent implements OnInit {
 
     let key = value[1].accessKey;
     if (key == "switch") {
-        this.genElement(value[1], this._elprovider.getSwitchInList(),
+      this.genElement(value[1], this._elprovider.getSwitchInList(),
 
-          (id)=>{
-            let el=$("#"+id);
-            let defaults:Switch={
-              id:id,
-              text:{
-                text:el.find('.list__item__center').html(),
-                color:el.find('.list__item__center').css('color'),
-                size:el.find('.list__item__center').css('font-size')
-              },
-              style:{
-                background:el.css("background-color"),
-                padding:el.css('padding'),
-                margin:el.css('margin'),
-                switchBg: el.find(".switch__toggle").css('background-color'),
-                borderColor:el.css('border-color'),
-                borderThickness:el.css('border-width'),
-                class:""
-              }
+        (id) => {
+          let el = $("#" + id);
+          let defaults: Switch = {
+            id: id,
+            text: {
+              text: el.find('.list__item__center').html(),
+              color: el.find('.list__item__center').css('color'),
+              size: el.find('.list__item__center').css('font-size')
+            },
+            style: {
+              background: el.css("background-color"),
+              padding: el.css('padding'),
+              margin: el.css('margin'),
+              switchBg: el.find(".switch__toggle").css('background-color'),
+              borderColor: el.css('border-color'),
+              borderThickness: el.css('border-width'),
+              class: ""
             }
+          }
+          this.toFalse();
+          this._switchService.add(defaults);
+          this.selectedSwitch = defaults;
 
-            this._switchService.add(defaults);
-            this.selectedSwitch=defaults;
+        },
 
-          },
+        (event) => {
 
-          (event) =>{
-            console.log(event.toElement.offsetParent.id);
-            this.selectedSwitch= this._switchService.get(event.toElement.offsetParent.id);
-            //this.text=this.selectedButton.script;
-          })
-
+          this.toFalse();
+          console.log(event.toElement.offsetParent.id);
+          this.selectedSwitch = this._switchService.get(event.toElement.offsetParent.id);
+          //this.text=this.selectedButton.script;
+        })
 
 
     }
@@ -139,7 +133,7 @@ export class CanvasComponent implements OnInit {
 
         (id) => {
 
-          let el=$("#"+id);
+          let el = $("#" + id);
           let defaults: Button = {
             id: id,
             link: "#",
@@ -150,31 +144,33 @@ export class CanvasComponent implements OnInit {
               color: el.css('color')
             },
             style: {
-              width:el.css('width'),
+              width: el.css('width'),
               height: el.css('height'),
               background: el.css('background-color'),
-              padding:el.css('padding'),
-              margin:el.css('margin'),
+              padding: el.css('padding'),
+              margin: el.css('margin'),
               radius: el.css('border-radius'),
-              borderColor:el.css('border-color'),
-              borderThickness:el.css('border-width'),
+              borderColor: el.css('border-color'),
+              borderThickness: el.css('border-width'),
               class: ""
 
             },
-            type:"default",
-            script:"var btn_"+id+" = $('#"+id+"');"
+            type: "default",
+            script: "var btn_" + id + " = $('#" + id + "');"
           }
 
+          this.toFalse();
           this._buttonService.add(defaults);
-          this.selectedButton=defaults;
-          this.text=defaults.script;
+          this.selectedButton = defaults;
+          this.text = defaults.script;
 
         },
 
         (event) => {
 
+        this.toFalse();
           this.selectedButton = this._buttonService.get(event.toElement.id);
-          this.text=this.selectedButton.script;
+          this.text = this.selectedButton.script;
 
         })
     }
@@ -211,15 +207,20 @@ export class CanvasComponent implements OnInit {
     return result;
   }
 
-  public showEventLoader(event){
+  public showEventLoader(event) {
     console.log(event);
-    if(event){
-       this.lgModel.show();
+    if (event) {
+      this.lgModel.show();
     }
   }
 
-  private rgbToHex(rgb){
+  private rgbToHex(rgb) {
     return '#' + rgb.substr(4, rgb.indexOf(')') - 4).split(',').map((color) => parseInt(color).toString(16)).join('');
+  }
+
+  private toFalse() {
+    this.selectedButton=null;
+    this.selectedSwitch=null;
   }
 
 }

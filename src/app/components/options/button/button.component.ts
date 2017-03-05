@@ -24,7 +24,7 @@ export class ButtonComponent implements OnInit {
 
 
   public formChange(){
-    $("#styles").html('<style>' +
+    $("#btnStyles").html('<style>' +
       this._buttonService.getStyles()+
       '</style>');
     this.addClasses();

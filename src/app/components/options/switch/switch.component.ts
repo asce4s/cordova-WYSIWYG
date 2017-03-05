@@ -18,7 +18,7 @@ export class SwitchComponent implements OnInit {
   }
 
   public formChange(){
-    $("#styles").html('<style>' +
+    $("#switchStyles").html('<style>' +
       this._switchService.getStyles()+
       '</style>');
     this.addClasses();

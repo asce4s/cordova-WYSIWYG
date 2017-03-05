@@ -53,13 +53,16 @@
   </section>
   <section class="col-md-3" id="options">
 
-   <button-options *ngIf="selectedButton" [selectedButton]="selectedButton" (modelShow)="showEventLoader($event)"></button-options>
-    <switch-options *ngIf="selectedSwitch" [selectedSwitch]="selectedSwitch" (modelShow)="showEventLoader($event)"></switch-options>
+   <button-options *ngIf="selectedButton!=null" [selectedButton]="selectedButton" (modelShow)="showEventLoader($event)"></button-options>
+    <switch-options *ngIf="selectedSwitch!=null" [selectedSwitch]="selectedSwitch" (modelShow)="showEventLoader($event)"></switch-options>
 
   </section>
 
 </div>
 <div id="styles">
+
+  <div id="btnStyles"></div>
+  <div id="switchStyles"></div>
 
 </div>
 
