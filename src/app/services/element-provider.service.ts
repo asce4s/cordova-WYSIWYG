@@ -219,15 +219,15 @@ export class ElementProviderService {
     return ` <label class="checkbox">
                  <input type="checkbox" class="checkbox__input">
                     <div class="checkbox__checkmark"></div>
-                    OFF
+                    <span class="checkbox-label">OFF</span>
              </label>`
   }
 
   getRadioButton() {
     return `<label class="radio-button">
-                <input type="radio" class="radio-button__input" name="r" checked="checked">
+                <input type="radio" class="radio-button__input" name="group1" checked="checked">
                 <div class="radio-button__checkmark"></div>
-                Label
+                <span class="radio-label">Label</span>
             </label>`
   }
 

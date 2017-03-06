@@ -32,8 +32,11 @@ export class RadioService {
                 'color:'+radio.text.color+';'+
                 'font-size:'+radio.text.size+';'+
                 'padding:'+radio.style.padding+';'+
-                'margin:'+radio.style.margin+';'
+                'margin:'+radio.style.margin+';'+
 
+            '}' +
+            '#' + radio.id + ' .radio-button__checkmark:after{' +
+            'border-color:' +radio.style.color
             '}'
         })
 
