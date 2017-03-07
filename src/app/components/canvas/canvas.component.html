@@ -53,19 +53,29 @@
   </section>
   <section class="col-md-3" id="options">
 
-   <button-options *ngIf="selectedButton" [selectedButton]="selectedButton" (modelShow)="showEventLoader($event)"></button-options>
-    <switch-options *ngIf="selectedSwitch" [selectedSwitch]="selectedSwitch" (modelShow)="showEventLoader($event)"></switch-options>
-
-
+    <button-options *ngIf="selectedButton!=null" [selectedButton]="selectedButton"
+                    (modelShow)="showEventLoader($event)"></button-options>
+    <switch-options *ngIf="selectedSwitch!=null" [selectedSwitch]="selectedSwitch"
+                    (modelShow)="showEventLoader($event)"></switch-options>
+    <checkbox-options *ngIf="selectedCheckbox!=null" [selectedCheckbox]="selectedCheckbox"
+                      (modelShow)="showEventLoader($event)"></checkbox-options>
+    <radio-options *ngIf="selectedRadio!=null" [selectedRadio]="selectedRadio"
+                   (modelShow)="showEventLoader($event)"></radio-options>
   </section>
 
 </div>
 <div id="styles">
 
+  <div id="btnStyles"></div>
+  <div id="switchStyles"></div>
+  <div id="checkboxStyles"></div>
+  <div id="radioStyles"></div>
+
 </div>
 
 
-<div bsModal #lgModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div bsModal #lgModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">

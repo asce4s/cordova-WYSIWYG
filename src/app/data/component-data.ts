@@ -133,6 +133,16 @@ export const COMPONENTS: any[] = [
     "width": "88px",
     "height": "62px"
   }
+  ,
+  {
+    "id": "navbar",
+    "name": "Navbar",
+    "background": "no-repeat -20px -829px",
+    "width": "140px",
+    "height": "44px"
+  }
+
+
 
 
 ]

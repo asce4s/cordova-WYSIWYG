@@ -35,7 +35,14 @@ export class CheckboxService {
                 'margin:'+checkbox.style.margin+';'+
 
 
-            '}'
+            '}' +
+             '#'+checkbox.id+ ' .checkbox__input:checked + .checkbox__checkmark:before{' +
+          'background:'+checkbox.style.color+';'+
+          'border: 1px solid '+checkbox.style.color+';' +
+          '}'+
+          '#'+checkbox.id+ ' .checkbox__checkmark:before{' +
+          'border: 1px solid '+checkbox.style.color+';' +
+          '}'
         })
 
         return res;
