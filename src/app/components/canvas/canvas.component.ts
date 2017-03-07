@@ -15,7 +15,7 @@ import {SwitchService} from "../../services/switch.service";
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.css'],
-  providers: [ElementProviderService, ButtonService,SwitchService],
+  providers: [ElementProviderService, ButtonService,SwitchService ],
 
 
 
@@ -30,6 +30,7 @@ export class CanvasComponent implements OnInit {
   private selectedButton: Button;
   private selectedSwitch: Switch;
 
+
   text:string ;
   @ViewChild('lgModal') public lgModel:ModalDirective;
 
@@ -38,6 +39,7 @@ export class CanvasComponent implements OnInit {
               private _elprovider: ElementProviderService,
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
+
   ) {
 
 
@@ -132,6 +134,7 @@ export class CanvasComponent implements OnInit {
 
 
     }
+
 
     if (key == "button") {
 
