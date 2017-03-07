@@ -269,6 +269,21 @@ export class CanvasComponent implements OnInit {
       );
     }
 
+    if (key == "navbar") {
+      this.genElement(value[1], this._elprovider.getNavigationBarItem(),
+
+
+        (id) => {
+
+
+        },
+        (event) => {
+
+
+        }
+      );
+    }
+
 
   }
 

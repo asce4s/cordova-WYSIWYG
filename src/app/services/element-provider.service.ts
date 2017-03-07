@@ -35,6 +35,7 @@ export class ElementProviderService {
                 <span class="toolbar-button--quiet">
                     <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
                 </span>
+                
             </div>
 
             <div class="navigation-bar__center">
@@ -365,7 +366,7 @@ export class ElementProviderService {
   }
 
   getTextInput() {
-    return ` <input type="text" class="text-input" placeholder="text" value="">`
+    return ` <input type="text" class="text-input--underbar" placeholder="text" value="">`
   }
 
   getTextArea() {
