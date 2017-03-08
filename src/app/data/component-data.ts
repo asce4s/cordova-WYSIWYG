@@ -140,6 +140,14 @@ export const COMPONENTS: any[] = [
     "background": "no-repeat -20px -829px",
     "width": "140px",
     "height": "44px"
+  },
+
+  {
+    "id": "heading",
+    "name": "Heading",
+    "background": "no-repeat -34px -1428px",
+    "width": "112px",
+    "height": "44px"
   }
 
 

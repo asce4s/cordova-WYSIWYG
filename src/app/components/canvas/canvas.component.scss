@@ -29,6 +29,12 @@
   #designArea{
     height: 490px;
     background: #fff;
+
+    .container-fluid{
+      border:1px dotted #ccc;
+      width: 100%;
+      min-height:200px;
+    }
   }
 
 }

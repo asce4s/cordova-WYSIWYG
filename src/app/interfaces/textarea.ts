@@ -1,6 +1,7 @@
-export interface Select {
+export interface Textarea {
   id:string,
   text:{
+    text:any,
     size:any,
     align:any,
     color:any,
@@ -10,11 +11,10 @@ export interface Select {
     height:any,
     padding:any,
     margin:any,
-
+    color:any,
+    borderColor:any,
+    borderThickness:any,
     class:any
-  },
-  options:{
-    //I'll take care of this
   }
   script:any
 }
