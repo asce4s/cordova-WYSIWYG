@@ -22,6 +22,14 @@ import { NavbarComponent } from './components/options/navbar/navbar.component';
 import { ParagraphComponent } from './components/options/paragraph/paragraph.component';
 import { RadioComponent } from './components/options/radio/radio.component';
 import { SelectComponent } from './components/options/select/select.component';
+import { ContainerComponent } from './components/options/container/container.component';
+import { HtmlComponent } from './components/options/html/html.component';
+import { InputComponent } from './components/options/input/input.component';
+import { ListComponent } from './components/options/list/list.component';
+import { MapComponent } from './components/options/map/map.component';
+import { RangeComponent } from './components/options/range/range.component';
+import { TextareaComponent } from './components/options/textarea/textarea.component';
+import { VideoComponent } from './components/options/video/video.component';
 
 
 
@@ -42,7 +50,15 @@ import { SelectComponent } from './components/options/select/select.component';
     NavbarComponent,
     ParagraphComponent,
     RadioComponent,
-    SelectComponent
+    SelectComponent,
+    ContainerComponent,
+    HtmlComponent,
+    InputComponent,
+    ListComponent,
+    MapComponent,
+    RangeComponent,
+    TextareaComponent,
+    VideoComponent
 
 
   ],
