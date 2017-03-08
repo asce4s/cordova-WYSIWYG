@@ -22,7 +22,7 @@
     <div class="col-sm-8">
       <select [(ngModel)]="selectedVideo.type" class="form-control" name="align" (change)="addVideoType()">
         <option value="default">Default</option>
-        <option value="Video--material">Material</option>
+        <option value="button--material">Material</option>
 
       </select>
     </div>
@@ -111,6 +111,6 @@
 </form>
 <div class="form-group" style="text-align: center;">
 
-  <Video class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</Video>
+  <button class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</button>
 
 </div>

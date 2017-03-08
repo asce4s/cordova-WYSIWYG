@@ -16,7 +16,7 @@
     <div class="col-sm-8">
       <select [(ngModel)]="selectedRange.type" class="form-control" name="align" (change)="addRangeType()">
         <option value="default">Default</option>
-        <option value="Range--material">Material</option>
+        <option value="button--material">Material</option>
 
       </select>
     </div>
@@ -87,6 +87,6 @@
 </form>
 <div class="form-group" style="text-align: center;">
 
-  <Range class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</Range>
+  <button class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</button>
 
 </div>
