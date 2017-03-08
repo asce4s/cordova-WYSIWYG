@@ -450,4 +450,8 @@ export class ElementProviderService {
     return `<div class="container-fluid" [dragula]='"first-bag"'></div>`
   }
 
+  getHTML(){
+    return `<div class="html"></div>`
+  }
+
 }
