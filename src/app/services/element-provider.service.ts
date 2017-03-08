@@ -438,5 +438,20 @@ export class ElementProviderService {
     return ` <button class="fab"><i class="zmdi zmdi-car"></i></button>`
   }
 
+  getParagraph(){
+    return `<p>your text here</p>`
+  }
+
+  getHeading(){
+    return `<h1>your heading here</h1>`
+  }
+
+  getContainer(){
+    return `<div class="container-fluid" [dragula]='"first-bag"'></div>`
+  }
+
+  getHTML(){
+    return `<div class="html"></div>`
+  }
 
 }
