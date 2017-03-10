@@ -15,7 +15,7 @@ export class NavbarService {
     }
 
     get(id) {
-        return NAVBAR.find(navbar => navbar.id == id);
+        return NAVBAR.find(navbarx => navbarx.id == id);
     }
 
     getAll() {
@@ -24,15 +24,15 @@ export class NavbarService {
 
     getStyles() {
         let res = "";
-        NAVBAR.forEach((navbar: Navbar) => {
+        NAVBAR.forEach((navbarx: Navbar) => {
             //res=button
-            res += '#' + navbar.id + '{' +
+            res += '#' + navbarx.id + '{' +
 
-                'text-align:'+navbar.text.align+';'+
-                'color:'+navbar.text.color+';'+
-                'font-size:'+navbar.text.size+';'+
-
-                'margin:'+navbar.style.margin+';'+
+                'text-align:'+navbarx.text.align+';'+
+                'color:'+navbarx.text.color+';'+
+                'font-size:'+navbarx.text.size+';'+
+                'background'+navbarx.style.backgroundr+';'+
+                'margin:'+navbarx.style.margin+';'+
 
 
             '}'

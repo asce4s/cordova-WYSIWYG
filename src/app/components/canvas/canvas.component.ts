@@ -12,6 +12,8 @@ import {Checkbox} from "../../interfaces/checkbox";
 import {CheckboxService} from "../../services/checkbox.service";
 import {Radio} from "../../interfaces/Radio";
 import {RadioService} from "../../services/radio.service";
+import {Navbar} from "../../interfaces/navbar";
+import {NavbarService} from "../../services/navbar.service";
 
 
 @Component({
@@ -22,6 +24,7 @@ import {RadioService} from "../../services/radio.service";
     ButtonService,
     SwitchService,
     CheckboxService,
+    NavbarService,
     RadioService],
 
 
@@ -37,6 +40,7 @@ export class CanvasComponent implements OnInit {
   private selectedSwitch: Switch;
   private selectedCheckbox: Checkbox;
   private selectedRadio:Radio;
+  private selectedNavbar:Navbar;
 
   text: string;
   @ViewChild('lgModal') public lgModel: ModalDirective;
@@ -47,6 +51,7 @@ export class CanvasComponent implements OnInit {
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
               private _checkboxService: CheckboxService,
+              private _navbarService: NavbarService,
               private _radioService: RadioService) {
 
 
@@ -270,14 +275,41 @@ export class CanvasComponent implements OnInit {
     }
 
     if (key == "navbar") {
+
       this.genElement(value[1], this._elprovider.getNavigationBarItem(),
 
 
           (id) => {
+            let el = $("#" + id);
+            let defaults: Navbar = {
+              id: id,
+              text:{
+                text: el.find('.navigation-bar__center').html(),
+                size: el.find('.navigation-bar__center').css('font-size'),
+                align:"center",
+                color:el.find('.navigation-bar__center').css('color')
+              },
+              style:{
+                margin:el.css('margin'),
+               backgroundr:el.find(".navigation-bar").css('background'),
+                class:""
+              },
+              script: "var btn_" + id + " = $('#" + id + "');"
 
+            }
+
+            this.toFalse();
+            this._navbarService.add(defaults);
+            this.selectedNavbar = defaults;
+            this.text = defaults.script;
 
           },
           (event) => {
+
+            console.log(event);
+            this.toFalse();
+            this.selectedNavbar=this._navbarService.get(event.toElement.offsetParent.id);
+            this.text=this.selectedNavbar.script;
 
 
           }
@@ -332,6 +364,7 @@ export class CanvasComponent implements OnInit {
     this.selectedSwitch = null;
     this.selectedCheckbox=null;
     this.selectedRadio=null;
+    this.selectedNavbar=null;
   }
 
 }

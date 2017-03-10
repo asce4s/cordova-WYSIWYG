@@ -58,7 +58,7 @@
   <hr>
   <h4>Styles</h4>
 
-  <div class="form-group">
+  <!--<div class="form-group">
     <label class="col-sm-4 control-label">Style</label>
     <div class="col-sm-8">
       <select [(ngModel)]="selectedNavbar.type" class="form-control" name="align" (change)="addNavbarType()">
@@ -67,18 +67,18 @@
 
       </select>
     </div>
-  </div>
+  </div>-->
 
 
   <div class="form-group">
     <label class="col-sm-4 control-label">Background</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.style.background"
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.style.backgroundr"
              name="background"
-             [(colorPicker)]="selectedNavbar.style.background"
+             [(colorPicker)]="selectedNavbar.style.backgroundr"
              [cpPosition]="'bottom'"
              [cpPositionOffset]="'10%'"
-             [value]="selectedNavbar.style.background"
+             [value]="selectedNavbar.style.backgroundr"
              (colorPickerChange)="formChange()"
              [cpWidth]="'160px'"
 
