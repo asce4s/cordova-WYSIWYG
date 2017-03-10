@@ -51,7 +51,7 @@ export class CanvasComponent implements OnInit {
 
 
     dragulaService.setOptions('first-bag', {
-      revertOnSpill: true,
+      removeOnSpill: true,
       copy: function (el, handle) {
         return el.localName == "li";
       },
