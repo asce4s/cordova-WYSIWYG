@@ -58,7 +58,7 @@
   <hr>
   <h4>Styles</h4>
 
-  <div class="form-group">
+ <!-- <div class="form-group">
     <label class="col-sm-4 control-label">Style</label>
     <div class="col-sm-8">
       <select [(ngModel)]="selectedTextarea.type" class="form-control" name="align" (change)="addTextareaType()">
@@ -67,7 +67,7 @@
 
       </select>
     </div>
-  </div>
+  </div>-->
 
   <div class="form-group">
     <label class="col-sm-4 control-label">Width</label>
@@ -87,12 +87,12 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Background</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedTextarea.style.background"
+      <input type="text" class="form-control" [(ngModel)]="selectedTextarea.style.color"
              name="background"
-             [(colorPicker)]="selectedTextarea.style.background"
+             [(colorPicker)]="selectedTextarea.style.color"
              [cpPosition]="'bottom'"
              [cpPositionOffset]="'10%'"
-             [value]="selectedTextarea.style.background"
+             [value]="selectedTextarea.style.color"
              (colorPickerChange)="formChange()"
              [cpWidth]="'160px'"
 

@@ -16,7 +16,12 @@ import {Navbar} from "../../interfaces/navbar";
 import {NavbarService} from "../../services/navbar.service";
 import {Range} from "../../interfaces/range";
 import {RangeService} from "../../services/range.service";
-
+import {Input} from "../../interfaces/input";
+import {InputService} from "../../services/input.service";
+import {List} from "../../interfaces/list";
+import {ListService} from "../../services/list.service";
+import {Textarea} from "../../interfaces/textarea";
+import {TextareaService} from "../../services/textarea.service";
 
 @Component({
   selector: 'app-canvas',
@@ -28,6 +33,9 @@ import {RangeService} from "../../services/range.service";
     CheckboxService,
     NavbarService,
       RangeService,
+      InputService,
+      TextareaService,
+      ListService,
     RadioService],
 
 
@@ -43,7 +51,10 @@ export class CanvasComponent implements OnInit {
   private selectedSwitch: Switch;
   private selectedCheckbox: Checkbox;
   private selectedRadio:Radio;
+  private selectedList:List;
+  private selectedTextarea:Textarea;
   private selectedRange:Range;
+  private selectedInput:Input;
   private selectedNavbar:Navbar;
 
   text: string;
@@ -54,8 +65,11 @@ export class CanvasComponent implements OnInit {
               private _elprovider: ElementProviderService,
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
+              private _listService:ListService,
               private _checkboxService: CheckboxService,
               private _navbarService: NavbarService,
+              private _inputService: InputService,
+              private _textareaService:TextareaService,
               private _rangeService: RangeService,
               private _radioService: RadioService) {
 
@@ -362,6 +376,152 @@ export class CanvasComponent implements OnInit {
       );
     }
 
+
+    if (key == "input") {
+
+      this.genElement(value[1], this._elprovider.getTextInput(),
+
+
+          (id) => {
+            let el = $("#" + id);
+            let defaults: Input = {
+              id: id,
+              text:{
+                text:el.find('.text-input--underbar').html(),
+                size:el.find('.text-input--underbar').css('font-size'),
+                align:"left",
+                color:'rgba(0,0,0,0.81)',
+              },
+              style:{
+                width:el.find('.text-input--underbar').css('width'),
+                height:el.find('.text-input--underbar').css('height'),
+                padding:el.find('.text-input--underbar').css('padding'),
+                margin:el.find('.text-input--underbar').css('margin'),
+                borderColor:el.find('.text-input--underbar').css('border-bottom'),
+                borderThickness:el.find('.text-input--underbar').css('border-bottom'),
+                class:""
+              },
+              script: "var btn_" + id + " = $('#" + id + "');"
+
+            }
+
+            this.toFalse();
+            this._inputService.add(defaults);
+            this.selectedInput = defaults;
+            this.text = defaults.script;
+
+          },
+          (event) => {
+
+            console.log(event);
+            this.toFalse();
+            this.selectedInput=this._inputService.get(event.toElement.id);
+            this.text=this.selectedInput.script;
+
+
+          }
+      );
+    }
+
+    if (key == "list") {
+
+   this.genElement(value[1], this._elprovider.getList(),
+
+
+         (id) => {
+            let el = $("#" + id);
+            let defaults: List = {
+              id: id,
+              //items:el.find('').css(''),
+              style:{
+                width:el.find('.list-item').css('width'),
+                height:el.find('.list-item').css('height'),
+                radius:el.find('.list').css('border-radius'),
+                background:el.find('.list-item').css('background-color'),
+                padding:el.find('.list').css('padding'),
+               margin:el.find('.list').css('margin'),
+              borderColor:el.find('.list').css('border'),
+                borderThickness:el.find('.list').css('border'),
+                listItemPadding:el.find('.list-item').css('padding'),
+                listItemMargin:el.find('.list-item').css('margin'),
+                listItemBackground:el.find('.list-item').css('color'),
+                listItemBorderColor:el.find('.list__item__center').css('background-image'),
+                listItemBorderThickness:el.find('.list__item__center').css('-webkit-background-size'),
+                class:""
+              },
+              script: "var btn_" + id + " = $('#" + id + "');"
+
+            }
+
+            this.toFalse();
+            this._listService.add(defaults);
+           this.selectedList = defaults;
+            this.text = defaults.script;
+
+         },
+          (event) => {
+
+            console.log(event);
+            this.toFalse();
+            this.selectedList=this._listService.get(event.toElement.id);
+            this.text=this.selectedList.script;
+
+
+         }
+      );
+    }
+
+
+
+    if (key == "textarea") {
+
+      this.genElement(value[1], this._elprovider.getTextArea(),
+
+
+          (id) => {
+            let el = $("#" + id);
+            let defaults: Textarea = {
+              id: id,
+              text:{
+                text:el.find('.textarea').html(),
+                size:el.find('.textarea').css('font-size'),
+                align:"left",
+                color:'rgba(0,0,0,0.81)',
+              },
+              style:{
+                width:el.find('.textarea').css('width'),
+                height:el.find('.textarea').css('height'),
+                padding:el.find('.textarea').css('padding'),
+                margin:el.find('.textarea').css('margin'),
+                color:el.find('.textarea').css('background-color'),
+                borderColor:el.find('.textarea').css('border'),
+                borderThickness:el.find('.textarea').css('border'),
+                class:""
+              },
+              script: "var btn_" + id + " = $('#" + id + "');"
+
+            }
+
+            this.toFalse();
+            this._textareaService.add(defaults);
+            this.selectedTextarea = defaults;
+            this.text = defaults.script;
+
+          },
+          (event) => {
+
+            console.log(event);
+            this.toFalse();
+            this.selectedTextarea=this._textareaService.get(event.toElement.id);
+            this.text=this.selectedTextarea.script;
+
+
+          }
+      );
+    }
+
+
+
   }
 
   private genElement(rElement, nElement, elFunc, clickfunc) {
@@ -411,6 +571,9 @@ export class CanvasComponent implements OnInit {
     this.selectedRadio=null;
     this.selectedNavbar=null;
     this.selectedRange=null;
+    this.selectedInput=null;
+    this.selectedList=null;
+
   }
 
 }

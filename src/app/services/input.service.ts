@@ -34,7 +34,7 @@ export class InputService {
                 'font-size:'+input.text.size+';'+
                 'padding:'+input.style.padding+';'+
                 'margin:'+input.style.margin+';'+
-                'border:'+input.style.borderThickness+' solid '+input.style.borderColor+';'
+                'border-bottom:'+input.style.borderThickness+' solid '+input.style.borderColor+';'
 
             '}'
         })
