@@ -27,13 +27,16 @@ export class RangeService {
         RANGE.forEach((range: Range) => {
             //res=button
             res += '#' + range.id + '{' +
-                'color:' + range.style.color + ';' +
+
+                'background-color:' + range.style.color+';'+
                 'width:' + range.style.width + ';' +
                 'height:' + range.style.height + ';' +
                 'padding:'+range.style.padding+';'+
                 'margin:'+range.style.margin+';'+
 
+
             '}'
+
         })
 
         return res;

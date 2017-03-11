@@ -14,6 +14,8 @@ import {Radio} from "../../interfaces/Radio";
 import {RadioService} from "../../services/radio.service";
 import {Navbar} from "../../interfaces/navbar";
 import {NavbarService} from "../../services/navbar.service";
+import {Range} from "../../interfaces/range";
+import {RangeService} from "../../services/range.service";
 
 
 @Component({
@@ -25,6 +27,7 @@ import {NavbarService} from "../../services/navbar.service";
     SwitchService,
     CheckboxService,
     NavbarService,
+      RangeService,
     RadioService],
 
 
@@ -40,6 +43,7 @@ export class CanvasComponent implements OnInit {
   private selectedSwitch: Switch;
   private selectedCheckbox: Checkbox;
   private selectedRadio:Radio;
+  private selectedRange:Range;
   private selectedNavbar:Navbar;
 
   text: string;
@@ -52,6 +56,7 @@ export class CanvasComponent implements OnInit {
               private _switchService: SwitchService,
               private _checkboxService: CheckboxService,
               private _navbarService: NavbarService,
+              private _rangeService: RangeService,
               private _radioService: RadioService) {
 
 
@@ -283,13 +288,14 @@ export class CanvasComponent implements OnInit {
             let el = $("#" + id);
             let defaults: Navbar = {
               id: id,
-              text:{
+
+              text: {
                 text: el.find('.navigation-bar__center').html(),
                 size: el.find('.navigation-bar__center').css('font-size'),
-                align:"center",
-                color:el.find('.navigation-bar__center').css('color')
+                align: "center",
+                color: el.find('.navigation-bar__center').css('color')
               },
-              style:{
+              style: {
                 margin:el.css('margin'),
                backgroundr:el.find(".navigation-bar").css('background'),
                 class:""
@@ -308,7 +314,7 @@ export class CanvasComponent implements OnInit {
 
             console.log(event);
             this.toFalse();
-            this.selectedNavbar=this._navbarService.get(event.toElement.offsetParent.id);
+            this.selectedNavbar=this._navbarService.get($(event.toElement).parent().attr("id"));
             this.text=this.selectedNavbar.script;
 
 
@@ -316,6 +322,45 @@ export class CanvasComponent implements OnInit {
       );
     }
 
+    if (key == "range") {
+
+      this.genElement(value[1], this._elprovider.getRange(),
+
+
+          (id) => {
+            let el = $("#" + id);
+            let defaults: Range = {
+              id: id,
+
+              style: {
+                width: el.css('width'),
+                height:el.css('height'),
+                padding:el.css('padding'),
+                margin:el.css('margin'),
+                color:el.find('.range').css('background-color'),
+                class:""
+              },
+              script: "var btn_" + id + " = $('#" + id + "');"
+
+            }
+
+            this.toFalse();
+            this._rangeService.add(defaults);
+            this.selectedRange = defaults;
+            this.text = defaults.script;
+
+          },
+          (event) => {
+
+            console.log(event);
+            this.toFalse();
+            this.selectedRange=this._rangeService.get(event.toElement.id);
+            this.text=this.selectedRange.script;
+
+
+          }
+      );
+    }
 
   }
 
@@ -365,6 +410,7 @@ export class CanvasComponent implements OnInit {
     this.selectedCheckbox=null;
     this.selectedRadio=null;
     this.selectedNavbar=null;
+    this.selectedRange=null;
   }
 
 }

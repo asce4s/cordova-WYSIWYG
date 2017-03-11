@@ -1,15 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit,  EventEmitter, Output} from '@angular/core';
+import {RangeService} from "../../../services/range.service";
+import * as $ from 'jquery';
+import {Range} from "../../../interfaces/range";
 
 @Component({
-  selector: 'app-range',
+  selector: 'range-options',
   templateUrl: './range.component.html',
-  styleUrls: ['./range.component.css']
+  inputs:['selectedRange'],
 })
 export class RangeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _rangeService:RangeService) { }
 
+  private selectedRange:Range;
+  @Output() modelShow: EventEmitter<any> = new EventEmitter();
   ngOnInit() {
+  }
+
+  public formChange(){
+    $("#rangeStyles").html('<style>' +
+        this._rangeService.getStyles()+
+        '</style>');
+    this.addClasses();
+  }
+
+
+
+  public addClasses(){
+    $('#'+this.selectedRange.id).addClass(this.selectedRange.style.class);
+  }
+
+  public eventLoad(){
+    this.modelShow.emit(true);
   }
 
 }
