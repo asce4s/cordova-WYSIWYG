@@ -2,10 +2,12 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {AngularFire, FirebaseListObservable} from "angularfire2";
 import {ModalDirective} from "ng2-bootstrap";
 
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.css'],
+  providers: []
 })
 export class ProjectsComponent implements OnInit {
 
@@ -13,11 +15,9 @@ export class ProjectsComponent implements OnInit {
   private imgLoader=true;
   private currentUser;
   @ViewChild('smModal') public smModel: ModalDirective;
+
   constructor(private af: AngularFire) {
-    this.db=this.af.database.list('/projects');
-    this.db.subscribe((key)=>{
-        this.imgLoader=false;
-    })
+
 
 
   }
@@ -25,7 +25,13 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this.af.auth.subscribe((auth)=>{
       this.currentUser=auth.uid;
+      this.db=this.af.database.list('/projects/'+this.currentUser);
+      this.db.subscribe((key)=>{
+        this.imgLoader=false;
+      })
     });
+
+
 
   }
 
@@ -52,9 +58,10 @@ export class ProjectsComponent implements OnInit {
 
   }
 
-  getProjects(){
-
-
+  removeProject(key){
+    if(confirm("Are you sure ?")){
+      this.db.remove(key);
+    }
   }
 
 }

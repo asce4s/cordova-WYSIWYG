@@ -14,12 +14,13 @@
 
   <img src="../../../assets/img/ring.gif" style="margin: 14% auto;display: block;" *ngIf="imgLoader">
   <div class="col-md-3" *ngFor="let item of db | async">
+
     <div class="panel panel-default">
-      <div class="panel-heading">{{item.title}}</div>
+      <div class="panel-heading">{{item.title}} <fa name="times" class="pull-right pointer" (click)="removeProject(item.$key)"></fa></div>
       <div class="panel-body">
         {{item.description}}
       </div>
-      <div class="panel-footer text-right"><button class="btn btn-default">Continue</button> </div>
+      <div class="panel-footer text-right"><a [routerLink]="['/builder',item.$key]"><button class="btn btn-default">Continue</button> </a></div>
     </div>
   </div>
 

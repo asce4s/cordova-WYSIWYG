@@ -61,6 +61,8 @@
                       (modelShow)="showEventLoader($event)"></checkbox-options>
     <radio-options *ngIf="selectedRadio!=null" [selectedRadio]="selectedRadio"
                    (modelShow)="showEventLoader($event)"></radio-options>
+    <navbar-options *ngIf="selectedNavbar!=null" [selectedNavbar]="selectedNavbar"
+                   (modelShow)="showEventLoader($event)"></navbar-options>
   </section>
 
 </div>
@@ -70,6 +72,7 @@
   <div id="switchStyles"></div>
   <div id="checkboxStyles"></div>
   <div id="radioStyles"></div>
+  <div id="navbarStyles"></div>
 
 </div>
 

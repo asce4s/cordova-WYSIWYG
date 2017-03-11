@@ -38,7 +38,8 @@ import {AngularFireModule, AuthProviders, AuthMethods} from "angularfire2";
 import { ProjectsComponent } from './pages/projects/projects.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'builder', component: HomeComponent },
+  { path: 'builder/:id', component: HomeComponent },
   { path: 'login',      component: LoginComponent},
   { path: 'projects',      component: ProjectsComponent},
 ];

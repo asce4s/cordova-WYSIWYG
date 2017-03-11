@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FirebaseListObservable, AngularFire} from "angularfire2";
+import {ActivatedRoute} from '@angular/router';
+import {RADIO} from "../../data/radio-data";
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-header',
@@ -7,9 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private db: any;
+  private id: any;
+
+  constructor(private af: AngularFire, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.db = this.af.database.object('/options/' + this.id);
+
+    });
+
+
+  }
+
+  saveDesign() {
+    this.db.set(
+      {radio:RADIO,
+      design:$("#designArea").html().toString()}
+      )
   }
 
 }
