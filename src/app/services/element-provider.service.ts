@@ -38,9 +38,7 @@ export class ElementProviderService {
                 
             </div>
 
-            <div class="navigation-bar__center">
-                Navigation Bar
-            </div>
+            <div class="navigation-bar__center">Navigation Bar</div>
 
             <div class="navigation-bar__right">
                 <span class="toolbar-button--quiet">Label</span>

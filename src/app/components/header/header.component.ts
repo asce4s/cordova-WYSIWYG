@@ -3,6 +3,8 @@ import {FirebaseListObservable, AngularFire} from "angularfire2";
 import {ActivatedRoute} from '@angular/router';
 import {RADIO} from "../../data/radio-data";
 import * as $ from 'jquery'
+import {BUTTON} from "../../data/button-data";
+import {NAVBAR} from "../../data/navbar-data";
 
 @Component({
   selector: 'app-header',
@@ -21,7 +23,6 @@ export class HeaderComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      this.db = this.af.database.object('/options/' + this.id);
 
     });
 
@@ -29,10 +30,14 @@ export class HeaderComponent implements OnInit {
   }
 
   saveDesign() {
+    this.db = this.af.database.object('/options/' + this.id);
     this.db.set(
-      {radio:RADIO,
-      design:$("#designArea").html().toString()}
+      { radio:RADIO,
+        button:BUTTON,
+        navbar:NAVBAR,
+        design:$("#designArea").html().toString()}
       )
+
   }
 
 }

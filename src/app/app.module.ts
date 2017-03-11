@@ -41,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'builder', component: HomeComponent },
   { path: 'builder/:id', component: HomeComponent },
   { path: 'login',      component: LoginComponent},
+  { path: '',      component: LoginComponent},
   { path: 'projects',      component: ProjectsComponent},
 ];
 

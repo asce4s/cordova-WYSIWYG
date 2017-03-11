@@ -55,6 +55,46 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Label Text</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.text.labelText" name="text"
+             (keyup)="setNavbarLabelText()">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Label Color</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.text.labelColor" name="color"
+
+             [(colorPicker)]="selectedNavbar.text.labelColor"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedNavbar.text.labelColor"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Icon Color</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedNavbar.text.iconColor" name="color"
+
+             [(colorPicker)]="selectedNavbar.text.iconColor"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedNavbar.text.iconColor"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+      >
+    </div>
+  </div>
+
+
+
   <hr>
   <h4>Styles</h4>
 

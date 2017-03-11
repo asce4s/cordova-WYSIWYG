@@ -5,6 +5,9 @@ export interface Navbar {
     size:any,
     align:any,
     color:any,
+    iconColor:any,
+    labelColor:any
+    labelText:any
   },
   style:{
     margin:any,

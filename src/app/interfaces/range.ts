@@ -7,7 +7,6 @@ export interface Range {
     padding:any,
     margin:any,
     color:any,
-
     class:any
   }
   script:any
