@@ -31,11 +31,13 @@ export class ParagraphService {
                 'width:' + paragraph.style.width + ';' +
                 'height:' + paragraph.style.height + ';' +
                 'text-align:'+paragraph.text.align+';'+
+                'line-height:'+paragraph.text.lineHeight+';'+
                 'color:'+paragraph.text.color+';'+
                 'font-size:'+paragraph.text.size+';'+
                 'padding:'+paragraph.style.padding+';'+
                 'margin:'+paragraph.style.margin+';'+
-                'border:'+paragraph.style.borderThickness+' solid '+paragraph.style.borderColor+';'
+                'overflow:'+paragraph.style.overflow+';'+
+                'border:'+paragraph.style.borderThickness+' solid '+paragraph.style.borderColor+';'+
 
             '}'
         })

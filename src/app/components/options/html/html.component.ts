@@ -34,6 +34,10 @@ export class HtmlComponent implements OnInit {
     $('#'+this.selectedHtml.id).html(this.selectedHtml.text.text);
   }
 
+  public setHtmlcodes(){
+    $('#'+this.selectedHtml.id).html(this.selectedHtml.code);
+  }
+
   public addClasses(){
     $('#'+this.selectedHtml.id).addClass(this.selectedHtml.style.class);
   }

@@ -28,6 +28,11 @@ import {Textarea} from "../../interfaces/textarea";
 import {TextareaService} from "../../services/textarea.service";
 import {Html} from "../../interfaces/html";
 import {HtmlService} from "../../services/html.service";
+import {Container} from "../../interfaces/container";
+import {ContainerService} from "../../services/container.service";
+import {Paragraph} from "../../interfaces/paragraph";
+import {ParagraphService} from "../../services/paragraph.service";
+
 
 
 @Component({
@@ -39,10 +44,12 @@ import {HtmlService} from "../../services/html.service";
     SwitchService,
     CheckboxService,
     NavbarService,
+      ParagraphService,
       RangeService,
       InputService,
       TextareaService,
       HtmlService,
+      ContainerService,
       ListService,
     RadioService],
 
@@ -62,10 +69,12 @@ export class CanvasComponent implements OnInit {
   private selectedCheckbox: Checkbox;
   private selectedRadio:Radio;
   private selectedList:List;
+  private selectedContainer;
   private selectedHtml:Html;
   private selectedTextarea:Textarea;
   private selectedRange:Range;
   private selectedInput:Input;
+  private selectedParagraph:Paragraph;
   private selectedNavbar:Navbar;
 
   text: string;
@@ -79,10 +88,12 @@ export class CanvasComponent implements OnInit {
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
               private _htmlService:HtmlService,
+              private _paragraphService:ParagraphService,
               private _listService:ListService,
               private _checkboxService: CheckboxService,
               private _navbarService: NavbarService,
               private _inputService: InputService,
+              private _containerService:ContainerService,
               private _textareaService:TextareaService,
               private _rangeService: RangeService,
               private _radioService: RadioService) {
@@ -561,21 +572,21 @@ export class CanvasComponent implements OnInit {
             let el = $("#" + id);
             let defaults: Html = {
               id: id,
-              code:el.find('.html').html(),
+              code:el.html(),
               text: {
                 text: el.html(),
-                size: el.find('.html').css('font-size'),
+                size: el.css('font-size'),
                 align: "center",
-                color: el.find('.html').css('color')
+                color: el.css('color')
               },
               style: {
-                width: el.find('.html').css('width'),
-                height: el.find('.html').css('height'),
-                color: el.find('.html').css('background-color'),
-                padding: el.find('.html').css('padding'),
-                margin: el.find('.html').css('margin'),
-                borderColor: el.find('.html').css('border-color'),
-                borderThickness: el.find('.html').css('border-width'),
+                width: el.css('width'),
+                height: el.css('height'),
+                color: el.css('background-color'),
+                padding: el.css('padding'),
+                margin: el.css('margin'),
+                borderColor: el.css('border-color'),
+                borderThickness: el.css('border-width'),
                 class: ""
 
               },
@@ -596,8 +607,91 @@ export class CanvasComponent implements OnInit {
             this.selectedHtml = this._htmlService.get(event.toElement.id);
             this.text = this.selectedHtml.script;
 
-          })
+          });
     }
+
+      if (key == "container") {
+
+          this.genElement(value[1], this._elprovider.getContainer(),
+
+              (id) => {
+
+                  let el = $("#" + id);
+                  let defaults: Container = {
+                      id: id,
+                      style: {
+                          width: el.find('.container-fluid').css('width'),
+                          height: el.find('.container-fluid').css('height'),
+                          padding: el.find('.container-fluid').css('padding'),
+                          margin: el.find('.container-fluid').css('margin'),
+                          class: ""
+
+                      },
+
+                  }
+
+                  this.toFalse();
+                  this._containerService.add(defaults);
+                  this.selectedContainer = defaults;
+
+              },
+
+              (event) => {
+
+                  this.toFalse();
+                  this.selectedContainer = this._containerService.get(event.toElement.id);
+
+
+              });
+      }
+
+
+      if (key == "paragraph") {
+
+          this.genElement(value[1], this._elprovider.getParagraph(),
+
+              (id) => {
+
+                  let el = $("#" + id);
+                  let defaults: Paragraph = {
+                      id: id,
+                      text: {
+                          text: el.html(),
+                          size: el.css('font-size'),
+                          align: "center",
+                          color: el.css('color'),
+                          lineHeight:el.css('line-height')
+                      },
+                      style: {
+                          width: el.css('width'),
+                          height: el.css('height'),
+                          padding: el.css('padding'),
+                          margin: el.css('margin'),
+                          borderColor: el.css('border-color'),
+                          borderThickness: el.css('border-width'),
+                          overflow:el.css('overflow'),
+                          class: ""
+
+                      },
+
+                      script: "var btn_" + id + " = $('#" + id + "');"
+                  }
+
+                  this.toFalse();
+                  this._paragraphService.add(defaults);
+                  this.selectedParagraph = defaults;
+                  this.text = defaults.script;
+
+              },
+
+              (event) => {
+
+                  this.toFalse();
+                  this.selectedParagraph = this._paragraphService.get(event.toElement.id);
+                  this.text = this.selectedParagraph.script;
+
+              });
+      }
 
   }
 
@@ -646,6 +740,9 @@ export class CanvasComponent implements OnInit {
     this.selectedRange=null;
     this.selectedInput=null;
     this.selectedList=null;
+    this.selectedContainer=null;
+    this.selectedHtml=null;
+    this.selectedParagraph=null;
 
   }
 
