@@ -65,6 +65,12 @@
                    (modelShow)="showEventLoader($event)"></navbar-options>
     <range-options *ngIf="selectedRange!=null" [selectedRange]="selectedRange"
                     (modelShow)="showEventLoader($event)"></range-options>
+    <input-options *ngIf="selectedInput!=null" [selectedInput]="selectedInput"
+                   (modelShow)="showEventLoader($event)"></input-options>
+    <list-options *ngIf="selectedList!=null" [selectedList]="selectedList"
+                   (modelShow)="showEventLoader($event)"></list-options>
+    <textarea-options *ngIf="selectedTextarea!=null" [selectedTextarea]="selectedTextarea"
+                  (modelShow)="showEventLoader($event)"></textarea-options>
   </section>
 
 </div>
@@ -76,6 +82,10 @@
   <div id="radioStyles"></div>
   <div id="navbarStyles"></div>
   <div id="rangeStyles"></div>
+  <div id="inputStyles"></div>
+  <div id="listStyles"></div>
+  <div id="textareaStyles"></div>
+
 
 </div>
 

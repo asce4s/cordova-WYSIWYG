@@ -15,7 +15,7 @@ export class TextareaService {
     }
 
     get(id) {
-        return TEXTAREA.find(textarea => textarea.id == id);
+        return TEXTAREA.find(textareax => textareax.id == id);
     }
 
     getAll() {
@@ -24,18 +24,18 @@ export class TextareaService {
 
     getStyles() {
         let res = "";
-        TEXTAREA.forEach((textarea: Textarea) => {
+        TEXTAREA.forEach((textareax: Textarea) => {
             //res=button
-            res += '#' + textarea.id + '{' +
-                'color:' + textarea.style.color + ';' +
-                'width:' + textarea.style.width + ';' +
-                'height:' + textarea.style.height + ';' +
-                'text-align:'+textarea.text.align+';'+
-                'color:'+textarea.text.color+';'+
-                'font-size:'+textarea.text.size+';'+
-                'padding:'+textarea.style.padding+';'+
-                'margin:'+textarea.style.margin+';'+
-                'border:'+textarea.style.borderThickness+' solid '+textarea.style.borderColor+';'
+            res += '#' +textareax.id + '{' +
+                'width:' + textareax.style.width + ';' +
+                'height:' + textareax.style.height + ';' +
+                'text-align:'+textareax.text.align+';'+
+                'color:'+textareax.text.color+';'+
+                'font-size:'+textareax.text.size+';'+
+                'padding:'+textareax.style.padding+';'+
+                'margin:'+textareax.style.margin+';'+
+                'background-color:'+textareax.style.color+';'+
+                'border:'+textareax.style.borderThickness+' solid '+textareax.style.borderColor+';'
 
             '}'
         })
