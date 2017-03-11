@@ -1,15 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Html} from "../../../interfaces/html";
+import {HtmlService} from "../../../services/html.service";
 
+import * as $ from 'jquery';
 @Component({
-  selector: 'app-html',
+  selector: 'html-options',
   templateUrl: './html.component.html',
-  styleUrls: ['./html.component.css']
+  inputs:['selectedHtml'],
+
+
+
+
 })
 export class HtmlComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _htmlService:HtmlService) { }
 
   ngOnInit() {
   }
 
+  private selectedHtml: Html;
+  @Output() modelShow: EventEmitter<any> = new EventEmitter();
+
+
+  public formChange(){
+    $("#htmlStyles").html('<style>' +
+        this._htmlService.getStyles()+
+        '</style>');
+    this.addClasses();
+  }
+
+  public setHtmlText(){
+    $('#'+this.selectedHtml.id).html(this.selectedHtml.text.text);
+  }
+
+  public addClasses(){
+    $('#'+this.selectedHtml.id).addClass(this.selectedHtml.style.class);
+  }
+
+
+
+  public eventLoad(){
+    this.modelShow.emit(true);
+  }
 }

@@ -22,6 +22,8 @@ import {List} from "../../interfaces/list";
 import {ListService} from "../../services/list.service";
 import {Textarea} from "../../interfaces/textarea";
 import {TextareaService} from "../../services/textarea.service";
+import {Html} from "../../interfaces/html";
+import {HtmlService} from "../../services/html.service";
 
 @Component({
   selector: 'app-canvas',
@@ -35,6 +37,7 @@ import {TextareaService} from "../../services/textarea.service";
       RangeService,
       InputService,
       TextareaService,
+      HtmlService,
       ListService,
     RadioService],
 
@@ -52,6 +55,7 @@ export class CanvasComponent implements OnInit {
   private selectedCheckbox: Checkbox;
   private selectedRadio:Radio;
   private selectedList:List;
+  private selectedHtml:Html;
   private selectedTextarea:Textarea;
   private selectedRange:Range;
   private selectedInput:Input;
@@ -65,6 +69,7 @@ export class CanvasComponent implements OnInit {
               private _elprovider: ElementProviderService,
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
+              private _htmlService:HtmlService,
               private _listService:ListService,
               private _checkboxService: CheckboxService,
               private _navbarService: NavbarService,
@@ -521,6 +526,52 @@ export class CanvasComponent implements OnInit {
     }
 
 
+    if (key == "html") {
+
+      this.genElement(value[1], this._elprovider.getHTML(),
+
+          (id) => {
+
+            let el = $("#" + id);
+            let defaults: Html = {
+              id: id,
+              code:el.find('.html').html(),
+              text: {
+                text: el.html(),
+                size: el.find('.html').css('font-size'),
+                align: "center",
+                color: el.find('.html').css('color')
+              },
+              style: {
+                width: el.find('.html').css('width'),
+                height: el.find('.html').css('height'),
+                color: el.find('.html').css('background-color'),
+                padding: el.find('.html').css('padding'),
+                margin: el.find('.html').css('margin'),
+                borderColor: el.find('.html').css('border-color'),
+                borderThickness: el.find('.html').css('border-width'),
+                class: ""
+
+              },
+
+              script: "var btn_" + id + " = $('#" + id + "');"
+            }
+
+            this.toFalse();
+            this._htmlService.add(defaults);
+            this.selectedHtml = defaults;
+            this.text = defaults.script;
+
+          },
+
+          (event) => {
+
+            this.toFalse();
+            this.selectedHtml = this._htmlService.get(event.toElement.id);
+            this.text = this.selectedHtml.script;
+
+          })
+    }
 
   }
 

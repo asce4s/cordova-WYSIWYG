@@ -35,7 +35,7 @@ export class InputComponent implements OnInit {
   }
 
   public setInputText(){
-    $('#'+this.selectedInput.id+" .text-input--underbar").html(this.selectedInput.text.text);
+    $('#'+this.selectedInput.id).html(this.selectedInput.text.text);
   }
 
 

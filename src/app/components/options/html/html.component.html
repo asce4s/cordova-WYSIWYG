@@ -95,12 +95,12 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Background</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" [(ngModel)]="selectedHtml.style.background"
+      <input type="text" class="form-control" [(ngModel)]="selectedHtml.style.color"
              name="background"
-             [(colorPicker)]="selectedHtml.style.background"
+             [(colorPicker)]="selectedHtml.style.color"
              [cpPosition]="'bottom'"
              [cpPositionOffset]="'10%'"
-             [value]="selectedHtml.style.background"
+             [value]="selectedHtml.style.color"
              (colorPickerChange)="formChange()"
              [cpWidth]="'160px'"
 

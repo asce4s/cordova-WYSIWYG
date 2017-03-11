@@ -71,6 +71,8 @@
                    (modelShow)="showEventLoader($event)"></list-options>
     <textarea-options *ngIf="selectedTextarea!=null" [selectedTextarea]="selectedTextarea"
                   (modelShow)="showEventLoader($event)"></textarea-options>
+    <html-options *ngIf="selectedHtml!=null" [selectedHtml]="selectedHtml"
+                      (modelShow)="showEventLoader($event)"></html-options>
   </section>
 
 </div>
@@ -85,7 +87,7 @@
   <div id="inputStyles"></div>
   <div id="listStyles"></div>
   <div id="textareaStyles"></div>
-
+  <div id="htmlStyles"></div>
 
 </div>
 
