@@ -38,7 +38,16 @@ export class NavbarService {
                 '#' +navbar.id+' .navigation-bar__center{' +
                 'color:' + navbar.text.color + ';' +
                 'font-size:'+navbar.text.size+';'+
-                '}'
+                '}'+
+
+              '#' +navbar.id+' .navigation-bar__left .toolbar-button--quiet{' +
+              'color:' + navbar.text.iconColor + ';' +
+              '}'
+              +
+
+              '#' +navbar.id+' .navigation-bar__right .toolbar-button--quiet{' +
+              'color:' + navbar.text.labelColor + ';' +
+              '}'
         })
 
         return res;

@@ -30,9 +30,33 @@ import { MapComponent } from './components/options/map/map.component';
 import { RangeComponent } from './components/options/range/range.component';
 import { TextareaComponent } from './components/options/textarea/textarea.component';
 import { VideoComponent } from './components/options/video/video.component';
+import { LoginComponent } from './pages/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 
+import { RouterModule, Routes } from '@angular/router';
+import {AngularFireModule, AuthProviders, AuthMethods} from "angularfire2";
+import { ProjectsComponent } from './pages/projects/projects.component';
 
+const appRoutes: Routes = [
+  { path: 'builder', component: HomeComponent },
+  { path: 'builder/:id', component: HomeComponent },
+  { path: 'login',      component: LoginComponent},
+  { path: '',      component: LoginComponent},
+  { path: 'projects',      component: ProjectsComponent},
+];
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyCMoOmqwaHtlqZ2lK66dzc5dsDRtypG1ZE",
+  authDomain: "cordova-wisiwig.firebaseapp.com",
+  databaseURL: "https://cordova-wisiwig.firebaseio.com",
+  storageBucket: "cordova-wisiwig.appspot.com",
+  messagingSenderId: "541237740083"
+};
+
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Popup
+};
 
 @NgModule({
   declarations: [
@@ -58,11 +82,15 @@ import { VideoComponent } from './components/options/video/video.component';
     MapComponent,
     RangeComponent,
     TextareaComponent,
-    VideoComponent
+    VideoComponent,
+    LoginComponent,
+    HomeComponent,
+    ProjectsComponent
 
 
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -70,6 +98,7 @@ import { VideoComponent } from './components/options/video/video.component';
     DragulaModule,
     ColorPickerModule,
     ModalModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
 
 
   ],

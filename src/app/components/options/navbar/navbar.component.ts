@@ -38,5 +38,9 @@ export class NavbarComponent implements OnInit {
     $('#'+this.selectedNavbar.id+" .navigation-bar__center").html(this.selectedNavbar.text.text);
   }
 
+  public setNavbarLabelText(){
+    $('#'+this.selectedNavbar.id+" .navigation-bar__right .toolbar-button--quiet").html(this.selectedNavbar.text.labelText);
+  }
+
 
 }

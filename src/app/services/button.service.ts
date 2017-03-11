@@ -24,6 +24,7 @@ export class ButtonService {
 
   getStyles() {
     let res = "";
+
     BUTTON.forEach((button: Button) => {
       //res=button
       res += '#' + button.id + '{' +
@@ -36,7 +37,7 @@ export class ButtonService {
         'font-size:'+button.text.size+';'+
         'padding:'+button.style.padding+';'+
         'margin:'+button.style.margin+';'+
-          'border:'+button.style.borderThickness+' solid '+button.style.borderColor+';'
+          'border:'+button.style.borderThickness+' solid '+button.style.borderColor+';'+
 
         '}'
     })

@@ -16,6 +16,10 @@ import {Navbar} from "../../interfaces/navbar";
 import {NavbarService} from "../../services/navbar.service";
 import {Range} from "../../interfaces/range";
 import {RangeService} from "../../services/range.service";
+import {ActivatedRoute} from "@angular/router";
+import {AngularFire} from "angularfire2";
+import {BUTTON} from "../../data/button-data";
+
 import {Input} from "../../interfaces/input";
 import {InputService} from "../../services/input.service";
 import {List} from "../../interfaces/list";
@@ -24,6 +28,7 @@ import {Textarea} from "../../interfaces/textarea";
 import {TextareaService} from "../../services/textarea.service";
 import {Html} from "../../interfaces/html";
 import {HtmlService} from "../../services/html.service";
+
 
 @Component({
   selector: 'app-canvas',
@@ -49,6 +54,8 @@ export class CanvasComponent implements OnInit {
   private device = "Android";
   private components;
   private componentSprite;
+  private db: any;
+  private id: any;
 
   private selectedButton: Button;
   private selectedSwitch: Switch;
@@ -66,6 +73,8 @@ export class CanvasComponent implements OnInit {
 
   constructor(private dragulaService: DragulaService,
               private _elRef: ElementRef,
+              private af: AngularFire,
+              private route: ActivatedRoute,
               private _elprovider: ElementProviderService,
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
@@ -80,13 +89,12 @@ export class CanvasComponent implements OnInit {
 
 
     dragulaService.setOptions('first-bag', {
-      revertOnSpill: true,
+      removeOnSpill: true,
       copy: function (el, handle) {
         return el.localName == "li";
       },
       copySortSource: true,
       accepts: function (el, handle) {
-        console.log(handle.id);
         return handle.id == "designArea";
 
       }
@@ -114,6 +122,20 @@ export class CanvasComponent implements OnInit {
     this.components = COMPONENTS;
 
 
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.db = this.af.database.object('/options/' + this.id);
+
+
+      this.db.subscribe((item) =>{
+        this.loadFirebaseData(item);
+
+
+
+      })
+    });
+
+    console.log(BUTTON);
   }
 
 
@@ -123,6 +145,8 @@ export class CanvasComponent implements OnInit {
     } else {
       this.skin = require('../../../assets/img/iphone-skin.png');
     }
+
+
 
   }
 
@@ -160,7 +184,6 @@ export class CanvasComponent implements OnInit {
           (event) => {
 
             this.toFalse();
-            console.log(event.toElement.offsetParent.id);
             this.selectedSwitch = this._switchService.get(event.toElement.offsetParent.id);
             this.text=this.selectedButton.script;
           })
@@ -247,7 +270,7 @@ export class CanvasComponent implements OnInit {
 
           },
           (event) => {
-            console.log(event);
+
             this.toFalse();
             this.selectedCheckbox=this._checkboxService.get(event.toElement.offsetParent.id);
             this.text=this.selectedCheckbox.script;
@@ -312,7 +335,10 @@ export class CanvasComponent implements OnInit {
                 text: el.find('.navigation-bar__center').html(),
                 size: el.find('.navigation-bar__center').css('font-size'),
                 align: "center",
-                color: el.find('.navigation-bar__center').css('color')
+                color: el.find('.navigation-bar__center').css('color'),
+                iconColor:el.find('.navigation-bar__left .toolbar-button--quiet').css('color'),
+                labelColor:el.find('.navigation-bar__right .toolbar-button--quiet').css('color'),
+                labelText:el.find('.navigation-bar__right .toolbar-button--quiet').html(),
               },
               style: {
                 margin:el.css('margin'),
@@ -468,7 +494,7 @@ export class CanvasComponent implements OnInit {
 
             console.log(event);
             this.toFalse();
-            this.selectedList=this._listService.get(event.toElement.id);
+            this.selectedList=this._listService.get($(event.toElement).parent().parent().attr('id'));
             this.text=this.selectedList.script;
 
 
@@ -611,10 +637,6 @@ export class CanvasComponent implements OnInit {
     }
   }
 
-  private rgbToHex(rgb) {
-    return '#' + rgb.substr(4, rgb.indexOf(')') - 4).split(',').map((color) => parseInt(color).toString(16)).join('');
-  }
-
   private toFalse() {
     this.selectedButton = null;
     this.selectedSwitch = null;
@@ -626,5 +648,43 @@ export class CanvasComponent implements OnInit {
     this.selectedList=null;
 
   }
+
+
+  private loadFirebaseData(item){
+    $("#designArea").html(item.design);
+
+    
+    if(item.button) {
+      item.button.forEach((i, key) => {
+        this._buttonService.add(i);
+        this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+          this.toFalse();
+          this.selectedButton = i;
+          this.text = this.selectedButton.script;
+
+        });
+
+      })
+
+    }
+    if(item.navbar) {
+      item.navbar.forEach((i, key) => {
+        this._navbarService.add(i);
+
+        this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+          this.toFalse();
+          this.selectedNavbar = i;
+          this.text = this.selectedNavbar.script;
+
+        });
+      })
+
+
+    }
+
+
+  }
+
+
 
 }
