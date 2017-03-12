@@ -77,6 +77,8 @@
                   (modelShow)="showEventLoader($event)"></container-options>
     <paragraph-options *ngIf="selectedParagraph!=null" [selectedParagraph]="selectedParagraph"
                        (modelShow)="showEventLoader($event)"></paragraph-options>
+    <heading-options *ngIf="selectedHeading!=null" [selectedHeading]="selectedHeading"
+                       (modelShow)="showEventLoader($event)"></heading-options>
   </section>
 
 </div>
@@ -93,6 +95,8 @@
   <div id="textareaStyles"></div>
   <div id="htmlStyles"></div>
   <div id="containerStyles"></div>
+  <div id="paragraphStyles"></div>
+  <div id="headingStyles"></div>
 
 </div>
 

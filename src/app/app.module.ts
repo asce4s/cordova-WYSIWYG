@@ -36,6 +36,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import {AngularFireModule, AuthProviders, AuthMethods} from "angularfire2";
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { HeadingComponent } from './components/options/heading/heading.component';
 
 const appRoutes: Routes = [
   { path: 'builder', component: HomeComponent },
@@ -85,7 +86,8 @@ const myFirebaseAuthConfig = {
     VideoComponent,
     LoginComponent,
     HomeComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    HeadingComponent
 
 
   ],

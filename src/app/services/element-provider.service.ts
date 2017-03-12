@@ -235,12 +235,6 @@ export class ElementProviderService {
               <li class="list__item">
                 <div class="list__item__center">Dog</div>
               </li>
-              <li class="list__item">
-                <div class="list__item__center">Cat</div>
-              </li>
-              <li class="list__item">
-                <div class="list__item__center">Hamster</div>
-              </li>
             </ul>`
   }
 
@@ -451,5 +445,7 @@ export class ElementProviderService {
   getHTML(){
     return `<div class="html"></div>`
   }
+
+
 
 }

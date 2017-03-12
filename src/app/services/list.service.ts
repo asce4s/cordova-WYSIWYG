@@ -26,27 +26,30 @@ export class ListService {
         let res = "";
         LIST.forEach((list: List) => {
             //res=button
-            res += '#' + list.id + '.list-item{' +
-                'background-color:' + list.style.background + ';' +
-                'width:' + list.style.width + ';' +
-                'height:' + list.style.height + ';' +
-                'padding:'+list.style.listItemPadding+';'+
-                'margin:'+list.style.listItemMargin+';'+
-                'color:'+list.style.listItemBackground+';'+
-                    '}'+
-                    '#'+list.id+'.list{'+
+            res += '#'+list.id+'.list{'+
                 'border-radius:' + list.style.radius + ';' +
                 'padding:'+list.style.padding+';'+
                 'margin:'+list.style.margin+';'+
                 'border:'+list.style.borderThickness+' solid '+list.style.borderColor+';'+
 
+                '}'+
+
+                '#'+list.id+'.list__item{'+
+                'background-color:'+list.style.background+';'+
+                'width:'+list.style.width+';'+
+                'height:'+list.style.height+';'+
+                'padding:'+list.style.listItemPadding+';'+
+                'margin:'+list.style.listItemMargin+';'+
+                'color:'+list.style.listItemBackground+';'+
+
+                '}'+
 
 
-            '}'+
-                    '#'+list.id+'.list__item__center{'+
-                    '-webkit-background-size:'+'100%'+list.style.listItemBorderThickness+';'+
-                    'background-image:'+'linear-gradient(90deg,'+list.style.listItemBorderColor+','+ list.style.listItemBorderColor+ '50%);'+
-                    '}'
+                '#'+list.id+'.list__item__center{'+
+                '-webkit-background-size: 100%'+list.style.listItemBorderThickness+';'+
+                'background-image: linear-gradient(90deg,'+list.style.listItemBorderColor+','+ list.style.listItemBorderColor+ '50%);'+
+
+                '}'
 
         })
 

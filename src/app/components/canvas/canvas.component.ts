@@ -32,6 +32,8 @@ import {Container} from "../../interfaces/container";
 import {ContainerService} from "../../services/container.service";
 import {Paragraph} from "../../interfaces/paragraph";
 import {ParagraphService} from "../../services/paragraph.service";
+import {Heading} from "../../interfaces/heading";
+import {HeadingService} from "../../services/heading.service";
 
 
 
@@ -49,6 +51,7 @@ import {ParagraphService} from "../../services/paragraph.service";
       InputService,
       TextareaService,
       HtmlService,
+      HeadingService,
       ContainerService,
       ListService,
     RadioService],
@@ -71,6 +74,7 @@ export class CanvasComponent implements OnInit {
   private selectedList:List;
   private selectedContainer;
   private selectedHtml:Html;
+  private selectedHeading:Heading;
   private selectedTextarea:Textarea;
   private selectedRange:Range;
   private selectedInput:Input;
@@ -88,6 +92,7 @@ export class CanvasComponent implements OnInit {
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
               private _htmlService:HtmlService,
+              private _headingService:HeadingService,
               private _paragraphService:ParagraphService,
               private _listService:ListService,
               private _checkboxService: CheckboxService,
@@ -476,17 +481,17 @@ export class CanvasComponent implements OnInit {
               id: id,
               //items:el.find('').css(''),
               style:{
-                width:el.find('.list-item').css('width'),
-                height:el.find('.list-item').css('height'),
+                width:el.find('.list__item').css('width'),
+                height:el.find('.list__item').css('height'),
                 radius:el.find('.list').css('border-radius'),
-                background:el.find('.list-item').css('background-color'),
+                background:el.find('.list__item').css('background-color'),
                 padding:el.find('.list').css('padding'),
-               margin:el.find('.list').css('margin'),
-              borderColor:el.find('.list').css('border'),
+                margin:el.find('.list').css('margin'),
+                borderColor:el.find('.list').css('border'),
                 borderThickness:el.find('.list').css('border'),
-                listItemPadding:el.find('.list-item').css('padding'),
-                listItemMargin:el.find('.list-item').css('margin'),
-                listItemBackground:el.find('.list-item').css('color'),
+                listItemPadding:el.find('.list__item').css('padding'),
+                listItemMargin:el.find('.list__item').css('margin'),
+                listItemBackground:el.find('.list__item').css('color'),
                 listItemBorderColor:el.find('.list__item__center').css('background-image'),
                 listItemBorderThickness:el.find('.list__item__center').css('-webkit-background-size'),
                 class:""
@@ -693,6 +698,53 @@ export class CanvasComponent implements OnInit {
               });
       }
 
+
+      if (key == "heading") {
+
+          this.genElement(value[1], this._elprovider.getHeading(),
+
+              (id) => {
+
+                  let el = $("#" + id);
+                  let defaults: Heading = {
+                      id: id,
+                      text: {
+                          text: el.html(),
+                          size: el.css('font-size'),
+                          align: "center",
+                          color: el.css('color'),
+                          lineHeight:el.css('line-height')
+                      },
+                      style: {
+                          width: el.css('width'),
+                          height: el.css('height'),
+                          padding: el.css('padding'),
+                          margin: el.css('margin'),
+                          borderColor: el.css('border-color'),
+                          borderThickness: el.css('border-width'),
+                          class: ""
+
+                      },
+
+                      script: "var btn_" + id + " = $('#" + id + "');"
+                  }
+
+                  this.toFalse();
+                  this._headingService.add(defaults);
+                  this.selectedHeading = defaults;
+                  this.text = defaults.script;
+
+              },
+
+              (event) => {
+
+                  this.toFalse();
+                  this.selectedHeading = this._headingService.get(event.toElement.id);
+                  this.text = this.selectedHeading.script;
+
+              });
+      }
+
   }
 
   private genElement(rElement, nElement, elFunc, clickfunc) {
@@ -743,6 +795,7 @@ export class CanvasComponent implements OnInit {
     this.selectedContainer=null;
     this.selectedHtml=null;
     this.selectedParagraph=null;
+    this.selectedHeading=null;
 
   }
 
