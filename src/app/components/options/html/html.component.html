@@ -10,8 +10,14 @@
   <div class="form-group">
     <label class="col-sm-4 control-label">Code</label>
     <div class="col-sm-8">
-      <textarea class="form-control" [(ngModel)]="selectedHtml.code" name="text" (keyup)="setHtmlcodes()">
-      </textarea>
+
+
+      <div ace-editor
+           [(text)]="selectedHtml.code"
+           [mode]="'html'"
+           style="min-height: 200px; width:100%; overflow: auto;"
+           (keyup)="setHtmlText()"
+      ></div>
     </div>
   </div>
 

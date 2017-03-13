@@ -446,6 +446,14 @@ export class ElementProviderService {
     return `<div class="html"></div>`
   }
 
+  getImage(){
 
+    return `<img class="img" src="">`
+  }
+
+
+  getMap(){
+    return `<div class="map"></div>`
+  }
 
 }
