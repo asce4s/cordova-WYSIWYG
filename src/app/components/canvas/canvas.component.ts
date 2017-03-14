@@ -41,6 +41,7 @@ import {ImageService} from "../../services/image.service";
 
 
 
+
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
@@ -973,6 +974,354 @@ export class CanvasComponent implements OnInit {
 
 
     }
+
+
+      if(item.checkbox) {
+
+          item.checkbox.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._checkboxService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedCheckbox = i;
+                      this.text = this.selectedCheckbox.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#checkboxStyles").html('<style>' +
+                  this._checkboxService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+
+      if(item.container) {
+
+          item.container.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._containerService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedContainer = i;
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#containerStyles").html('<style>' +
+                  this._containerService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+      }
+
+
+      if(item.heading) {
+
+          item.heading.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._headingService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedHeading = i;
+                      this.text = this.selectedHeading.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#headingStyles").html('<style>' +
+                  this._headingService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+      if(item.html) {
+
+          item.html.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._htmlService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedHtml = i;
+                      this.text = this.selectedHtml.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#htmlStyles").html('<style>' +
+                  this._htmlService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+
+      if(item.input) {
+
+          item.input.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._inputService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedInput = i;
+                      this.text = this.selectedInput.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#inputStyles").html('<style>' +
+                  this._inputService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+      if(item.list) {
+
+          item.list.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._listService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedList = i;
+                      this.text = this.selectedList.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#lisStyles").html('<style>' +
+                  this._listService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+      if(item.image) {
+
+          item.image.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._imageService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedImage = i;
+                      this.text = this.selectedImage.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#imageStyles").html('<style>' +
+                  this._imageService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+      if(item.map) {
+
+          item.map.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._mapService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedMap = i;
+
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#mapStyles").html('<style>' +
+                  this._mapService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+
+      if(item.paragraph) {
+
+          item.paragraph.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._paragraphService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedParagraph = i;
+                      this.text = this.selectedParagraph.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#paragraphStyles").html('<style>' +
+                  this._paragraphService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+      }
+
+
+      if(item.range) {
+
+          item.range.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._rangeService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedRange = i;
+                      this.text = this.selectedRange.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#rangeStyles").html('<style>' +
+                  this._rangeService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+
+      if(item.switch) {
+
+          item.switch.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._switchService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedSwitch = i;
+
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#switchStyles").html('<style>' +
+                  this._switchService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+
+      if(item.textarea) {
+
+          item.textarea.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._textareaService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedTextarea = i;
+                      this.text = this.selectedTextarea.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#textareaStyles").html('<style>' +
+                  this._textareaService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
+
+
+
+
+
 
 
   }
