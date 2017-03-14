@@ -34,6 +34,10 @@ import {Paragraph} from "../../interfaces/paragraph";
 import {ParagraphService} from "../../services/paragraph.service";
 import {Heading} from "../../interfaces/heading";
 import {HeadingService} from "../../services/heading.service";
+import {Map} from "../../interfaces/map";
+import {MapService} from "../../services/map.service";
+import {Image} from "../../interfaces/image";
+import {ImageService} from "../../services/image.service";
 
 
 
@@ -46,6 +50,8 @@ import {HeadingService} from "../../services/heading.service";
     SwitchService,
     CheckboxService,
     NavbarService,
+      MapService,
+      ImageService,
       ParagraphService,
       RangeService,
       InputService,
@@ -72,8 +78,10 @@ export class CanvasComponent implements OnInit {
   private selectedCheckbox: Checkbox;
   private selectedRadio:Radio;
   private selectedList:List;
-  private selectedContainer;
+  private selectedImage:Image;
+  private selectedContainer:Container;
   private selectedHtml:Html;
+  private selectedMap:Map;
   private selectedHeading:Heading;
   private selectedTextarea:Textarea;
   private selectedRange:Range;
@@ -91,11 +99,13 @@ export class CanvasComponent implements OnInit {
               private _elprovider: ElementProviderService,
               private _buttonService: ButtonService,
               private _switchService: SwitchService,
+              private _mapService:MapService,
               private _htmlService:HtmlService,
               private _headingService:HeadingService,
               private _paragraphService:ParagraphService,
               private _listService:ListService,
               private _checkboxService: CheckboxService,
+              private _imageService:ImageService,
               private _navbarService: NavbarService,
               private _inputService: InputService,
               private _containerService:ContainerService,
@@ -745,6 +755,86 @@ export class CanvasComponent implements OnInit {
               });
       }
 
+
+      if (key == "map") {
+
+          this.genElement(value[1], this._elprovider.getMap(),
+
+              (id) => {
+
+                  let el = $("#" + id);
+                  let defaults: Map = {
+                      id: id,
+                      code:el.html(),
+
+                      style: {
+                          width: el.find('.map').css('width'),
+                          height: el.find('.map').css('height'),
+                          padding: el.find('.map').css('padding'),
+                          margin: el.find('.map').css('margin'),
+                          class: ""
+
+                      },
+
+
+                  }
+
+                  this.toFalse();
+                  this._mapService.add(defaults);
+                  this.selectedMap = defaults;
+
+              },
+
+              (event) => {
+
+                  this.toFalse();
+                  this.selectedMap = this._mapService.get(event.toElement.id);
+
+              });
+      }
+
+
+      if (key == "image") {
+
+          this.genElement(value[1], this._elprovider.getImage(),
+
+              (id) => {
+
+                  let el = $("#" + id);
+                  let defaults: Image = {
+                      id: id,
+                      link: "#",
+                      style: {
+                          width: el.find('.img').css('width'),
+                          height: el.find('.img').css('height'),
+                          padding: el.find('.img').css('padding'),
+                          margin: el.find('.img').css('margin'),
+                          src:el.attr('src'),
+                          radius:el.find('.img').css('border-radius'),
+                          borderColor: el.find('img').css('border-color'),
+                          borderThickness: el.find('img').css('border-width'),
+                          class: ""
+
+                      },
+
+                      script: "var btn_" + id + " = $('#" + id + "');"
+                  }
+
+                  this.toFalse();
+                  this._imageService.add(defaults);
+                  this.selectedImage = defaults;
+                  this.text = defaults.script;
+
+              },
+
+              (event) => {
+
+                  this.toFalse();
+                  this.selectedImage = this._imageService.get(event.toElement.id);
+                  this.text = this.selectedImage.script;
+
+              });
+      }
   }
 
   private genElement(rElement, nElement, elFunc, clickfunc) {
@@ -796,7 +886,8 @@ export class CanvasComponent implements OnInit {
     this.selectedHtml=null;
     this.selectedParagraph=null;
     this.selectedHeading=null;
-
+    this.selectedMap=null;
+    this.selectedImage=null;
   }
 
 

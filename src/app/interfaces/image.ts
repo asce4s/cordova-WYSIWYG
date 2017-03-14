@@ -5,6 +5,7 @@ export interface Image {
   style:{
     width:any,
     height:any,
+    src:any,
     radius:any,
     padding:any,
     margin:any,
