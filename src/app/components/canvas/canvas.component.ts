@@ -894,31 +894,82 @@ export class CanvasComponent implements OnInit {
   private loadFirebaseData(item){
     $("#designArea").html(item.design);
 
-    
+
     if(item.button) {
-      item.button.forEach((i, key) => {
-        this._buttonService.add(i);
-        this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
-          this.toFalse();
-          this.selectedButton = i;
-          this.text = this.selectedButton.script;
 
-        });
+      item.button.reduce( (p,i)=> {
+        return p.then(()=> {
+          this._buttonService.add(i);
+          this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+            this.toFalse();
+            this.selectedButton = i;
+            this.text = this.selectedButton.script;
 
-      })
+          });
+        })
+
+      },Promise.resolve()).then((res)=> {
+        $("#btnStyles").html('<style>' +
+          this._buttonService.getStyles()+
+          '</style>');
+      }, function(err) {
+        console.log(err)
+      });
+
+
 
     }
     if(item.navbar) {
-      item.navbar.forEach((i, key) => {
-        this._navbarService.add(i);
 
-        this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
-          this.toFalse();
-          this.selectedNavbar = i;
-          this.text = this.selectedNavbar.script;
+      item.navbar.reduce( (p,i)=> {
 
+        return p.then(()=> {
+          this._navbarService.add(i);
+
+          this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+            this.toFalse();
+            this.selectedNavbar = i;
+            this.text = this.selectedNavbar.script;
+
+          });
         });
-      })
+
+      },Promise.resolve()).then((res)=> {
+        $("#navbarStyles").html('<style>' +
+          this._navbarService.getStyles()+
+          '</style>');
+      }, function(err) {
+        console.log(err)
+      });
+
+
+
+
+    }
+    if(item.radio) {
+
+      item.radio.reduce( (p,i)=> {
+
+        return p.then(()=> {
+          this._radioService.add(i);
+
+          this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+            this.toFalse();
+            this.selectedRadio = i;
+            this.text = this.selectedRadio.script;
+
+          });
+        });
+
+      },Promise.resolve()).then((res)=> {
+        $("#radioStyles").html('<style>' +
+          this._radioService.getStyles()+
+          '</style>');
+      }, function(err) {
+        console.log(err)
+      });
+
+
 
 
     }
