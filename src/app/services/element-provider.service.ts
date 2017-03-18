@@ -456,4 +456,13 @@ export class ElementProviderService {
     return `<div class="map"></div>`
   }
 
+  getSelect(){
+    return `<select class="selectpicker">
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+            </select>
+`
+  }
+
 }

@@ -17,6 +17,8 @@ import {PARAGRAPH} from "../../data/paragraph-data";
 import {RANGE} from "../../data/range-data";
 import {SWITCH} from "../../data/switch-data";
 import {TEXTAREA} from "../../data/textarea-data";
+import {SELECT} from "../../data/select-data";
+
 
 
 @Component({
@@ -52,6 +54,7 @@ export class HeaderComponent implements OnInit {
         container:CONTAINER,
         heading:HEADING,
         html:HTML,
+          select:SELECT,
         image:IMAGE,
         input:INPUT,
         list:LIST,

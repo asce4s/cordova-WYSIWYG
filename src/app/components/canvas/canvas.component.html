@@ -83,6 +83,9 @@
                      (modelShow)="showEventLoader($event)"></map-options>
     <image-options *ngIf="selectedImage!=null" [selectedImage]="selectedImage"
                  (modelShow)="showEventLoader($event)"></image-options>
+    <select-options *ngIf="selectedSelect!=null" [selectedSelect]="selectedSelect"
+                   (modelShow)="showEventLoader($event)"></select-options>
+
   </section>
 
 </div>
@@ -103,6 +106,7 @@
   <div id="headingStyles"></div>
   <div id="mapStyles"></div>
   <div id="imageStyles"></div>
+  <div id="selectStyles"></div>
 
 
 </div>

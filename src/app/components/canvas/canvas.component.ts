@@ -38,6 +38,8 @@ import {Map} from "../../interfaces/map";
 import {MapService} from "../../services/map.service";
 import {Image} from "../../interfaces/image";
 import {ImageService} from "../../services/image.service";
+import {Select} from "../../interfaces/select";
+import {SelectService} from "../../services/select.service";
 
 
 
@@ -50,6 +52,7 @@ import {ImageService} from "../../services/image.service";
     ButtonService,
     SwitchService,
     CheckboxService,
+      SelectService,
     NavbarService,
       MapService,
       ImageService,
@@ -82,6 +85,7 @@ export class CanvasComponent implements OnInit {
   private selectedImage:Image;
   private selectedContainer:Container;
   private selectedHtml:Html;
+  private selectedSelect:Select;
   private selectedMap:Map;
   private selectedHeading:Heading;
   private selectedTextarea:Textarea;
@@ -109,6 +113,7 @@ export class CanvasComponent implements OnInit {
               private _imageService:ImageService,
               private _navbarService: NavbarService,
               private _inputService: InputService,
+              private _selectService:SelectService,
               private _containerService:ContainerService,
               private _textareaService:TextareaService,
               private _rangeService: RangeService,
@@ -836,6 +841,54 @@ export class CanvasComponent implements OnInit {
 
               });
       }
+
+
+
+
+      if (key == "select") {
+
+          this.genElement(value[1], this._elprovider.getSelect(),
+
+              (id) => {
+
+                  let el = $("#" + id);
+                  let defaults: Select = {
+                      id: id,
+                      text:{
+                          size:el.find('.selectpicker').css('font-size'),
+                          align:"center",
+                          color:'rgba(0,0,0,0.81)',
+                      },
+                      style:{
+                          width:el.find('.selectpicker').css('width'),
+                          height:el.find('.selectpicker').css('height'),
+                          padding:el.find('.selectpicker').css('padding'),
+                          margin:el.find('.selectpicker').css('margin'),
+
+                          class:""
+                      },
+                      options:{
+                          //I'll take care of this
+                      },
+
+                      script: "var btn_" + id + " = $('#" + id + "');"
+                  }
+
+                  this.toFalse();
+                  this._selectService.add(defaults);
+                  this.selectedSelect = defaults;
+                  this.text = defaults.script;
+
+              },
+
+              (event) => {
+
+                  this.toFalse();
+                  this.selectedSelect = this._selectService.get(event.toElement.id);
+                  this.text = this.selectedSelect.script;
+
+              });
+      }
   }
 
   private genElement(rElement, nElement, elFunc, clickfunc) {
@@ -1320,6 +1373,33 @@ export class CanvasComponent implements OnInit {
 
 
 
+      if(item.select) {
+
+          item.select.reduce( (p,i)=> {
+
+              return p.then(()=> {
+                  this._selectService.add(i);
+
+                  this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+                      this.toFalse();
+                      this.selectedSelect = i;
+                      this.text = this.selectedSelect.script;
+
+                  });
+              });
+
+          },Promise.resolve()).then((res)=> {
+              $("#selectStyles").html('<style>' +
+                  this._selectService.getStyles()+
+                  '</style>');
+          }, function(err) {
+              console.log(err)
+          });
+
+
+
+
+      }
 
 
 
