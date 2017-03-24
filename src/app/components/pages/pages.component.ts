@@ -7,11 +7,14 @@ import {
   transition,
   animate
 } from '@angular/core';
+ import { page } from '../../interfaces/page';
+ import { PageService } from '../../services/page.service';
 
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss'],
+  providers: [PageService],
   animations: [
     trigger('modalDialog', [
       state('hide', style({
@@ -30,12 +33,16 @@ import {
 export class PagesComponent implements OnInit {
   private modal:string;
   private newPageName: string;
-  private pages:string[] = [];
+  // private pages:string[] = [];
+  private pages:page[];
   private selectedPage:string = "";
 
 
-  constructor() {
+  constructor(private _pageService: PageService) {
     this.modal = "hide";
+    _pageService.getAllPages().then((pages)=>{
+      this.pages = pages;
+    });
   }
 
   ngOnInit() {
@@ -51,12 +58,13 @@ export class PagesComponent implements OnInit {
 
   addPage(){
     this.modal = "hide";
-    this.pages.push(this.newPageName);
+    this._pageService.add({id:this.newPageName.toString(),elements:[]});
     this.newPageName = "";
   }
 
   selectPage(page:string){
     this.selectedPage = page;
+    this._pageService.setActivePage(page);
   }
 
 }

@@ -8,6 +8,9 @@ import {ButtonService} from "../../services/button.service";
 import {ModalDirective} from "ng2-bootstrap";
 
 
+import { PageService } from "../../services/page.service";
+import { page } from "../../interfaces/page";
+
 
 @Component({
   selector: 'app-canvas',
@@ -50,6 +53,7 @@ export class CanvasComponent implements OnInit {
     dragulaService.drop.subscribe((value) => {
 
       this.getOptions(value);
+      console.log(value);
 
 
     });
@@ -122,6 +126,7 @@ export class CanvasComponent implements OnInit {
           this._buttonService.add(x);
           this.selectedButton=x;
           this.text=x.script;
+
 
         },
 
