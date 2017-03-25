@@ -38,8 +38,12 @@ import {Map} from "../../interfaces/map";
 import {MapService} from "../../services/map.service";
 import {Image} from "../../interfaces/image";
 import {ImageService} from "../../services/image.service";
+
 import {BuildService} from "../../services/build.service";
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+
+import {Select} from "../../interfaces/select";
+import {SelectService} from "../../services/select.service";
 
 
 @Component({
@@ -50,6 +54,7 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
     ButtonService,
     SwitchService,
     CheckboxService,
+    SelectService,
     NavbarService,
     MapService,
     ImageService,
@@ -74,16 +79,18 @@ export class CanvasComponent implements OnInit {
   private componentSprite;
   private db: any;
   private id: any;
-  private iframeSrc:SafeResourceUrl;
+  private iframeSrc: SafeResourceUrl;
 
   private selectedButton: Button;
   private selectedSwitch: Switch;
   private selectedCheckbox: Checkbox;
+
   private selectedRadio: Radio;
   private selectedList: List;
   private selectedImage: Image;
   private selectedContainer: Container;
   private selectedHtml: Html;
+  private selectedSelect: Select;
   private selectedMap: Map;
   private selectedHeading: Heading;
   private selectedTextarea: Textarea;
@@ -91,6 +98,7 @@ export class CanvasComponent implements OnInit {
   private selectedInput: Input;
   private selectedParagraph: Paragraph;
   private selectedNavbar: Navbar;
+
 
   text: string;
   @ViewChild('lgModal') public lgModel: ModalDirective;
@@ -113,6 +121,7 @@ export class CanvasComponent implements OnInit {
               private _imageService: ImageService,
               private _navbarService: NavbarService,
               private _inputService: InputService,
+              private _selectService: SelectService,
               private _containerService: ContainerService,
               private _textareaService: TextareaService,
               private _rangeService: RangeService,
@@ -166,7 +175,7 @@ export class CanvasComponent implements OnInit {
       })
     });
 
-    this.iframeSrc=null;
+    this.iframeSrc = null;
   }
 
 
@@ -497,12 +506,12 @@ export class CanvasComponent implements OnInit {
             style: {
               width: el.find('.list__item').css('width'),
               height: el.find('.list__item').css('height'),
-              radius:  "0px",
+              radius: "0px",
               background: el.find('.list__item').css('background-color'),
               padding: "0px",
-              margin:  "0px",
+              margin: "0px",
               borderColor: el.css('border-color'),
-              borderThickness:"0px",
+              borderThickness: "0px",
               listItemPadding: el.find('.list__item').css('padding'),
               listItemMargin: el.find('.list__item').css('margin'),
               listItemBackground: el.find('.list__item').css('color'),
@@ -836,8 +845,56 @@ export class CanvasComponent implements OnInit {
           this.selectedImage = this._imageService.get(event.toElement.id);
           this.text = this.selectedImage.script;
 
+
         });
     }
+
+
+    if (key == "select") {
+
+      this.genElement(value[1], this._elprovider.getSelect(),
+
+        (id) => {
+
+          let el = $("#" + id);
+          let defaults: Select = {
+            id: id,
+            text: {
+              size: el.find('.selectpicker').css('font-size'),
+              align: "center",
+              color: 'rgba(0,0,0,0.81)',
+            },
+            style: {
+              width: el.find('.selectpicker').css('width'),
+              height: el.find('.selectpicker').css('height'),
+              padding: el.find('.selectpicker').css('padding'),
+              margin: el.find('.selectpicker').css('margin'),
+
+              class: ""
+            },
+            options: {
+              //I'll take care of this
+            },
+
+            script: "var btn_" + id + " = $('#" + id + "');"
+          }
+
+          this.toFalse();
+          this._selectService.add(defaults);
+          this.selectedSelect = defaults;
+          this.text = defaults.script;
+
+        },
+
+        (event) => {
+
+          this.toFalse();
+          this.selectedSelect = this._selectService.get(event.toElement.id);
+          this.text = this.selectedSelect.script;
+
+        });
+    }
+
   }
 
   private genElement(rElement, nElement, elFunc, clickfunc) {
@@ -1291,14 +1348,16 @@ export class CanvasComponent implements OnInit {
 
   }
 
+
   public genPreview() {
- //   console.log(this.id);
-    let data = "name="+this.id+"&design="+$("#designArea").html().toString()+"&styles="+this.getAllStyles()
+    //   console.log(this.id);
+    let data = "name=" + this.id + "&design=" + $("#designArea").html().toString() + "&styles=" + this.getAllStyles()
     this._buildService.sendData(data).subscribe((v) => {
       console.log(this.sanitizer.bypassSecurityTrustResourceUrl(v.path));
-      this.iframeSrc=this.sanitizer.bypassSecurityTrustResourceUrl(v.path);
+      this.iframeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(v.path);
 
-      if(this.iframeSrc) {
+
+      if (this.iframeSrc) {
         this.previewModal.show();
       }
     })

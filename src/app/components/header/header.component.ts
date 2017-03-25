@@ -17,7 +17,9 @@ import {PARAGRAPH} from "../../data/paragraph-data";
 import {RANGE} from "../../data/range-data";
 import {SWITCH} from "../../data/switch-data";
 import {TEXTAREA} from "../../data/textarea-data";
-import {BuildService} from "../../services/build.service";
+import {SELECT} from "../../data/select-data";
+
+
 
 
 @Component({
