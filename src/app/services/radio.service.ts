@@ -36,9 +36,10 @@ export class RadioService {
 
             '}' +
             '#' + radio.id + ' .radio-button__checkmark:after{' +
-            'border-color:' +radio.style.color
+            'border-color:' +radio.style.color+';'+
             '}'
         })
+
 
         return res;
     }

@@ -26,7 +26,7 @@ export class ListService {
         let res = "";
         LIST.forEach((list: List) => {
             //res=button
-            res += '#'+list.id+'.list{'+
+            res += '#'+list.id+'{'+
                 'border-radius:' + list.style.radius + ';' +
                 'padding:'+list.style.padding+';'+
                 'margin:'+list.style.margin+';'+

@@ -17,19 +17,23 @@ import {PARAGRAPH} from "../../data/paragraph-data";
 import {RANGE} from "../../data/range-data";
 import {SWITCH} from "../../data/switch-data";
 import {TEXTAREA} from "../../data/textarea-data";
+import {BuildService} from "../../services/build.service";
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+
 })
 export class HeaderComponent implements OnInit {
 
   private db: any;
   private id: any;
 
-  constructor(private af: AngularFire, private route: ActivatedRoute) {
+  constructor(private af: AngularFire,
+              private route: ActivatedRoute,
+    ) {
   }
 
   ngOnInit() {
@@ -44,25 +48,28 @@ export class HeaderComponent implements OnInit {
 
   saveDesign() {
     this.db = this.af.database.object('/options/' + this.id);
-    this.db.set(
-      { radio:RADIO,
-        button:BUTTON,
-        navbar:NAVBAR,
-        checkbox:CHECKBOX,
-        container:CONTAINER,
-        heading:HEADING,
-        html:HTML,
-        image:IMAGE,
-        input:INPUT,
-        list:LIST,
-        map:MAP,
-        paragraph:PARAGRAPH,
-        range:RANGE,
-        switch:SWITCH,
-        textarea:TEXTAREA,
+    let data= { radio:RADIO,
+      button:BUTTON,
+      navbar:NAVBAR,
+      checkbox:CHECKBOX,
+      container:CONTAINER,
+      heading:HEADING,
+      html:HTML,
+      image:IMAGE,
+      input:INPUT,
+      list:LIST,
+      map:MAP,
+      paragraph:PARAGRAPH,
+      range:RANGE,
+      switch:SWITCH,
+      textarea:TEXTAREA,
 
-        design:$("#designArea").html().toString()}
-      )
+      design:$("#designArea").html().toString()
+    }
+    this.db.set(data);
+
+
+
 
   }
 

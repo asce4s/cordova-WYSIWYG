@@ -36,4 +36,12 @@ export class ListComponent implements OnInit {
     this.modelShow.emit(true);
   }
 
+  addItem(){
+    $("#list-items").append(`<input type="text" placeholder="Item Name">`);
+
+    let item=`<li class="list__item">
+                <div class="list__item__center">Dog</div>
+              </li>`;
+  }
+
 }

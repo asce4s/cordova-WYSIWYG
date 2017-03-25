@@ -65,4 +65,11 @@
 hr {
   border-top: 1px solid #131111; }
 
+#preview {
+  border: none;
+  width: 375px;
+  height: 530px;
+  display: block;
+  margin: 0 auto; }
+
 /*# sourceMappingURL=canvas.component.css.map */

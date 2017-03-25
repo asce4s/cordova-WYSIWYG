@@ -45,5 +45,19 @@ export class ButtonService {
     return res;
   }
 
+  getScripts(){
+    let res = "";
+
+    BUTTON.forEach((button: Button) => {
+      if(button.script){
+        res+=button.script;
+      }else{
+        res="";
+      }
+    })
+
+    return res;
+
+  }
 
 }

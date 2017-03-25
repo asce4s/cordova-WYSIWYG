@@ -40,7 +40,11 @@
         <option>Apple</option>
 
       </select>
+
+      <a (click)="genPreview()">preview</a>
     </span>
+
+
 
     <div id="skin" [ngStyle]="{'background-image': 'url(' + skin + ')','padding': '57px 28px 127px 25px'}">
 
@@ -124,6 +128,18 @@
              [mode]="'javascript'"
              style="min-height: 400px; width:100%; overflow: auto;"
         ></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #previewModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background: transparent;border:none;box-shadow: none">
+
+      <div class="modal-body">
+        <iframe *ngIf="iframeSrc" [src]="iframeSrc" id="preview"></iframe>
       </div>
     </div>
   </div>
