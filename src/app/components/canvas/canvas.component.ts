@@ -1,52 +1,53 @@
-import {Component, OnInit, Renderer, ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit, Renderer, ElementRef, ViewChild, NgModule, Compiler, ViewContainerRef } from '@angular/core';
 import * as $ from 'jquery';
-import {DragulaService} from 'ng2-dragula/ng2-dragula';
-import {ElementProviderService} from "../../services/element-provider.service";
-import {Button} from "../../interfaces/button";
-import {COMPONENTS} from "../../data/component-data";
-import {ButtonService} from "../../services/button.service";
-import {ModalDirective} from "ng2-bootstrap";
-import {Switch} from "../../interfaces/switch";
-import {SwitchService} from "../../services/switch.service";
-import {Checkbox} from "../../interfaces/checkbox";
-import {CheckboxService} from "../../services/checkbox.service";
-import {Radio} from "../../interfaces/Radio";
-import {RadioService} from "../../services/radio.service";
-import {Navbar} from "../../interfaces/navbar";
-import {NavbarService} from "../../services/navbar.service";
-import {Range} from "../../interfaces/range";
-import {RangeService} from "../../services/range.service";
-import {ActivatedRoute} from "@angular/router";
-import {AngularFire} from "angularfire2";
-import {BUTTON} from "../../data/button-data";
+import { DragulaService } from 'ng2-dragula/ng2-dragula';
+import { ElementProviderService } from "../../services/element-provider.service";
+import { Button } from "../../interfaces/button";
+import { COMPONENTS } from "../../data/component-data";
+import { ButtonService } from "../../services/button.service";
+import { ModalDirective } from "ng2-bootstrap";
+import { Switch } from "../../interfaces/switch";
+import { SwitchService } from "../../services/switch.service";
+import { Checkbox } from "../../interfaces/checkbox";
+import { CheckboxService } from "../../services/checkbox.service";
+import { Radio } from "../../interfaces/Radio";
+import { RadioService } from "../../services/radio.service";
+import { Navbar } from "../../interfaces/navbar";
+import { NavbarService } from "../../services/navbar.service";
+import { Range } from "../../interfaces/range";
+import { RangeService } from "../../services/range.service";
+import { ActivatedRoute } from "@angular/router";
+import { AngularFire } from "angularfire2";
+import { BUTTON } from "../../data/button-data";
 
-import {Input} from "../../interfaces/input";
-import {InputService} from "../../services/input.service";
-import {List} from "../../interfaces/list";
-import {ListService} from "../../services/list.service";
-import {Textarea} from "../../interfaces/textarea";
-import {TextareaService} from "../../services/textarea.service";
-import {Html} from "../../interfaces/html";
-import {HtmlService} from "../../services/html.service";
-import {Container} from "../../interfaces/container";
-import {ContainerService} from "../../services/container.service";
-import {Paragraph} from "../../interfaces/paragraph";
-import {ParagraphService} from "../../services/paragraph.service";
-import {Heading} from "../../interfaces/heading";
-import {HeadingService} from "../../services/heading.service";
-import {Map} from "../../interfaces/map";
-import {MapService} from "../../services/map.service";
-import {Image} from "../../interfaces/image";
-import {ImageService} from "../../services/image.service";
+import { Input } from "../../interfaces/input";
+import { InputService } from "../../services/input.service";
+import { List } from "../../interfaces/list";
+import { ListService } from "../../services/list.service";
+import { Textarea } from "../../interfaces/textarea";
+import { TextareaService } from "../../services/textarea.service";
+import { Html } from "../../interfaces/html";
+import { HtmlService } from "../../services/html.service";
+import { Container } from "../../interfaces/container";
+import { ContainerService } from "../../services/container.service";
+import { Paragraph } from "../../interfaces/paragraph";
+import { ParagraphService } from "../../services/paragraph.service";
+import { Heading } from "../../interfaces/heading";
+import { HeadingService } from "../../services/heading.service";
+import { Map } from "../../interfaces/map";
+import { MapService } from "../../services/map.service";
+import { Image } from "../../interfaces/image";
+import { ImageService } from "../../services/image.service";
 
-import {BuildService} from "../../services/build.service";
-import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import { BuildService } from "../../services/build.service";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
-import {Select} from "../../interfaces/select";
-import {SelectService} from "../../services/select.service";
+import { Select } from "../../interfaces/select";
+import { SelectService } from "../../services/select.service";
 
 import { PageService } from "../../services/page.service";
 import { page } from "../../interfaces/page";
+import { dragula, DragulaModule } from "ng2-dragula";
 
 
 @Component({
@@ -108,41 +109,46 @@ export class CanvasComponent implements OnInit {
   text: string;
   @ViewChild('lgModal') public lgModel: ModalDirective;
   @ViewChild('previewModal') public previewModal: ModalDirective;
+  @ViewChild('container', { read: ViewContainerRef }) container: ViewContainerRef;
 
   constructor(private dragulaService: DragulaService,
-              private _elRef: ElementRef,
-              private af: AngularFire,
-              private route: ActivatedRoute,
-              private sanitizer: DomSanitizer,
-              private _elprovider: ElementProviderService,
-              private _buttonService: ButtonService,
-              private _switchService: SwitchService,
-              private _mapService: MapService,
-              private _htmlService: HtmlService,
-              private _headingService: HeadingService,
-              private _paragraphService: ParagraphService,
-              private _listService: ListService,
-              private _checkboxService: CheckboxService,
-              private _imageService: ImageService,
-              private _navbarService: NavbarService,
-              private _inputService: InputService,
-              private _selectService: SelectService,
-              private _containerService: ContainerService,
-              private _textareaService: TextareaService,
-              private _rangeService: RangeService,
-              private _radioService: RadioService,
-              private  _buildService: BuildService,
-  private _pageService:PageService) {
+    private _elRef: ElementRef,
+    private af: AngularFire,
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer,
+    private _elprovider: ElementProviderService,
+    private _buttonService: ButtonService,
+    private _switchService: SwitchService,
+    private _mapService: MapService,
+    private _htmlService: HtmlService,
+    private _headingService: HeadingService,
+    private _paragraphService: ParagraphService,
+    private _listService: ListService,
+    private _checkboxService: CheckboxService,
+    private _imageService: ImageService,
+    private _navbarService: NavbarService,
+    private _inputService: InputService,
+    private _selectService: SelectService,
+    private _containerService: ContainerService,
+    private _textareaService: TextareaService,
+    private _rangeService: RangeService,
+    private _radioService: RadioService,
+    private _buildService: BuildService,
+    private _pageService: PageService,
+    private compiler: Compiler,
+    private _renderer: Renderer) {
 
 
     dragulaService.setOptions('first-bag', {
       removeOnSpill: true,
       copy: function (el, handle) {
         return el.localName == "li";
+        //return true;
       },
       copySortSource: true,
       accepts: function (el, handle) {
-        return handle.id == "designArea";
+
+        return handle.id == "designArea" || $(handle).hasClass("page-container");
 
       }
     });
@@ -151,7 +157,7 @@ export class CanvasComponent implements OnInit {
     dragulaService.drop.subscribe((value) => {
 
       this.getOptions(value);
-      console.log(value);
+      //  console.log(value);
 
 
     });
@@ -183,6 +189,12 @@ export class CanvasComponent implements OnInit {
     });
 
     this.iframeSrc = null;
+
+
+    //alert($("#designArea").html());
+
+    //this._renderer.createElement(this._elRef.nativeElement.querySelector("#designArea"),`<div class="container-fluid page-container" [dragula]='"first-bag"' ></div>`);
+
   }
 
 
@@ -509,7 +521,7 @@ export class CanvasComponent implements OnInit {
           let el = $("#" + id);
           let defaults: List = {
             id: id,
-            items:"item1",
+            items: "item1",
             style: {
               width: el.find('.list__item').css('width'),
               height: el.find('.list__item').css('height'),
@@ -520,7 +532,7 @@ export class CanvasComponent implements OnInit {
               borderColor: el.css('border-color'),
               borderThickness: "0px",
               listItemPadding: el.find('.list__item').css('padding'),
-              listItemMargin:  '0px 0px 0px',
+              listItemMargin: '0px 0px 0px',
               listItemBackground: el.find('.list__item').css('color'),
               listItemBorderColor: el.find('.list__item__center').css('background-image'),
               listItemBorderThickness: el.find('.list__item__center').css('-webkit-background-size'),
@@ -645,37 +657,54 @@ export class CanvasComponent implements OnInit {
 
     if (key == "container") {
 
-      this.genElement(value[1], this._elprovider.getContainer(),
+      let newEl = this._elprovider.getContainer;
+      let rElement=value[1];
+      let id = this.genID();
+      //this._pageService.getActivePage().elements.push(id);
+      if (rElement.localName == "li") {
 
-        (id) => {
+        //newEl.attr('id', id);
+        $(rElement).remove();
+        this.addComponent(`<div class="container-fluid page-container" [dragula]='"first-bag"' id="`+id+`"></div>`);
+      
 
-          let el = $("#" + id);
-          let defaults: Container = {
-            id: id,
-            style: {
-              width: el.find('.container-fluid').css('width'),
-              height: el.find('.container-fluid').css('height'),
-              padding: el.find('.container-fluid').css('padding'),
-              margin: el.find('.container-fluid').css('margin'),
-              class: ""
-
-            },
-
-          }
-
-          this.toFalse();
-          this._containerService.add(defaults);
-          this.selectedContainer = defaults;
-
-        },
-
-        (event) => {
-
-          this.toFalse();
-          this.selectedContainer = this._containerService.get(event.toElement.id);
+        let el = $("#" + id);
+           let defaults: Container = {
+             id: id,
+             style: {
+               width: el.find('.container-fluid').css('width'),
+               height: el.find('.container-fluid').css('height'),
+               padding: el.find('.container-fluid').css('padding'),
+               margin: el.find('.container-fluid').css('margin'),
+               class: ""
+ 
+             },
+ 
+           }
+ 
+           this.toFalse();
+           this._containerService.add(defaults);
+           this.selectedContainer = defaults;
 
 
-        });
+        this._elRef.nativeElement.querySelector('#' + id).addEventListener('click', (event) => {
+ 
+           this.toFalse();
+           this.selectedContainer = this._containerService.get(event.toElement.id);
+ 
+ 
+         });
+      } else {
+        this._elRef.nativeElement.querySelector('#' + rElement.id).removeEventListener('click');
+        this._elRef.nativeElement.querySelector('#' + rElement.id).addEventListener('click', (event) => {
+ 
+           this.toFalse();
+           this.selectedContainer = this._containerService.get(event.toElement.id);
+ 
+ 
+         });
+      }
+
     }
 
 
@@ -878,7 +907,7 @@ export class CanvasComponent implements OnInit {
 
               class: ""
             },
-            options:[],
+            options: [],
 
 
             script: "var btn_" + id + " = $('#" + id + "');"
@@ -893,7 +922,7 @@ export class CanvasComponent implements OnInit {
 
         (event) => {
 
-        console.log(event.toElement.id);
+          console.log(event.toElement.id);
           this.toFalse();
           this.selectedSelect = this._selectService.get(event.toElement.id);
           this.text = this.selectedSelect.script;
@@ -904,9 +933,11 @@ export class CanvasComponent implements OnInit {
   }
 
   private genElement(rElement, nElement, elFunc, clickfunc) {
+
+
     let newEl = $(nElement);
     let id = this.genID();
-    this._pageService.getActivePage().elements.push(id);
+    //this._pageService.getActivePage().elements.push(id);
     if (rElement.localName == "li") {
 
       newEl.attr('id', id);
@@ -923,6 +954,24 @@ export class CanvasComponent implements OnInit {
 
   }
 
+  private addComponent(template: string) {
+
+
+    @Component({ selector: null, template: template })
+    class TemplateComponent { }
+
+    @NgModule({
+      declarations: [TemplateComponent], imports: [
+        DragulaModule]
+    })
+    class TemplateModule { }
+
+    const mod = this.compiler.compileModuleAndAllComponentsSync(TemplateModule);
+    const factory = mod.componentFactories.find((comp) =>
+      comp.componentType === TemplateComponent
+    );
+    const component = this.container.createComponent(factory);
+  }
 
   private genID() {
 
@@ -956,6 +1005,17 @@ export class CanvasComponent implements OnInit {
     this.selectedMap = null;
     this.selectedImage = null;
   }
+
+
+
+
+
+
+
+
+
+
+
 
 
   private loadFirebaseData(item) {
@@ -1441,3 +1501,4 @@ export class CanvasComponent implements OnInit {
 
 
 }
+

@@ -439,7 +439,7 @@ export class ElementProviderService {
   }
 
   getContainer(){
-    return `<div class="container-fluid" [dragula]='"first-bag"'></div>`
+    return `<div class="container-fluid page-container" [dragula]='"first-bag"' ></div>`
   }
 
   getHTML(){

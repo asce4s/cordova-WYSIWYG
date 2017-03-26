@@ -48,8 +48,9 @@
 
     <div id="skin" [ngStyle]="{'background-image': 'url(' + skin + ')','padding': '57px 28px 127px 25px'}">
 
-      <div id="designArea" [dragula]='"first-bag"' style="padding: 10px">
-
+      <div id="designArea" [dragula]='"first-bag"' style="padding: 10px" >
+        <template #container></template>
+        
       </div>
 
     </div>
