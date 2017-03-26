@@ -45,6 +45,9 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {Select} from "../../interfaces/select";
 import {SelectService} from "../../services/select.service";
 
+import { PageService } from "../../services/page.service";
+import { page } from "../../interfaces/page";
+
 
 @Component({
   selector: 'app-canvas',
@@ -67,7 +70,9 @@ import {SelectService} from "../../services/select.service";
     ContainerService,
     ListService,
     RadioService,
-    BuildService],
+    BuildService,
+    PageService
+  ],
 
 
 })
@@ -126,7 +131,8 @@ export class CanvasComponent implements OnInit {
               private _textareaService: TextareaService,
               private _rangeService: RangeService,
               private _radioService: RadioService,
-              private  _buildService: BuildService) {
+              private  _buildService: BuildService,
+  private _pageService:PageService) {
 
 
     dragulaService.setOptions('first-bag', {
@@ -145,6 +151,7 @@ export class CanvasComponent implements OnInit {
     dragulaService.drop.subscribe((value) => {
 
       this.getOptions(value);
+      console.log(value);
 
 
     });
@@ -266,6 +273,7 @@ export class CanvasComponent implements OnInit {
           this._buttonService.add(defaults);
           this.selectedButton = defaults;
           this.text = defaults.script;
+
 
         },
 
@@ -497,32 +505,30 @@ export class CanvasComponent implements OnInit {
 
       this.genElement(value[1], this._elprovider.getList(),
 
-
         (id) => {
           let el = $("#" + id);
           let defaults: List = {
             id: id,
-            //items:el.find('').css(''),
+            items:"item1",
             style: {
               width: el.find('.list__item').css('width'),
               height: el.find('.list__item').css('height'),
               radius: "0px",
               background: el.find('.list__item').css('background-color'),
               padding: "0px",
-              margin: "0px",
+              margin: '0px 0px 0px',
               borderColor: el.css('border-color'),
               borderThickness: "0px",
               listItemPadding: el.find('.list__item').css('padding'),
-              listItemMargin: el.find('.list__item').css('margin'),
+              listItemMargin:  '0px 0px 0px',
               listItemBackground: el.find('.list__item').css('color'),
               listItemBorderColor: el.find('.list__item__center').css('background-image'),
               listItemBorderThickness: el.find('.list__item__center').css('-webkit-background-size'),
               class: ""
             },
+
             script: "var btn_" + id + " = $('#" + id + "');"
-
           }
-
           this.toFalse();
           this._listService.add(defaults);
           this.selectedList = defaults;
@@ -860,21 +866,20 @@ export class CanvasComponent implements OnInit {
           let defaults: Select = {
             id: id,
             text: {
-              size: el.find('.selectpicker').css('font-size'),
+              size: el.css('font-size'),
               align: "center",
               color: 'rgba(0,0,0,0.81)',
             },
             style: {
-              width: el.find('.selectpicker').css('width'),
-              height: el.find('.selectpicker').css('height'),
-              padding: el.find('.selectpicker').css('padding'),
-              margin: el.find('.selectpicker').css('margin'),
+              width: null,
+              height: null,
+              padding: null,
+              margin: null,
 
               class: ""
             },
-            options: {
-              //I'll take care of this
-            },
+            options:[],
+
 
             script: "var btn_" + id + " = $('#" + id + "');"
           }
@@ -888,6 +893,7 @@ export class CanvasComponent implements OnInit {
 
         (event) => {
 
+        console.log(event.toElement.id);
           this.toFalse();
           this.selectedSelect = this._selectService.get(event.toElement.id);
           this.text = this.selectedSelect.script;
@@ -900,6 +906,7 @@ export class CanvasComponent implements OnInit {
   private genElement(rElement, nElement, elFunc, clickfunc) {
     let newEl = $(nElement);
     let id = this.genID();
+    this._pageService.getActivePage().elements.push(id);
     if (rElement.localName == "li") {
 
       newEl.attr('id', id);
@@ -1161,10 +1168,13 @@ export class CanvasComponent implements OnInit {
     }
     if (item.list) {
 
+
       item.list.reduce((p, i) => {
+
 
         return p.then(() => {
           this._listService.add(i);
+          console.log(i);
 
           this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
             this.toFalse();
@@ -1310,6 +1320,32 @@ export class CanvasComponent implements OnInit {
       }, Promise.resolve()).then((res) => {
         $("#switchStyles").html('<style>' +
           this._switchService.getStyles() +
+          '</style>');
+      }, function (err) {
+        console.log(err)
+      });
+
+
+    }
+
+    if (item.select) {
+
+      item.select.reduce((p, i) => {
+
+        return p.then(() => {
+          this._selectService.add(i);
+
+          this._elRef.nativeElement.querySelector('#' + i.id).addEventListener('click', res => {
+            this.toFalse();
+            this.selectedSelect = i;
+
+
+          });
+        });
+
+      }, Promise.resolve()).then((res) => {
+        $("#selectStyles").html('<style>' +
+          this._selectService.getStyles() +
           '</style>');
       }, function (err) {
         console.log(err)

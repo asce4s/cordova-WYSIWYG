@@ -9,14 +9,14 @@ export const COMPONENTS: any[] = [
     "height": "54px"
   },
 
-  {
+  /*{
     "id": "card",
     "name": "Card",
     "background": "no-repeat -30px -416px",
     "width": "120px",
     "height": "75px"
   },
-
+*/
   {
     "id": "checkbox",
     "name": "Checkbox",

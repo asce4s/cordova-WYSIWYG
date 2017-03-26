@@ -33,6 +33,9 @@ import { VideoComponent } from './components/options/video/video.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 
+import { PagesComponent } from './components/pages/pages.component';
+
+
 import { RouterModule, Routes } from '@angular/router';
 import {AngularFireModule, AuthProviders, AuthMethods} from "angularfire2";
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -87,7 +90,10 @@ const myFirebaseAuthConfig = {
     LoginComponent,
     HomeComponent,
     ProjectsComponent,
-    HeadingComponent
+    HeadingComponent,
+    PagesComponent,
+
+
 
 
   ],

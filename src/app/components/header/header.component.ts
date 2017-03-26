@@ -65,6 +65,7 @@ export class HeaderComponent implements OnInit {
       range:RANGE,
       switch:SWITCH,
       textarea:TEXTAREA,
+      select:SELECT,
 
       design:$("#designArea").html().toString()
     }

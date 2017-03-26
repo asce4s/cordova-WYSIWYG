@@ -37,4 +37,21 @@ export class SelectComponent implements OnInit {
   public eventLoad(){
     this.modelShow.emit(true);
   }
+
+  addOption(){
+
+    let value="";
+    let text="";
+    this.selectedSelect.options.push({value,text});
+
+    console.log(this.selectedSelect.options);
+    let options=``;
+    this.selectedSelect.options.forEach((opt)=>{
+      options+=`<option value="`+opt.value+`">`+opt.text+`</option>`
+    })
+    $('#'+this.selectedSelect.id).html(options);
+
+
+
+  }
 }

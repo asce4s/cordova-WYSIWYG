@@ -232,8 +232,8 @@ export class ElementProviderService {
 
   getList() {
     return `<ul class="list">
-              <li class="list__item">
-                <div class="list__item__center">Dog</div>
+              <li class="list__item" >
+                <div class="list__item__center">Item 1</div>
               </li>
             </ul>`
   }

@@ -8,11 +8,14 @@
   </div>
 
   <hr>
-  <h4>List Items <a title="Add new Item" class="pointer pull-right" (click)="addItem()"><fa name="plus"></fa></a></h4>
-  <div  id="list-items" class="form-group">
-
-
+  <h4>List Items</h4>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <textarea class="form-control" [(ngModel)]="selectedList.items" name="items" (keyup)="setItems()"></textarea>
+    </div>
   </div>
+
+
 
   <hr>
   <h4>Styles</h4>
@@ -60,7 +63,7 @@
     </div>
   </div>
 
-  <div class="form-group">
+ <div class="form-group">
     <label class="col-sm-4 control-label">List Margin</label>
     <div class="col-sm-8">
 
@@ -68,6 +71,7 @@
 
     </div>
   </div>
+
 
   <div class="form-group">
     <label class="col-sm-4 control-label">List Border Color</label>

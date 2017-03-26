@@ -10,10 +10,18 @@
 
 
   <hr>
+  <h4>Options <a class="pointer" (click)="addOption()"><fa name="plus"></fa></a></h4>
+
+  <div id="select-options">
+    <div class="option"  *ngFor="let opt of selectedSelect.options">
+      <input type="text" class="form-control" style="width: 45%;display: inline-block;" placeholder="Value" [(ngModel)]="opt.value" [ngModelOptions]="{standalone: true}">
+      <input type="text" class="form-control" style="width: 45%;display: inline-block;" placeholder="Text" [(ngModel)]="opt.text" [ngModelOptions]="{standalone: true}">
+    </div>
+  </div>
+
+
+  <hr>
   <h4>Text</h4>
-
-
-
   <div class="form-group">
     <label class="col-sm-4 control-label">Size</label>
     <div class="col-sm-8">
@@ -108,10 +116,6 @@
     </div>
   </div>
 
-  <hr>
-  <h4>Options</h4>
-
-  <hr>
 
 
 </form>

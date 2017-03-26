@@ -36,12 +36,20 @@ export class ListComponent implements OnInit {
     this.modelShow.emit(true);
   }
 
-  addItem(){
-    $("#list-items").append(`<input type="text" placeholder="Item Name">`);
 
-    let item=`<li class="list__item">
-                <div class="list__item__center">Dog</div>
-              </li>`;
+  public setItems(){
+    let items = this.selectedList.items.split('\n');
+    let el=``;
+    items.forEach((item)=>{
+      el+=`<li class="list__item" >
+                <div class="list__item__center">`+item+`</div>
+              </li>`
+    })
+
+    $("#"+this.selectedList.id).html(el)
   }
+
+
+
 
 }

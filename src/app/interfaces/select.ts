@@ -13,8 +13,7 @@ export interface Select {
 
     class:any
   },
-  options:{
-    //I'll take care of this
-  }
+  options:Array<{value: string, text: string}>,
+
   script:any
 }

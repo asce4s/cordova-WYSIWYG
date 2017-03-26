@@ -1,7 +1,7 @@
 export interface List {
   id:string,
 
-  //items:any,
+  items:any,
   style:{
     width:any,
     height:any,
