@@ -1,0 +1,17 @@
+.title {
+  padding: 5px 19px;
+  display: block;
+  border-bottom: #ccc solid 1px;
+  background: $primary;
+  color: #fff;
+}
+
+.wrap{
+  padding: 20px;
+}
+.modal{display: none}
+
+html,body{
+  overflow-y: hidden;
+}
+

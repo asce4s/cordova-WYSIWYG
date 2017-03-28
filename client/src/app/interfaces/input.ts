@@ -1,0 +1,19 @@
+export interface Input {
+  id:string,
+  text:{
+    text:any,
+    size:any,
+    align:any,
+    color:any,
+  },
+  style:{
+    width:any,
+    height:any,
+    padding:any,
+    margin:any,
+    borderColor:any,
+    borderThickness:any,
+    class:any
+  }
+  script:any
+}

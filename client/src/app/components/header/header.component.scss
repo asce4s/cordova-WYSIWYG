@@ -1,0 +1,18 @@
+@import '../canvas/../../../assets/scss/variable';
+
+#header {
+  height: 50px;
+  border-bottom: 1px solid $borders;
+  padding-top: 10px;
+
+
+  fa{
+    margin: 0 5px;
+  }
+
+  #opt{
+    text-align: right;
+  }
+
+
+}

@@ -1,0 +1,116 @@
+<form class="form-horizontal" (input)=" formChange()">
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">ID</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.id" name="id" disabled>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Link</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.link" name="link">
+    </div>
+  </div>
+
+  <hr>
+  <h4>Styles</h4>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Style</label>
+    <div class="col-sm-8">
+      <select [(ngModel)]="selectedVideo.type" class="form-control" name="align" (change)="addVideoType()">
+        <option value="default">Default</option>
+        <option value="button--material">Material</option>
+
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Width</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.width" name="width">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Height</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.height" name="height">
+    </div>
+  </div>
+
+
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Padding</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.padding" name="padding">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Margin</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.margin" name="margin">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Border Color</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.borderColor"
+             name="borderColor"
+             [(colorPicker)]="selectedVideo.style.borderColor"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedVideo.style.borderColor"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+
+
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Border Width</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.borderThickness" name="borderWidth">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Radius</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.radius" name="radius">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Classes</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedVideo.style.class" name="class">
+    </div>
+  </div>
+
+  <hr>
+
+
+</form>
+<div class="form-group" style="text-align: center;">
+
+  <button class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</button>
+
+</div>

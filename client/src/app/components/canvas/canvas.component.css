@@ -1,0 +1,75 @@
+#canvas {
+  height: 85vh;
+  overflow-y: scroll; }
+  #canvas #skin {
+    width: 350px;
+    height: 675px;
+    background-size: contain;
+    background-position: 50% 0%;
+    margin: 0 auto;
+    margin-top: 20px; }
+  #canvas #device {
+    border: none;
+    outline: navajowhite;
+    color: #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 101px;
+    padding: 0 5px; }
+  #canvas #designArea {
+    height: 490px;
+    background: #fff; }
+    #canvas #designArea .container-fluid {
+      border: 1px dotted #ccc;
+      width: 100%;
+      min-height: 200px; }
+
+#options {
+  height: 85vh;
+  border-left: 1px solid #dcd4d4;
+  padding-top: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+#elements {
+  height: 85vh;
+  border-right: 1px solid #dcd4d4;
+  padding-right: 0px;
+  padding-left: 0px; }
+  #elements #pages {
+    height: 50%;
+    overflow-y: scroll; }
+  #elements #components {
+    height: 50%;
+    border-top: 1px solid #dcd4d4;
+    overflow-y: scroll;
+    overflow-x: hidden; }
+    #elements #components .wrap {
+      padding: 0; }
+  #elements ul, #elements li {
+    list-style: none; }
+  #elements ul {
+    padding-left: 10px;
+    padding-top: 10px; }
+
+.component {
+  display: inline-block;
+  /*text-align: center;*/
+  font-size: 12px;
+  zoom: 0.9;
+  margin: 10px;
+  width: 42% !important;
+  padding-left: 10px; }
+
+hr {
+  border-top: 1px solid #131111; }
+
+#preview {
+  border: none;
+  width: 375px;
+  height: 530px;
+  display: block;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=canvas.component.css.map */

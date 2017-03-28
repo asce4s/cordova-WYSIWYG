@@ -1,0 +1,27 @@
+<div id="media">
+  <div class="row">
+    <div class="col-md-8">
+      <tabset #staticTabs>
+        <tab heading="All media">Static content</tab>
+        <tab heading="Upload">
+          <div class="drag-n-drop-container"  ngFileDrop [options]="options" (onUpload)="handleUpload($event)"
+            [ngClass]="{'file-over': hasBaseDropZoneOver}" (onFileOver)="fileOverBase($event)">
+            <h1>Drag & Drop</h1>
+            <label class="upload-button">
+          <input
+            type="file"
+            class="hidden"
+            ngFileSelect
+            [options]="options"
+            (onUpload)="handleUpload($event)">
+          Browse
+        </label>
+          </div>
+        </tab>
+
+
+      </tabset>
+    </div>
+    <div class="col-md-4">sdg</div>
+  </div>
+</div>
