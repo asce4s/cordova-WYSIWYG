@@ -1,6 +1,7 @@
 export interface Map {
   id:string,
-  code:any,//textarea for this one
+  lat:any,
+  long:any,
   style:{
     padding:any,
     margin:any,

@@ -31,7 +31,7 @@ export class MapComponent implements OnInit {
   }
 
   public setMapText(){
-    $('#'+this.selectedMap.id).html(this.selectedMap.code);
+    //$('#'+this.selectedMap.id).html(this.selectedMap.code);
   }
 
 
@@ -43,5 +43,9 @@ export class MapComponent implements OnInit {
 
   public eventLoad(){
     this.modelShow.emit(true);
+  }
+
+  changeLocation(){
+    $('#'+this.selectedMap.id+' iframe').attr("src",'https://maps.google.com/maps?q='+this.selectedMap.lat+','+this.selectedMap.long+'&hl=es;z=14&amp;output=embed')
   }
 }

@@ -1,27 +1,48 @@
 <div id="media">
-  <div class="row">
-    <div class="col-md-8">
-      <tabset #staticTabs>
-        <tab heading="All media">Static content</tab>
-        <tab heading="Upload">
-          <div class="drag-n-drop-container"  ngFileDrop [options]="options" (onUpload)="handleUpload($event)"
-            [ngClass]="{'file-over': hasBaseDropZoneOver}" (onFileOver)="fileOverBase($event)">
-            <h1>Drag & Drop</h1>
-            <label class="upload-button">
-          <input
-            type="file"
-            class="hidden"
-            ngFileSelect
-            [options]="options"
-            (onUpload)="handleUpload($event)">
-          Browse
-        </label>
-          </div>
-        </tab>
+    <div class="row">
+        <div class="col-md-8">
+            <tabset #staticTabs>
+                <tab heading="All media" class="allmedia">
+                    <div class="row" id="media-container">
+                        <div class="col-md-3" *ngFor="let image of images">
+                            <img class="img-responsive img-rounded media-img pointer" [src]="baseURL+'/'+image" alt=""
+                                 (click)="selectImgFromList(baseURL+'/'+image)">
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Upload">
+                    <div class="drag-n-drop-container" ngFileDrop [options]="options" (onUpload)="handleUpload($event)"
+                         [ngClass]="{'file-over': hasBaseDropZoneOver}" (onFileOver)="fileOverBase($event)">
+                        <h1>Drag & Drop</h1>
+                        <label class="upload-button">
+                            <input
+                                    type="file"
+                                    class="hidden"
+                                    ngFileSelect
+                                    [options]="options"
+                                    (onUpload)="handleUpload($event)">
+                            Browse
+                        </label>
+                    </div>
+
+                    <progressbar [max]="max" [value]="dynamic" class="progress-striped active" [type]="'success'">
+                        <span style="color:white; white-space:nowrap;">{{dynamic}} / {{max}}</span>
+                    </progressbar>
+                </tab>
+
+            </tabset>
 
 
-      </tabset>
+        </div>
+        <div class="col-md-4" id="selectedIMG-container">
+
+            <div *ngIf="selectedImgURL">
+                <img [src]="selectedImgURL" *ngIf="selectedImgURL" id="selectedIMG" class="img-responsive img-rounded">
+                <p id="selectedImg-details">{{details}}</p>
+
+                <button class="btn btn-primary" (click)="selectImage()">Select</button>
+            </div>
+
+        </div>
     </div>
-    <div class="col-md-4">sdg</div>
-  </div>
 </div>

@@ -17,9 +17,12 @@
 
   <div class="form-group">
     <label class="col-sm-4 control-label">Input Image</label>
-    <div class="col-sm-12">
+    <div class="col-sm-8">
+<button (click)="selectImage()">Select</button>
 
-
+    </div>
+    <div class="col-md-12">
+      <img *ngIf="selectedImage.src.length>10" [src]="selectedImage.src" style="width: 200px;height: 140px;margin: 30px auto 0;display: block;">
     </div>
   </div>
 

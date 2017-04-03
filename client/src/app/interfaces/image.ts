@@ -1,11 +1,11 @@
 export interface Image {
   id:string,
   link:any,
-
+  src:any,
   style:{
     width:any,
     height:any,
-    src:any,
+
     radius:any,
     padding:any,
     margin:any,

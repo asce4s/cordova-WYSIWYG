@@ -64,4 +64,41 @@
   margin: 20px 0 50px
 }
 
- .file-over { border: dotted 3px #ccc; } 
+ .file-over { border: dotted 3px #ccc; }
+
+.progress-bar {
+  height: 25px;
+
+}
+.progress-bar-success {
+  background-color: #5cb85c !important;
+}
+
+.media-img{
+  width:100%;
+  height: 100px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.media-img:hover{
+  border: 1px solid #888;
+}
+
+.allmedia{
+  padding-top: 20px;
+}
+
+#media-container{
+  max-height: 350px;
+  overflow-y: scroll;
+}
+
+#selectedIMG{
+  width:100%;
+  height: 250px;
+}
+
+#selectedIMG-container{
+  padding-top: 43px;
+}

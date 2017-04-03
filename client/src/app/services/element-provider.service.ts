@@ -453,7 +453,7 @@ export class ElementProviderService {
 
 
   getMap(){
-    return `<div class="map"></div>`
+    return `<div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840.750283630532!2d81.04902863502498!3d6.987173575722675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x66ed4636fc37246e!2sKatharagama+Devalaya!5e0!3m2!1sen!2slk!4v1490945559197" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe></div>`
   }
 
   getSelect(){
