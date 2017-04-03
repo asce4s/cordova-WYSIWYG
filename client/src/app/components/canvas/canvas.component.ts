@@ -109,6 +109,8 @@ export class CanvasComponent implements OnInit {
 
     private mediaURL: string;
 
+    public containerAry=[];
+
 
     text: string;
     @ViewChild('lgModal') public lgModel: ModalDirective;
@@ -660,6 +662,8 @@ export class CanvasComponent implements OnInit {
                 });
         }
 
+
+
         if (key == "container") {
 
             let newEl = this._elprovider.getContainer;
@@ -669,8 +673,9 @@ export class CanvasComponent implements OnInit {
 
                 //newEl.attr('id', id);
                 $(rElement).remove();
-                this.addComponent(`<div class="container-fluid page-container" [dragula]='"first-bag"' id="` + id + `"></div>`);
+               // this.addComponent(`<div class="container-fluid page-container" [dragula]='"first-bag"' id="` + id + `"></div>`);
 
+                this.containerAry.push()
 
                 let el = $("#" + id);
                 let defaults: Container = {
@@ -689,7 +694,7 @@ export class CanvasComponent implements OnInit {
                 this.toFalse();
                 this._containerService.add(defaults);
                 this.selectedContainer = defaults;
-
+                this.containerAry.push(this.selectedContainer);
 
                 this._elRef.nativeElement.querySelector('#' + id).addEventListener('click', (event) => {
 

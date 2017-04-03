@@ -48,7 +48,8 @@
         <div id="skin" [ngStyle]="{'background-image': 'url(' + skin + ')','padding': '57px 28px 127px 25px'}">
 
             <div id="designArea" [dragula]='"first-bag"' style="padding: 10px">
-                <template #container></template>
+
+                <div *ngFor="let c of containerAry" class="container-fluid page-container" [dragula]='"first-bag"' id="{{c.id}}"></div>
 
 
             </div>
