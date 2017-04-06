@@ -104,6 +104,11 @@ export class CanvasComponent implements OnInit {
   private selectedParagraph: Paragraph;
   private selectedNavbar: Navbar;
 
+  /*For adding page and other stuffs -- randy*/
+  private pages:page[];
+  private activePage:page;
+  /*end --For adding page and other stuffs -- randy*/
+
 
   text: string;
   @ViewChild('lgModal') public lgModel: ModalDirective;
@@ -134,6 +139,16 @@ export class CanvasComponent implements OnInit {
               private  _buildService: BuildService,
   private _pageService:PageService) {
 
+    /*randy*/
+    _pageService.getAllPages().then((_pages:page[])=>{
+      this.pages = _pages;
+    });
+
+    _pageService.activePage.subscribe((page)=>{
+      this.activePage = page;
+    });
+    /*end */
+
 
     dragulaService.setOptions('first-bag', {
       removeOnSpill: true,
@@ -142,7 +157,9 @@ export class CanvasComponent implements OnInit {
       },
       copySortSource: true,
       accepts: function (el, handle) {
-        return handle.id == "designArea";
+        //return handle.id == "designArea";
+
+        return $(handle).hasClass('pages')
 
       }
     });
@@ -906,7 +923,14 @@ export class CanvasComponent implements OnInit {
   private genElement(rElement, nElement, elFunc, clickfunc) {
     let newEl = $(nElement);
     let id = this.genID();
-    this._pageService.getActivePage().elements.push(id);
+
+    // console.log(rElement);
+    // console.log(nElement);
+
+    this._pageService.addElement(id);
+
+
+
     if (rElement.localName == "li") {
 
       newEl.attr('id', id);

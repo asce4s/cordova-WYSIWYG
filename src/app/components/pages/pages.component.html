@@ -3,15 +3,15 @@
   <div (click)="openAddPageDialog()" id="addPage">Add Page <span>+</span></div>
   <div>
     <ul>
-      <li *ngFor="let page of pages" (click)="selectPage(page.id)" [ngClass]="{selected: selectedPage == page.id}">
+      <li *ngFor="let page of pages" (click)="selectPage(page)" [ngClass]="{selected: selectedPage == page}">
         <a>
           <span class="pageCaret"></span>
           <span>{{page.id}}</span>
-          <ul [ngClass]="{hide: selectedPage != page.id}">
+          <ul [ngClass]="{hide: selectedPage != page}">
             <li *ngFor="let element of page.elements">{{element}}</li>
           </ul>
-          <span [ngClass]="{hide: selectedPage != page.id}">delete</span>
-          <span [ngClass]="{hide: selectedPage != page.id}">edit</span>
+          <span [ngClass]="{hide: selectedPage != page}">delete</span>
+          <span [ngClass]="{hide: selectedPage != page}">edit</span>
         </a>
       </li>
     </ul>

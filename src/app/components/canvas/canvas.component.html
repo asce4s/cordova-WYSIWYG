@@ -45,12 +45,18 @@
     </span>
 
 
-
     <div id="skin" [ngStyle]="{'background-image': 'url(' + skin + ')','padding': '57px 28px 127px 25px'}">
 
-      <div id="designArea" [dragula]='"first-bag"' style="padding: 10px">
 
+      <div id="designArea" style="padding: 10px">
+        <div *ngFor="let page of pages">
+          <div class="pages" [hidden]="page !== activePage" [dragula]='"first-bag"'
+               style="padding: 10px;height: 490px;min-width: 100%;">
+
+          </div>
+        </div>
       </div>
+
 
     </div>
 
@@ -66,29 +72,29 @@
     <radio-options *ngIf="selectedRadio!=null" [selectedRadio]="selectedRadio"
                    (modelShow)="showEventLoader($event)"></radio-options>
     <navbar-options *ngIf="selectedNavbar!=null" [selectedNavbar]="selectedNavbar"
-                   (modelShow)="showEventLoader($event)"></navbar-options>
+                    (modelShow)="showEventLoader($event)"></navbar-options>
     <range-options *ngIf="selectedRange!=null" [selectedRange]="selectedRange"
-                    (modelShow)="showEventLoader($event)"></range-options>
+                   (modelShow)="showEventLoader($event)"></range-options>
     <input-options *ngIf="selectedInput!=null" [selectedInput]="selectedInput"
                    (modelShow)="showEventLoader($event)"></input-options>
     <list-options *ngIf="selectedList!=null" [selectedList]="selectedList"
-                   (modelShow)="showEventLoader($event)"></list-options>
+                  (modelShow)="showEventLoader($event)"></list-options>
     <textarea-options *ngIf="selectedTextarea!=null" [selectedTextarea]="selectedTextarea"
-                  (modelShow)="showEventLoader($event)"></textarea-options>
+                      (modelShow)="showEventLoader($event)"></textarea-options>
     <html-options *ngIf="selectedHtml!=null" [selectedHtml]="selectedHtml"
-                      (modelShow)="showEventLoader($event)"></html-options>
+                  (modelShow)="showEventLoader($event)"></html-options>
     <container-options *ngIf="selectedContainer!=null" [selectedContainer]="selectedContainer"
-                  (modelShow)="showEventLoader($event)"></container-options>
+                       (modelShow)="showEventLoader($event)"></container-options>
     <paragraph-options *ngIf="selectedParagraph!=null" [selectedParagraph]="selectedParagraph"
                        (modelShow)="showEventLoader($event)"></paragraph-options>
     <heading-options *ngIf="selectedHeading!=null" [selectedHeading]="selectedHeading"
-                       (modelShow)="showEventLoader($event)"></heading-options>
+                     (modelShow)="showEventLoader($event)"></heading-options>
     <map-options *ngIf="selectedMap!=null" [selectedMap]="selectedMap"
-                     (modelShow)="showEventLoader($event)"></map-options>
+                 (modelShow)="showEventLoader($event)"></map-options>
     <image-options *ngIf="selectedImage!=null" [selectedImage]="selectedImage"
-                 (modelShow)="showEventLoader($event)"></image-options>
+                   (modelShow)="showEventLoader($event)"></image-options>
     <select-options *ngIf="selectedSelect!=null" [selectedSelect]="selectedSelect"
-                   (modelShow)="showEventLoader($event)"></select-options>
+                    (modelShow)="showEventLoader($event)"></select-options>
 
   </section>
 

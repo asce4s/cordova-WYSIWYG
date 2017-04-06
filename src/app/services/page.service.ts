@@ -1,42 +1,49 @@
 import { Injectable } from '@angular/core';
 import {page} from '../interfaces/page';
-import {PAGE} from '../data/page-data';
+import {PAGES} from '../data/page-data';
+import {Subject} from "rxjs";
 
 @Injectable()
 export class PageService {
-  private activePage:page;
+  activePage = new Subject<page>();
+  private activePageID:string;
 
   constructor() {
-    this.activePage = null;
+    /**
+    **This will update the current page id listening to the activePage object
+    **/
+    this.activePage.subscribe(page=>{
+      this.activePageID = page.id;
+    });
+  }
+
+  createPage(){
+    return `
+    
+      `;
   }
 
   add(Page:page){
-    Promise.resolve(PAGE).then((pages:page[]) => pages.push(Page));
-    this.activePage = Page;
+    Promise.resolve(PAGES).then((pages:page[]) => {
+      pages.push(Page);
+      this.activePage.next(Page);
+    });
   }
 
   get(id){
-    Promise.resolve(PAGE).then((pages:page[]) => {
-      return pages.find(_ => _.id == id);
-    });
+    return PAGES.find(_page => _page.id == id);
   }
 
   getAllPages(){
-    return Promise.resolve(PAGE);
+    return Promise.resolve(PAGES);
   }
 
-  setActivePage(id){
-    Promise.resolve(PAGE).then((pages:page[])=>{
-      this.activePage = pages.find(_=>_.id == id);
-    });
-  }
-
-  getActivePage(){
-    return this.activePage ;
+  setActivePage(page:page){
+    this.activePage.next(page);
   }
 
   addElement(element:any){
-    this.activePage.elements.push(element);
+    this.get(this.activePageID).elements.push(element);
   }
 
 }
