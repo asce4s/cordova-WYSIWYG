@@ -49,7 +49,7 @@
 
             <div id="designArea" [dragula]='"first-bag"' style="padding: 10px">
 
-                <div *ngFor="let c of containerAry" class="container-fluid page-container" [dragula]='"first-bag"' id="{{c.id}}"></div>
+                <div *ngFor="let c of containerAry" class="container-fluid page-container" [dragula]='"first-bag"' id="{{c.id}}" (dblclick)="containerSelect(c.id)"></div>
 
 
             </div>

@@ -51,6 +51,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
+            //'root' =>public_path(),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
@@ -61,6 +62,11 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
+        ],
+
+        'uploads' => [
+            'driver' => 'local',
+            'root'   => public_path(),
         ],
 
     ],

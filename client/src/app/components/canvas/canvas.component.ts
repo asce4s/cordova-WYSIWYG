@@ -675,8 +675,6 @@ export class CanvasComponent implements OnInit {
                 $(rElement).remove();
                // this.addComponent(`<div class="container-fluid page-container" [dragula]='"first-bag"' id="` + id + `"></div>`);
 
-                this.containerAry.push()
-
                 let el = $("#" + id);
                 let defaults: Container = {
                     id: id,
@@ -694,15 +692,18 @@ export class CanvasComponent implements OnInit {
                 this.toFalse();
                 this._containerService.add(defaults);
                 this.selectedContainer = defaults;
-                this.containerAry.push(this.selectedContainer);
-
-                this._elRef.nativeElement.querySelector('#' + id).addEventListener('click', (event) => {
-
-                    this.toFalse();
-                    this.selectedContainer = this._containerService.get(event.toElement.id);
 
 
-                });
+                    this.containerAry.push(defaults);
+
+                    /*this._elRef.nativeElement.select('#' + id).addEventListener('click', (event) => {
+
+
+
+                    });*/
+
+
+
             } else {
                 this._elRef.nativeElement.querySelector('#' + rElement.id).removeEventListener('click');
                 this._elRef.nativeElement.querySelector('#' + rElement.id).addEventListener('click', (event) => {
@@ -1521,6 +1522,12 @@ export class CanvasComponent implements OnInit {
          return res;*/
     }
 
+    containerSelect(xid){
+        this.toFalse();
+        this.selectedContainer = this._containerService.get(xid);
+        console.log(xid);
+        console.log(CONTAINER);
 
+    }
 }
 

@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
+
+
+
+
+Route::post('/upload','MediaController@upload');
+
+Route::get('/build','CordovaController@build');
+
+Route::post('/new','CordovaController@createNew');
+
+Route::post('/delete','CordovaController@delete');
+
+Route::post('/getmedia','MediaController@getAll');

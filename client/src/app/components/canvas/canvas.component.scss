@@ -29,6 +29,7 @@
   #designArea{
     height: 490px;
     background: #fff;
+    overflow-y: scroll;
 
     .container-fluid{
       border:1px dotted #ccc;
