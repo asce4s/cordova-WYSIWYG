@@ -8,7 +8,7 @@
           <span class="pageCaret"></span>
           <span>{{page.id}}</span>
           <ul [ngClass]="{hide: selectedPage != page}">
-            <li *ngFor="let element of page.elements">{{element}}</li>
+            <li *ngFor="let element of page.elements">{{element.id}} {{element.accesskey}}</li>
           </ul>
           <span [ngClass]="{hide: selectedPage != page}">delete</span>
           <span [ngClass]="{hide: selectedPage != page}">edit</span>

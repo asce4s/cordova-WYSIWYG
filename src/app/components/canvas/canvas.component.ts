@@ -924,11 +924,14 @@ export class CanvasComponent implements OnInit {
     let newEl = $(nElement);
     let id = this.genID();
 
-    // console.log(rElement);
-    // console.log(nElement);
+    /**
+     * @Randy
+     * Getting access key and id and passing them to the page service
+     */
+    let accessKey = $(rElement).attr("accesskey");
+    this._pageService.addElement({id:id,accesskey:accessKey});
 
-    this._pageService.addElement(id);
-
+    console.log($("#designArea").html());
 
 
     if (rElement.localName == "li") {
