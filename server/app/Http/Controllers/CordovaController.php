@@ -22,7 +22,7 @@ class CordovaController extends Controller
 
         $res=array();
         $process = new Process('cd projects && cordova create '.$id);
-        $process->run();
+        print_r($process->run());
         /*$process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
                 $res["error"]="true";
