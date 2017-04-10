@@ -1,94 +1,67 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AngularFire, FirebaseListObservable} from "angularfire2";
 import {ModalDirective} from "ng2-bootstrap";
-import {HTTPService} from "../../services/HTTP.service";
-import {CoolLocalStorage} from "angular2-cool-storage";
-import {Router} from "@angular/router";
 
 
 @Component({
-    selector: 'app-projects',
-    templateUrl: './projects.component.html',
-    styleUrls: ['./projects.component.css'],
-    providers: [HTTPService]
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.css'],
+  providers: []
 })
 export class ProjectsComponent implements OnInit {
 
-    db: FirebaseListObservable<any>;
-    private imgLoader = true;
-    private currentUser;
-    @ViewChild('smModal') public smModel: ModalDirective;
+  db: FirebaseListObservable<any>;
+  private imgLoader=true;
+  private currentUser;
+  @ViewChild('smModal') public smModel: ModalDirective;
 
-    constructor(private af: AngularFire,
-                private _httpService: HTTPService,
-                private _localStorage: CoolLocalStorage,
-                private _router:Router
-    ) {
+  constructor(private af: AngularFire) {
 
 
-    }
 
-    ngOnInit() {
-        this.af.auth.subscribe((auth) => {
-            this.currentUser = auth.uid;
-            this.db = this.af.database.list('/projects/' + this.currentUser);
-            this.db.subscribe((key) => {
-                this.imgLoader = false;
-            })
-        });
+  }
+
+  ngOnInit() {
+    this.af.auth.subscribe((auth)=>{
+      this.currentUser=auth.uid;
+      this.db=this.af.database.list('/projects/'+this.currentUser);
+      this.db.subscribe((key)=>{
+        this.imgLoader=false;
+      })
+    });
 
 
-    }
 
-    private form = {
-        title: '',
-        description: '',
-        user: ''
-    }
+  }
 
-    createNew() {
+  private form={
+    title:'',
+    description:'',
+    user:''
+  }
 
-        this.form.user = this.currentUser;
+  createNew(){
 
-        this.db.push(this.form).then((item) => {
+    this.form.user=this.currentUser;
 
-            if (item) {
-                this.form = {
-                    title: '',
-                    description: '',
-                    user: ''
-                }
-
-                this.smModel.hide();
-                //this._localStorage.setItem('id', item.key);
-                this._httpService.sendRequest("id=" + item.key, '/new').subscribe((v) => {
-                    console.log(v);
-                });
-            }
-        });
-
-    }
-
-    removeProject(key) {
-        if (confirm("Are you sure ?")) {
-            this.db.remove(key);
-            this._httpService.sendRequest("id=" + key, '/delete').subscribe((v) => {
-                //console.log(v);
-            });
+    this.db.push(this.form).then((key)=>{
+      if(key){
+        this.form={
+          title:'',
+          description:'',
+          user:''
         }
+        this.smModel.hide();
+      }
+    });
+
+  }
+
+  removeProject(key){
+    if(confirm("Are you sure ?")){
+      this.db.remove(key);
     }
-
-
-    navi(id){
-        /*this._localStorage.setObject('session', {
-            appID:id,
-            user:this.currentUser
-        });*/
-
-        this._localStorage.setItem('appID',id);
-        this._localStorage.setItem('user',this.currentUser);
-        this._router.navigate(['/builder',id]);
-
-    }
+  }
 
 }

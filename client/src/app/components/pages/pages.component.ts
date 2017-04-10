@@ -14,7 +14,7 @@ import {
   selector: 'app-pages',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss'],
-  providers: [PageService],
+  providers: [],
   animations: [
     trigger('modalDialog', [
       state('hide', style({
@@ -33,9 +33,8 @@ import {
 export class PagesComponent implements OnInit {
   private modal:string;
   private newPageName: string;
-  // private pages:string[] = [];
   private pages:page[];
-  private selectedPage:string = "";
+  private selectedPage:page = null;
 
 
   constructor(private _pageService: PageService) {
@@ -62,9 +61,12 @@ export class PagesComponent implements OnInit {
     this.newPageName = "";
   }
 
-  selectPage(page:string){
+  selectPage(page:page){
     this.selectedPage = page;
     this._pageService.setActivePage(page);
+    this._pageService.getAllPages().then(pages=>{
+      console.log(pages);
+    });
   }
 
 }

@@ -10,6 +10,7 @@ app-pages{
 
     ul{
       li{
+        padding: 3px 0 0px 9px;
         .pageCaret{
           margin-right: 5px;
           margin-left: -5px;
@@ -21,10 +22,17 @@ app-pages{
           vertical-align: middle;
           width: 0;
         }
+
+        a{
+          text-decoration: none;
+          cursor: pointer;
+          color:#464444
+        }
       }
 
       .selected{
-        background-color: #46fffa;
+        background-color: rgba(204, 204, 204, 0.49);
+        border: 1px dashed #666;
         span{
           cursor: pointer;
         }
@@ -37,11 +45,11 @@ app-pages{
     display:none;
   }
 
-  .addPageDialog{
-    position: absolute;
-    background-color: #ae61ff;
-    padding:2em;
-    border:1px solid black;
+
+  .pgop{
+    color: #464444;
+    float:right;
+    margin: 0 6px;
   }
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import {AngularFire, AuthMethods, AuthProviders} from "angularfire2";
+import {AngularFire} from "angularfire2";
 import {Router} from "@angular/router";
 @Component({
   selector: 'app-login',
@@ -14,9 +14,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
    this.af.auth.subscribe((auth)=>{
-     if(auth){
-       this.router.navigate(['projects']);
-     }
+     console.log(auth);
 
    })
   }
@@ -32,32 +30,11 @@ export class LoginComponent implements OnInit {
   }
 
   public googleLogin(){
-   /* this.af.auth.login().then((data)=>{
-      this.router.navigate(['projects']);
-    }).catch((data)=>{
-
-    })*/
-
-   this.af.auth.login({
-     provider: AuthProviders.Google,
-     method: AuthMethods.Popup
-   }).then((data)=>{
-     this.router.navigate(['projects']);
-   }).catch((data)=>{
-
-   })
-
-
-  }
-
-  public fbLogin(){
-    this.af.auth.login({
-      provider: AuthProviders.Facebook,
-      method: AuthMethods.Popup
-    }).then((data)=>{
+    this.af.auth.login().then((data)=>{
       this.router.navigate(['projects']);
     }).catch((data)=>{
 
     })
+
   }
 }
