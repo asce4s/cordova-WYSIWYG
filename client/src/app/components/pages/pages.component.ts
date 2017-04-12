@@ -64,9 +64,10 @@ export class PagesComponent implements OnInit {
   selectPage(page:page){
     this.selectedPage = page;
     this._pageService.setActivePage(page);
-    this._pageService.getAllPages().then(pages=>{
-      console.log(pages);
-    });
+  }
+
+  deletePage(_page:page){
+    this._pageService.deletePage(_page);
   }
 
 }

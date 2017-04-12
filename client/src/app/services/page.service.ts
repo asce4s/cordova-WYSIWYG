@@ -30,6 +30,18 @@ export class PageService {
     });
   }
 
+  /*
+  * This will delete pages permenantly. But if they are need to be recovered,
+  * better way is to giving pages a status number.
+  * */
+  deletePage(page:page){
+    Promise.resolve(PAGES).then((pages:page[])=>{
+      pages.splice(pages.findIndex((p:page)=>{
+        return p.id == page.id;
+      }),1);
+    });
+  }
+
   get(id){
     return PAGES.find(_page => _page.id == id);
   }

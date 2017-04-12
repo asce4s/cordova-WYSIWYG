@@ -2,180 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e8cecf-ef37-4bc5-87c1-a11d1332a2d7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cordova-WYSIWYG.iml" afterPath="$PROJECT_DIR$/.idea/cordova-WYSIWYG.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/.editorconfig" afterPath="$PROJECT_DIR$/client/.editorconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/README.md" afterPath="$PROJECT_DIR$/client/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/angular-cli.json" afterPath="$PROJECT_DIR$/client/angular-cli.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/e2e/app.e2e-spec.ts" afterPath="$PROJECT_DIR$/client/e2e/app.e2e-spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/e2e/app.po.ts" afterPath="$PROJECT_DIR$/client/e2e/app.po.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/e2e/tsconfig.json" afterPath="$PROJECT_DIR$/client/e2e/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/karma.conf.js" afterPath="$PROJECT_DIR$/client/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/protractor.conf.js" afterPath="$PROJECT_DIR$/client/protractor.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.css" afterPath="$PROJECT_DIR$/client/src/app/app.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.css.map" afterPath="$PROJECT_DIR$/client/src/app/app.component.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.html" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.scss" afterPath="$PROJECT_DIR$/client/src/app/app.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/app.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.css" afterPath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.css.map" afterPath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.scss" afterPath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.css" afterPath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.css.map" afterPath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.scss" afterPath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/footer/footer.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/header/header.component.css" afterPath="$PROJECT_DIR$/client/src/app/components/header/header.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/header/header.component.css.map" afterPath="$PROJECT_DIR$/client/src/app/components/header/header.component.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/header/header.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/header/header.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/header/header.component.scss" afterPath="$PROJECT_DIR$/client/src/app/components/header/header.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/header/header.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/header/header.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/header/header.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/header/header.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/button/button.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/button/button.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/button/button.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/button/button.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/checkbox/checkbox.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/checkbox/checkbox.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/checkbox/checkbox.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/checkbox/checkbox.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/container/container.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/container/container.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/container/container.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/container/container.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/container/container.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/container/container.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/heading/heading.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/heading/heading.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/heading/heading.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/heading/heading.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/heading/heading.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/heading/heading.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/html/html.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/html/html.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/html/html.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/html/html.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/html/html.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/html/html.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/image/image.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/image/image.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/image/image.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/image/image.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/image/image.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/image/image.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/input/input.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/input/input.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/input/input.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/input/input.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/input/input.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/input/input.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/list/list.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/list/list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/list/list.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/list/list.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/list/list.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/list/list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/map/map.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/map/map.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/map/map.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/map/map.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/map/map.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/map/map.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/navbar/navbar.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/navbar/navbar.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/navbar/navbar.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/paragraph/paragraph.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/paragraph/paragraph.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/paragraph/paragraph.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/paragraph/paragraph.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/paragraph/paragraph.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/paragraph/paragraph.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/radio/radio.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/radio/radio.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/radio/radio.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/radio/radio.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/range/range.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/range/range.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/range/range.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/range/range.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/select/select.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/select/select.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/select/select.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/select/select.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/select/select.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/select/select.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/switch/switch.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/switch/switch.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/switch/switch.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/switch/switch.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/textarea/textarea.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/textarea/textarea.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/textarea/textarea.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/textarea/textarea.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/textarea/textarea.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/textarea/textarea.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/video/video.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/options/video/video.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/video/video.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/video/video.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/options/video/video.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/options/video/video.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.html" afterPath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.scss" afterPath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.spec.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.ts" afterPath="$PROJECT_DIR$/client/src/app/components/pages/pages.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/button-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/button-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/checkbox-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/checkbox-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/component-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/component-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/container-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/container-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/heading-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/heading-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/html-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/html-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/image-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/image-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/input-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/input-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/list-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/list-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/map-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/map-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/navbar-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/navbar-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/page-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/page-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/paragraph-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/paragraph-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/radio-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/radio-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/range-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/range-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/select-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/select-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/switch-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/switch-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/textarea-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/textarea-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/data/video-data.ts" afterPath="$PROJECT_DIR$/client/src/app/data/video-data.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/Radio.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/Radio.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/button.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/button.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/checkbox.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/checkbox.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/container.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/container.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/heading.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/heading.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/html.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/html.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/image.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/image.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/input.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/input.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/list.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/list.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/map.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/map.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/navbar.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/navbar.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/page.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/page.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/paragraph.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/paragraph.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/range.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/range.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/select.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/select.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/switch.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/switch.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/textarea.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/textarea.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/interfaces/video.ts" afterPath="$PROJECT_DIR$/client/src/app/interfaces/video.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/home/home.component.html" afterPath="$PROJECT_DIR$/client/src/app/pages/home/home.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/home/home.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/pages/home/home.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/home/home.component.ts" afterPath="$PROJECT_DIR$/client/src/app/pages/home/home.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/login/login.component.css" afterPath="$PROJECT_DIR$/client/src/app/pages/login/login.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/login/login.component.css.map" afterPath="$PROJECT_DIR$/client/src/app/pages/login/login.component.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/login/login.component.html" afterPath="$PROJECT_DIR$/client/src/app/pages/login/login.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/login/login.component.scss" afterPath="$PROJECT_DIR$/client/src/app/pages/login/login.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/login/login.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/pages/login/login.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/login/login.component.ts" afterPath="$PROJECT_DIR$/client/src/app/pages/login/login.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.css" afterPath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.css.map" afterPath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.html" afterPath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.spec.ts" afterPath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.ts" afterPath="$PROJECT_DIR$/client/src/app/pages/projects/projects.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/button.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/button.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/checkbox.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/checkbox.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/container.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/container.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/element-provider.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/element-provider.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/heading.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/heading.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/html.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/html.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/image.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/image.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/input.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/input.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/list.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/list.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/map.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/map.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/navbar.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/navbar.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/page.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/page.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/paragraph.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/paragraph.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/radio.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/radio.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/range.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/range.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/select.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/select.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/switch.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/switch.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/textarea.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/textarea.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/video.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/video.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/css/global.css" afterPath="$PROJECT_DIR$/client/src/assets/css/global.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/css/global.css.map" afterPath="$PROJECT_DIR$/client/src/assets/css/global.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/css/global.scss" afterPath="$PROJECT_DIR$/client/src/assets/css/global.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/css/ionicons/css/ionicons.css" afterPath="$PROJECT_DIR$/client/src/assets/css/ionicons/css/ionicons.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/css/ionicons/css/ionicons.min.css" afterPath="$PROJECT_DIR$/client/src/assets/css/ionicons/css/ionicons.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/css/ionicons/fonts/ionicons.svg" afterPath="$PROJECT_DIR$/client/src/assets/css/ionicons/fonts/ionicons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/css/onsen-css-components.css" afterPath="$PROJECT_DIR$/client/src/assets/css/onsen-css-components.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/scss/_common.scss" afterPath="$PROJECT_DIR$/client/src/assets/scss/_common.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/assets/scss/_variable.scss" afterPath="$PROJECT_DIR$/client/src/assets/scss/_variable.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/environments/environment.prod.ts" afterPath="$PROJECT_DIR$/client/src/environments/environment.prod.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/environments/environment.ts" afterPath="$PROJECT_DIR$/client/src/environments/environment.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/fonts/Material-Design-Iconic-Font.svg" afterPath="$PROJECT_DIR$/client/src/fonts/Material-Design-Iconic-Font.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.html" afterPath="$PROJECT_DIR$/client/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main.ts" afterPath="$PROJECT_DIR$/client/src/main.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/polyfills.ts" afterPath="$PROJECT_DIR$/client/src/polyfills.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/styles.css" afterPath="$PROJECT_DIR$/client/src/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/test.ts" afterPath="$PROJECT_DIR$/client/src/test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/tsconfig.json" afterPath="$PROJECT_DIR$/client/src/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/tslint.json" afterPath="$PROJECT_DIR$/client/tslint.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -190,53 +19,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="canvas.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="canvas.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19544">
-              <caret line="1469" column="0" lean-forward="false" selection-start-line="1469" selection-start-column="0" selection-end-line="1469" selection-end-column="0" />
+            <state relative-caret-position="253">
+              <caret line="930" column="50" lean-forward="false" selection-start-line="930" selection-start-column="50" selection-end-line="930" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="canvas.component.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.scss">
+      <file leaf-file-name="canvas.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pages.component.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pages.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="260">
+              <caret line="55" column="16" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
+                <marker date="1491835620179" expanded="true" signature="344:486" ph="{&quot;width&quot;: component.width...}" />
               </folding>
             </state>
           </provider>
@@ -245,10 +45,34 @@
       <file leaf-file-name="pages.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="359">
+              <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/app/services/page.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" column="90" lean-forward="false" selection-start-line="9" selection-start-column="90" selection-end-line="9" selection-end-column="90" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -257,7 +81,7 @@
       <file leaf-file-name="scripts.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/data/scripts.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="25">
               <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
               <folding />
             </state>
@@ -291,6 +115,7 @@
       <find>medi</find>
       <find>&quot;ma</find>
       <find>&quot;con</find>
+      <find>_page</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -334,8 +159,10 @@
         <option value="$PROJECT_DIR$/client/src/app/interfaces/scripts.ts" />
         <option value="$PROJECT_DIR$/client/src/app/data/scripts.ts" />
         <option value="$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/components/pages/pages.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/components/pages/pages.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/components/pages/pages.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/components/pages/pages.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/services/page.service.ts" />
       </list>
     </option>
   </component>
@@ -351,9 +178,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="696" />
+    <option name="width" value="1932" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -423,8 +249,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,7 +258,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -444,11 +268,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -458,15 +282,15 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -476,19 +300,19 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -498,195 +322,29 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cordova-WYSIWYG" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -697,6 +355,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ionic/smsSchedular" />
+    <property name="editor.config.accepted" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -770,35 +429,36 @@
       <workItem from="1491459596855" duration="5771000" />
       <workItem from="1491490373705" duration="601000" />
       <workItem from="1491803154819" duration="2267000" />
+      <workItem from="1491976813108" duration="3669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65486000" />
+    <option name="totallyTimeSpent" value="69155000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
+    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26618123" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26993534" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26350245" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2629834" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -881,7 +541,6 @@
         <option value="$PROJECT_DIR$/client/node_modules/angular2-color-picker/lib/color-picker.module.js.map" />
         <option value="$PROJECT_DIR$/client/node_modules/angular2-color-picker/lib/color-picker.directive.js" />
         <option value="$PROJECT_DIR$/client/node_modules/angular2-color-picker/lib/color-picker.directive.js.map" />
-        <option value="$PROJECT_DIR$/client/node_modules/angular2-font-awesome/index.js" />
       </list>
     </option>
   </component>
@@ -893,7 +552,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/config/services.php" />
     <entry file="file://$PROJECT_DIR$/server/config/cors.php" />
     <entry file="file://$PROJECT_DIR$/server/vendor/barryvdh/laravel-cors/config/cors.php" />
     <entry file="file://$PROJECT_DIR$/server/app/Http/Kernel.php" />
@@ -1086,9 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,14 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/interfaces/button.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1128,55 +775,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19544">
-          <caret line="1469" column="0" lean-forward="false" selection-start-line="1469" selection-start-column="0" selection-end-line="1469" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/data/scripts.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="25">
           <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="675">
+          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="930" column="50" lean-forward="false" selection-start-line="930" selection-start-column="50" selection-end-line="930" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/canvas/canvas.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="55" column="16" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1491835620179" expanded="true" signature="344:486" ph="{&quot;width&quot;: component.width...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="225">
+          <caret line="9" column="90" lean-forward="false" selection-start-line="9" selection-start-column="90" selection-end-line="9" selection-end-column="90" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/components/pages/pages.component.scss">
+    <entry file="file://$PROJECT_DIR$/client/src/app/services/page.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="434">
+          <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
