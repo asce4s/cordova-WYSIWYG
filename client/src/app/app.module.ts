@@ -13,7 +13,7 @@ import {DragulaModule} from "ng2-dragula";
 
 import { ButtonComponent } from './components/options/button/button.component';
 import {ColorPickerModule} from "angular2-color-picker";
-import {Ng2BootstrapModule, ModalModule} from "ng2-bootstrap";
+import {Ng2BootstrapModule, ModalModule, ProgressbarModule, TabsModule} from "ng2-bootstrap";
 import { AceEditorDirective } from 'ng2-ace-editor';
 import { SwitchComponent } from './components/options/switch/switch.component';
 import { ImageComponent } from './components/options/image/image.component';
@@ -40,6 +40,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {AngularFireModule, AuthProviders, AuthMethods} from "angularfire2";
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { HeadingComponent } from './components/options/heading/heading.component';
+import {MediaComponent} from "./components/media/media.component";
+import {NgUploaderModule} from 'ngx-uploader';
+import {CoolStorageModule} from "angular2-cool-storage";
 
 const appRoutes: Routes = [
   { path: 'builder', component: HomeComponent },
@@ -92,9 +95,7 @@ const myFirebaseAuthConfig = {
     ProjectsComponent,
     HeadingComponent,
     PagesComponent,
-
-
-
+    MediaComponent
 
   ],
   imports: [
@@ -106,7 +107,11 @@ const myFirebaseAuthConfig = {
     DragulaModule,
     ColorPickerModule,
     ModalModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
+    TabsModule.forRoot(),
+    ProgressbarModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    NgUploaderModule,
+    CoolStorageModule
 
 
   ],

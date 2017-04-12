@@ -41,7 +41,7 @@
 
       </select>
 
-      <a (click)="genPreview()">preview</a>
+      <a (click)="genPreview()" style="color:#fff;float: right"><fa name="eye"></fa></a>
     </span>
 
 
@@ -92,9 +92,13 @@
     <map-options *ngIf="selectedMap!=null" [selectedMap]="selectedMap"
                  (modelShow)="showEventLoader($event)"></map-options>
     <image-options *ngIf="selectedImage!=null" [selectedImage]="selectedImage"
-                   (modelShow)="showEventLoader($event)"></image-options>
+                   (modelShow)="showEventLoader($event)"
+                   (mediaManager)="mediaManager($event)"
+
+    ></image-options>
     <select-options *ngIf="selectedSelect!=null" [selectedSelect]="selectedSelect"
                     (modelShow)="showEventLoader($event)"></select-options>
+
 
   </section>
 
@@ -149,7 +153,26 @@
     <div class="modal-content" style="background: transparent;border:none;box-shadow: none">
 
       <div class="modal-body">
+        <img src="../../../assets/img/gears.gif" style="margin: 14% auto;display: block;" *ngIf="!iframeSrc">
         <iframe *ngIf="iframeSrc" [src]="iframeSrc" id="preview"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div bsModal #mediaModel="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Media Manager</h4>
+        <button type="button" class="close pull-right" (click)="mediaModel.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-media (media)="mediaHandle($event)"></app-media>
       </div>
     </div>
   </div>

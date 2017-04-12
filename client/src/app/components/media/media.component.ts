@@ -2,18 +2,17 @@ import {Component, OnInit, NgZone, Inject, EventEmitter, Output} from '@angular/
 import {TabsetComponent} from 'ng2-bootstrap';
 import {NgUploaderOptions} from "ngx-uploader";
 import {CoolLocalStorage} from "angular2-cool-storage";
-import {HTTPService} from "../../services/HTTP.service";
+
 import * as $ from 'jquery';
+import {HTTPService} from "../../services/http.service";
 
 @Component({
     selector: 'app-media',
     templateUrl: './media.component.html',
     styleUrls: ['./media.component.scss'],
     providers:[HTTPService]
-
 })
 export class MediaComponent implements OnInit {
-
 
     options: NgUploaderOptions;
     response: any;
