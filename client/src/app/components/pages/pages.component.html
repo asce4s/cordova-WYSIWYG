@@ -33,3 +33,21 @@
   </div>
 
 </div>
+
+<!--This is the dialog box for deleting pages-->
+<div [@modalDialog]="model_deletePage" class="addPageDialog">
+  <div class="panel panel-default">
+    <div class="panel-heading">Delete Page
+      <fa name="close" class="pull-right pointer" (click)="hideAddPageDialog()"></fa>
+    </div>
+    <div class="panel-body">
+      <label for="pageName">
+        Do you really need to delete this page ? It contain some elements
+        you will loose them if you continue
+      </label>
+      <button (click)="deletePageFinal()" class="btn btn-primary" style="margin-top: 10px;width:100%">Delete</button>
+      <button (click)="deletePageCancel()" class="btn btn-primary" style="margin-top: 10px;width:100%">Cancel</button>
+    </div>
+  </div>
+
+</div>

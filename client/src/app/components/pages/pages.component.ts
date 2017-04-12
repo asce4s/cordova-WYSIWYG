@@ -32,6 +32,8 @@ import {
 
 export class PagesComponent implements OnInit {
   private modal:string;
+  private model_deletePage:string;
+  private pageToDelete:page = null;
   private newPageName: string;
   private pages:page[];
   private selectedPage:page = null;
@@ -39,6 +41,7 @@ export class PagesComponent implements OnInit {
 
   constructor(private _pageService: PageService) {
     this.modal = "hide";
+    this.model_deletePage = "hide";
     _pageService.getAllPages().then((pages)=>{
       this.pages = pages;
     });
@@ -55,6 +58,14 @@ export class PagesComponent implements OnInit {
     this.modal = "hide";
   }
 
+  openDeletePageDialog(){
+    this.model_deletePage = "show";
+  }
+
+  hideDeletePageDialog(){
+    this.model_deletePage = "hide";
+  }
+
   addPage(){
     this.modal = "hide";
     this._pageService.add({id:this.newPageName.toString(),elements:[]});
@@ -66,8 +77,25 @@ export class PagesComponent implements OnInit {
     this._pageService.setActivePage(page);
   }
 
+  deletePageFinal(){
+    this._pageService.deletePage(this.pageToDelete);
+    this.pageToDelete = null;
+    this.hideDeletePageDialog(); // why this is not working ?
+  }
+
+  deletePageCancel(){
+    this.pageToDelete = null;
+    this.hideDeletePageDialog();
+  }
+
   deletePage(_page:page){
-    this._pageService.deletePage(_page);
+    this.pageToDelete = _page;
+    /*checking whether there are elements in the page*/
+    if(_page.elements.length > 0){
+      this.openDeletePageDialog();
+    }else{
+      this.deletePageFinal();
+    }
   }
 
 }
