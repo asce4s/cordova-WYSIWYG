@@ -7,6 +7,7 @@
     </div>
     <div class="collapse navbar-collapse" style="padding-right: 20px">
       <button type="button" class="btn btn-default navbar-btn navbar-right" (click)="smModal.show()">Create New</button>
+      <a class=" navbar-right" (click)="af.auth.logout()"><fa name="power-off"></fa> </a>
     </div>
   </div>
 </nav>
@@ -20,7 +21,7 @@
       <div class="panel-body">
         {{item.description}}
       </div>
-      <div class="panel-footer text-right"><a [routerLink]="['/builder',item.$key]"><button class="btn btn-default">Continue</button> </a></div>
+      <div class="panel-footer text-right"><a (click)="navi(item.$key)" ><button class="btn btn-default">Continue</button> </a></div>
     </div>
   </div>
 
