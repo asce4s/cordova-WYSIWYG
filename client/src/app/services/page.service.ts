@@ -7,6 +7,7 @@ import {Subject} from "rxjs";
 export class PageService {
   activePage = new Subject<page>();
   private activePageID:string;
+  private homePageID:string;
 
   constructor() {
     /**
@@ -27,6 +28,9 @@ export class PageService {
     Promise.resolve(PAGES).then((pages:page[]) => {
       pages.push(Page);
       this.activePage.next(Page);
+      if(Page.home){
+        this.homePageID = Page.id;
+      }
     });
   }
 
@@ -52,6 +56,16 @@ export class PageService {
 
   setActivePage(page:page){
     this.activePage.next(page);
+  }
+
+  setHomePage(_page:page){
+    this.get(this.homePageID).home = false;
+    _page.home = true;
+    this.homePageID = _page.id;
+  }
+
+  getHomePage(){
+    return this.get(this.homePageID);
   }
 
   addElement(element:any){

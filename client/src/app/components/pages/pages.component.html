@@ -6,9 +6,10 @@
       <li *ngFor="let page of pages" (click)="selectPage(page)" [ngClass]="{selected: selectedPage == page}">
         <a>
           <span class="pageCaret"></span>
-          <span>{{page.id}}
+          <span>{{page.id}}</span>
           <span [ngClass]="{hide: selectedPage != page}" (click)="deletePage(page)" class="del pgop"><fa name="trash"></fa></span>
-          <span [ngClass]="{hide: selectedPage != page}" class="edit pgop"><fa name="pencil"></fa></span></span>
+          <span [ngClass]="{hide: selectedPage != page}" class="edit pgop"><fa name="pencil"></fa></span>
+          <span [ngClass]="{hide: selectedPage != page}" class="home pgop" (click)="setHomePage(page)" [title]="page.home ? 'Home page':'Set This page as the home page'"><fa [name]="page.home ? 'circle':'circle-o' "></fa></span>
           <ul [ngClass]="{hide: selectedPage != page}">
             <li *ngFor="let element of page.elements">{{element.id}} {{element.accesskey}}</li>
           </ul>

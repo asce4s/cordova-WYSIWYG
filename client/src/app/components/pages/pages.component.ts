@@ -68,7 +68,11 @@ export class PagesComponent implements OnInit {
 
   addPage(){
     this.modal = "hide";
-    this._pageService.add({id:this.newPageName.toString(),elements:[]});
+    let home = false;
+    if(this.pages.length == 0){
+      home = true;
+    }
+    this._pageService.add({id:this.newPageName.toString(),elements:[],home:home});
     this.newPageName = "";
   }
 
@@ -95,6 +99,13 @@ export class PagesComponent implements OnInit {
       this.openDeletePageDialog();
     }else{
       this.deletePageFinal();
+    }
+  }
+
+  setHomePage(_page:page){
+    if(!_page.home){
+      this._pageService.setHomePage(_page);
+      console.log(this.pages);
     }
   }
 
