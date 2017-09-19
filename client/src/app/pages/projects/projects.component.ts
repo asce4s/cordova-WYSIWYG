@@ -4,6 +4,7 @@ import {ModalDirective} from "ng2-bootstrap";
 import {CoolLocalStorage} from "angular2-cool-storage";
 import {Router} from "@angular/router";
 import {HTTPService} from "../../services/http.service";
+import { moveIn, fallIn, moveInLeft } from '../router.animations';
 
 
 @Component({
@@ -26,6 +27,12 @@ export class ProjectsComponent implements OnInit {
     ) {
 
 
+    }
+
+    logout() {
+         this.af.auth.logout();
+         console.log('logged out');
+         this._router.navigate(['/login']);
     }
 
     ngOnInit() {

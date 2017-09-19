@@ -32,6 +32,7 @@ import { TextareaComponent } from './components/options/textarea/textarea.compon
 import { VideoComponent } from './components/options/video/video.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from './services/auth.service';
 
 import { PagesComponent } from './components/pages/pages.component';
 
@@ -43,13 +44,15 @@ import { HeadingComponent } from './components/options/heading/heading.component
 import {MediaComponent} from "./components/media/media.component";
 import {NgUploaderModule} from 'ngx-uploader';
 import {CoolStorageModule} from "angular2-cool-storage";
+import { SignupComponent } from './pages/signup/signup.component';
 
 const appRoutes: Routes = [
   { path: 'builder', component: HomeComponent },
-  { path: 'builder/:id', component: HomeComponent },
-  { path: 'login',      component: LoginComponent},
-  { path: '',      component: LoginComponent},
-  { path: 'projects',      component: ProjectsComponent},
+  { path: 'builder/:id',component: HomeComponent },
+  { path: 'login',component: LoginComponent},
+  { path: '',component: LoginComponent},
+  { path: 'projects',component: ProjectsComponent},
+  { path: 'signup',component: SignupComponent},
 ];
 
 export const firebaseConfig = {
@@ -95,7 +98,8 @@ const myFirebaseAuthConfig = {
     ProjectsComponent,
     HeadingComponent,
     PagesComponent,
-    MediaComponent
+    MediaComponent,
+    SignupComponent
 
   ],
   imports: [
@@ -111,11 +115,12 @@ const myFirebaseAuthConfig = {
     ProgressbarModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     NgUploaderModule,
-    CoolStorageModule
+    CoolStorageModule,
+    AngularFireModule.initializeApp(firebaseConfig)
 
 
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

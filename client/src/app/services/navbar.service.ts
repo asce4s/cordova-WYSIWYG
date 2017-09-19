@@ -53,5 +53,20 @@ export class NavbarService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        NAVBAR.forEach((i: Navbar) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

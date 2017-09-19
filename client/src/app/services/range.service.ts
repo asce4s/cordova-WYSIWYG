@@ -42,5 +42,20 @@ export class RangeService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        RANGE.forEach((i: Range) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

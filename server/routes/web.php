@@ -11,14 +11,16 @@
 |
 */
 
-Route::get('/', 'CordovaController@createNew');
+Route::get('/','CordovaController@test');
 
 
 
 
 Route::post('/upload','MediaController@upload');
 
-Route::get('/build','CordovaController@build');
+Route::post('/preview','CordovaController@preview');
+
+Route::post('/build','CordovaController@build');
 
 Route::post('/new','CordovaController@createNew');
 

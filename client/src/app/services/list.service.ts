@@ -56,5 +56,20 @@ export class ListService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        LIST.forEach((i: List) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

@@ -51,5 +51,19 @@ export class SwitchService {
     return res;
   }
 
+  /*getScripts(){
+    let res = "";
+
+    SWITCH.forEach((i: Switch) => {
+      if(i.script){
+        res+=i.script;
+      }else{
+        res="";
+      }
+    })
+
+    return res;
+
+  }*/
 
 }

@@ -43,5 +43,19 @@ export class TextareaService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        TEXTAREA.forEach((i: Textarea) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
 
 }

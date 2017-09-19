@@ -76,4 +76,17 @@
     margin: 0 9px;
     display: block; }
 
-/*# sourceMappingURL=login.component.css.map */
+.error {
+    background:#f1f0ef;
+    padding:1em;
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+}
+
+input.txt {
+    background:#fff !important;
+    padding:1.3em 1em;
+    font-size:1.3em;
+    border: 1px solid #BBBBBB;
+}

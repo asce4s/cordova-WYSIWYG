@@ -43,4 +43,22 @@ export class InputService {
     }
 
 
+    getScripts(){
+        let res = "";
+
+        INPUT.forEach((i: Input) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
+
+
+
 }

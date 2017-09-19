@@ -42,5 +42,20 @@ export class SelectService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        SELECT.forEach((i: Select) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

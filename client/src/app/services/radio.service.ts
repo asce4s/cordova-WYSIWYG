@@ -44,5 +44,20 @@ export class RadioService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        RADIO.forEach((i: Radio) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

@@ -44,5 +44,19 @@ export class HeadingService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        HEADING.forEach((i: Heading) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
 
 }

@@ -49,34 +49,18 @@ import {PageService} from "../../services/page.service";
 import {page} from "../../interfaces/page";
 import {HTTPService} from "../../services/http.service";
 import {PAGES} from "../../data/page-data";
+import {Scripts} from "../../interfaces/scripts";
+import {ScriptWindow} from "../../interfaces/scriptWindow";
 
 
 @Component({
     selector: 'app-canvas',
     templateUrl: './canvas.component.html',
     styleUrls: ['./canvas.component.scss'],
-    providers: [ElementProviderService,
-        ButtonService,
-        SwitchService,
-        CheckboxService,
-        SelectService,
-        NavbarService,
-        MapService,
-        ImageService,
-        ParagraphService,
-        RangeService,
-        InputService,
-        TextareaService,
-        HtmlService,
-        HeadingService,
-        ContainerService,
-        ListService,
-        RadioService,
-        BuildService,
-        PageService,
-        HTTPService
-    ],
+    inputs:['links'],
+    providers: [
 
+    ],
 
 })
 export class CanvasComponent implements OnInit {
@@ -108,6 +92,11 @@ export class CanvasComponent implements OnInit {
     private selectedNavbar: Navbar;
 
     private mediaURL: string;
+    public links;
+
+    private cus_scripts:Scripts;
+
+    public scriptWindow:ScriptWindow;
 
     /*For adding page and other stuffs -- randy*/
     private pages: page[];
@@ -119,6 +108,9 @@ export class CanvasComponent implements OnInit {
     @ViewChild('lgModal') public lgModel: ModalDirective;
     @ViewChild('previewModal') public previewModal: ModalDirective;
     @ViewChild('mediaModel') public mediaModel: ModalDirective;
+    @ViewChild('jsModal') public jsModal: ModalDirective;
+    @ViewChild('cssModal') public cssModal: ModalDirective;
+
 
     constructor(private dragulaService: DragulaService,
                 private _elRef: ElementRef,
@@ -143,7 +135,8 @@ export class CanvasComponent implements OnInit {
                 private _rangeService: RangeService,
                 private _radioService: RadioService,
                 private  _httpService: HTTPService,
-                private _pageService: PageService) {
+                private _pageService: PageService,
+                private _buildService:BuildService) {
 
         /*randy*/
         _pageService.getAllPages().then((_pages: page[]) => {
@@ -206,6 +199,21 @@ export class CanvasComponent implements OnInit {
         });
 
         this.iframeSrc = null;
+
+        this.cus_scripts={
+            js:"",
+            css:"/*Your CSS here*/"
+        }
+
+        this.scriptWindow={
+            title:"Add Custom JS",
+            type:"javascript",
+            text:""
+        }
+
+
+
+
     }
 
 
@@ -215,6 +223,7 @@ export class CanvasComponent implements OnInit {
         } else {
             this.skin = require('../../../assets/img/iphone-skin.png');
         }
+
 
 
     }
@@ -1437,20 +1446,11 @@ export class CanvasComponent implements OnInit {
 
     public genPreview() {
         this.iframeSrc=null;
-        let pages = [];
         this.previewModal.show();
 
-        $('.pages').each(function () {
-            pages.push($(this).html().toString());
-        })
-
-
-        let data = "id=" + this.id + "&pages=" + JSON.stringify(PAGES) + "&design=" + JSON.stringify(pages) + "&styles=" + this.getAllStyles()
-
-
-        this._httpService.sendRequest(data, '/build').subscribe((v) => {
+        this._buildService.buildPreview(this.cus_scripts).subscribe((v) => {
+            console.log(v)
             this.iframeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(v.url);
-
 
 
         });
@@ -1458,43 +1458,29 @@ export class CanvasComponent implements OnInit {
 
     }
 
+    public cus_js(){
+        this.scriptWindow={
+            title:"Add Custom JS",
+            type:"javascript",
+            text:this.cus_scripts.js
+        }
 
-    private getAllStyles() {
-        let res = this._buttonService.getStyles() +
-            this._checkboxService.getStyles() +
-            this._navbarService.getStyles() +
-            this._radioService.getStyles() +
-            this._switchService.getStyles() +
-            this._containerService.getStyles() +
-            this._headingService.getStyles() +
-            this._htmlService.getStyles() +
-            this._imageService.getStyles() +
-            this._inputService.getStyles() +
-            this._paragraphService.getStyles() +
-            this._listService.getStyles() +
-            this._mapService.getStyles() +
-            this._textareaService.getStyles() +
-            this._rangeService.getStyles();
-
-        return res;
+        this.jsModal.show();
     }
 
-    private getAllScripts() {
-        /* let res=this._buttonService.getStyles()+
-         this._checkboxService.getStyles()+
-         this._navbarService.getStyles()+
-         this._radioService.getStyles()+
-         this._switchService.getStyles()+
-         this._containerService.getStyles()+
-         this._headingService.getStyles()+
-         this._htmlService.getStyles()+
-         this._imageService.getStyles()+
-         this._inputService.getStyles()+
-         this._paragraphService.getStyles()+
-         this._listService.getStyles()+
-         this._rangeService.getStyles();
+    public cus_css(){
+        console.log(this.cus_scripts.css);
+        this.scriptWindow={
+            title:"Add Custom CSS",
+            type:"css",
+            text:this.cus_scripts.css
+        }
 
-         return res;*/
+        this.scriptWindow.text=this.cus_scripts.css;
+
+
+
+        this.cssModal.show();
     }
 
 

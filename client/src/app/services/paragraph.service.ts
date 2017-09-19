@@ -45,5 +45,20 @@ export class ParagraphService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        PARAGRAPH.forEach((i: Paragraph) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

@@ -48,5 +48,20 @@ export class CheckboxService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        CHECKBOX.forEach((i: Checkbox) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

@@ -43,5 +43,20 @@ export class HtmlService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        HTML.forEach((i: Html) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }

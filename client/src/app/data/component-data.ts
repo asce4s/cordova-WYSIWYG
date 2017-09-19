@@ -25,14 +25,14 @@ export const COMPONENTS: any[] = [
     "height": "68px"
   }
   ,
-  {
+ /* {
     "id": "form",
     "name": "Form",
     "background": "no-repeat -26px -1027px",
     "width": "128px",
     "height": "46px"
   }
-  ,
+  ,*/
   {
     "id": "html",
     "name": "HTML",
@@ -110,14 +110,14 @@ export const COMPONENTS: any[] = [
     "width": "102px",
     "height": "61px"
   },
-  {
+  /*{
     "id": "video",
     "name": "Video",
     "background": "no-repeat -49px -4818px",
     "width": "82px",
     "height": "64px"
   }
-,
+,*/
   {
     "id": "paragraph",
     "name": "Paragraph",
@@ -126,14 +126,14 @@ export const COMPONENTS: any[] = [
     "height": "69px"
   }
 ,
-  {
+/*  {
     "id": "container",
     "name": "Container",
     "background": "no-repeat -46px -5819px",
     "width": "88px",
     "height": "62px"
   }
-  ,
+  ,*/
   {
     "id": "navbar",
     "name": "Navbar",

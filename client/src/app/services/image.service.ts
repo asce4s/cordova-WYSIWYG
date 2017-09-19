@@ -41,5 +41,20 @@ export class ImageService {
         return res;
     }
 
+    getScripts(){
+        let res = "";
+
+        IMAGE.forEach((i: Image) => {
+            if(i.script){
+                res+=i.script;
+            }else{
+                res="";
+            }
+        })
+
+        return res;
+
+    }
+
 
 }
