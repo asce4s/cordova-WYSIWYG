@@ -1,0 +1,20 @@
+export interface Heading {
+    id:string,
+    text:{
+        text:any,
+        size:any,
+        align:any,
+        color:any,
+        lineHeight:any
+    },
+    style:{
+        width:any,
+        height:any,
+        padding:any,
+        margin:any,
+        borderColor:any,
+        borderThickness:any,
+        class:any
+    }
+    script:any
+}

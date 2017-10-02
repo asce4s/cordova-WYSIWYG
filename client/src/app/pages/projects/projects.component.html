@@ -1,0 +1,67 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">CORDOVA WISIWIG</a>
+
+    </div>
+    <div class="collapse navbar-collapse" style="padding-right: 20px">
+      <button type="button" class="btn btn-danger glyphicon glyphicon-off navbar-btn navbar-right" (click)="logout()"></button>
+      <button type="button" class="btn btn-default navbar-btn navbar-right" (click)="smModal.show()">Create New</button>
+    </div>
+  </div>
+</nav>
+<div class="row">
+
+  <img src="../../../assets/img/ring.gif" style="margin: 14% auto;display: block;" *ngIf="imgLoader">
+  <div class="col-md-3" *ngFor="let item of db | async">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">{{item.title}} <fa name="times" class="pull-right pointer" (click)="removeProject(item.$key)"></fa></div>
+      <div class="panel-body">
+        {{item.description}}
+      </div>
+      <div class="panel-footer text-right"><a (click)="navi(item.$key)" ><button class="btn btn-default">Continue</button> </a></div>
+    </div>
+  </div>
+
+</div>
+
+<div bsModal #smModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Create New Project</h4>
+        <button type="button" class="close pull-right" (click)="smModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+
+        <div class="col-md-12 center-block">
+          <form>
+            <div class="form-group">
+              <input type="text" name="title" class="form-control" placeholder="Name" [(ngModel)]="form.title" required>
+            </div>
+
+            <div class="form-group">
+
+              <textarea name="description"  placeholder="Description" [(ngModel)]="form.description"  class="form-control">
+
+              </textarea>
+            </div>
+
+            <div class="form-group center-block">
+              <button class="btn btn-primary center-block" (click)="createNew()" style="width: 100%">
+                Create
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

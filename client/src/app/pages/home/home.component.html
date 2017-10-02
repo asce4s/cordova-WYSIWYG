@@ -1,0 +1,42 @@
+<app-header (downloamodelShow)="downloadModelF($event)" (downloadmodelData)="downloadData($event)"></app-header>
+<app-canvas [links]="links"></app-canvas>
+<app-footer></app-footer>
+
+
+<div bsModal #downloadModel="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Download Project</h4>
+                <button type="button" class="close pull-right" (click)="downloadModel.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="../../../assets/img/gears.gif" style="margin: 14% auto;display: block;" *ngIf="imgshow">
+
+                <div class="row"  *ngIf="!imgshow">
+                    <div class="col-md-4 text-center">
+                        <a href="{{links.project}}">
+                            <fa name="file-archive-o" size="3x"></fa>
+                            <h4>Project</h4>
+                        </a>
+                    </div>
+                    <div class="col-md-4  text-center">
+                        <a href="{{links.web}}">
+                            <fa name="globe" size="3x"></fa>
+                            <h4>Web</h4>
+                        </a>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="{{links.android}}">
+                            <fa name="android" size="3x"></fa>
+                            <h4>Android</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
