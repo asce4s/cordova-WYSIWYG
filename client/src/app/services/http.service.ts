@@ -8,13 +8,13 @@ export class HTTPService {
   constructor(private http: Http) {
   }
 
-  sendRequest(data,url) {
+  sendRequest(data, url) {
 
-    let baseURI="http://127.0.0.1:8000";
-    let headers = new Headers({'Content-Type': 'application/X-www-form-urlencoded'});
-    let options = new RequestOptions({headers: headers});
+    const baseURI = 'http://127.0.0.1:8000';
+    const headers = new Headers({'Content-Type': 'application/X-www-form-urlencoded'});
+    const options = new RequestOptions({headers: headers});
 
-    return this.http.post(baseURI+url, data, options)
+    return this.http.post(baseURI + url, data, options)
         .map(this.extractData)
         .catch(this.handleError);
 
@@ -22,7 +22,7 @@ export class HTTPService {
 
 
   private extractData(res: Response) {
-    let body = res.json();
+    const body = res.json();
     return body || {};
   }
 

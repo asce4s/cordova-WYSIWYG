@@ -33,6 +33,7 @@
     </section>
 
     <section class="col-md-6" id="canvas">
+
     <span class="title">
       <label>Device</label>
       <select [(ngModel)]="device" (change)="skinChange()" id="device">
@@ -52,10 +53,10 @@
 
 
             <div id="designArea" style="padding: 10px">
+
                 <div *ngFor="let page of pages">
                     <div class="pages" [hidden]="page !== activePage" [dragula]='"first-bag"'
-                         style="padding: 10px;height: 490px;min-width: 100%;">
-
+                         style="padding: 10px;height: 490px;min-width: 100%;" id="{{page.id}}" [innerHTML]="page.html | sanitizeHtml">
                     </div>
                 </div>
             </div>

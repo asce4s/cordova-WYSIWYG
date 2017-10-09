@@ -9,10 +9,9 @@ use Symfony\Component\Process\Process;
 
 class CordovaController extends Controller
 {
-    public function preview(Request $req)
-    {
+    public function preview(Request $req){
 
-         //print_r(json_encode(array("ss"=>$req->get('scripts'))));
+        //print_r(json_encode(array("ss"=>$req->get('scripts'))));
 
         $id = "build" . $req->get('id');
         $design = json_decode($req->get('design'));
@@ -195,7 +194,7 @@ class CordovaController extends Controller
         </div>
         <script type="text/javascript" src="cordova.js"></script>
        <script src="js/jquery-3.2.1.min.js"></script>
-        
+
         <script type="text/javascript" src="js/custom.js"></script>
         </body>
         </html>';
@@ -211,7 +210,7 @@ class CordovaController extends Controller
             initialize: function() {
                 document.addEventListener(\"deviceready\", this.onDeviceReady.bind(this), false);
             },
-        
+
             // deviceready Event Handler
             //
             // Bind any cordova events here. Common events are:
@@ -219,10 +218,10 @@ class CordovaController extends Controller
             onDeviceReady: function() {
                 ".$scripts."
             },
-        
-           
+
+
         };
-        
+
         app.initialize();";
     }
 

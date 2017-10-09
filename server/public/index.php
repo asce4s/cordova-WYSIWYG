@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: http://localhost:4200");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, x-xsrf-token, x_csrftoken');
 
 /**
  * Laravel - A PHP Framework For Web Artisans

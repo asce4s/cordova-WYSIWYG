@@ -32,7 +32,7 @@ export class ProjectsComponent implements OnInit {
     logout() {
          this.af.auth.logout();
          console.log('logged out');
-         this._router.navigate(['/login']);
+         this._router.navigateByUrl('/');
     }
 
     ngOnInit() {
@@ -68,6 +68,7 @@ export class ProjectsComponent implements OnInit {
 
                 this.smModel.hide();
                 //this._localStorage.setItem('id', item.key);
+              console.log(item.key)
                 this._httpService.sendRequest("id=" + item.key, '/new').subscribe((v) => {
                     console.log(v);
                 });

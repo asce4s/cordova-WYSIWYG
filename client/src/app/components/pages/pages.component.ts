@@ -72,7 +72,7 @@ export class PagesComponent implements OnInit {
     if(this.pages.length == 0){
       home = true;
     }
-    this._pageService.add({id:this.newPageName.toString(),elements:[],home:home});
+    this._pageService.add({id:this.newPageName.toString(),elements:[],home:home,html:''});
     this.newPageName = "";
   }
 
