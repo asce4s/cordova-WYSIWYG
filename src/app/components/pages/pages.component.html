@@ -1,0 +1,54 @@
+<!--Main pain for the pages-->
+<div class="page-container">
+  <div (click)="openAddPageDialog()" id="addPage">Add Page <span>+</span></div>
+  <div>
+    <ul>
+      <li *ngFor="let page of pages" (click)="selectPage(page)" [ngClass]="{selected: selectedPage == page}">
+        <a>
+          <span class="pageCaret"></span>
+          <span>{{page.id}}</span>
+          <span [ngClass]="{hide: selectedPage != page}" (click)="deletePage(page)" class="del pgop"><fa name="trash"></fa></span>
+          <span [ngClass]="{hide: selectedPage != page}" class="edit pgop"><fa name="pencil"></fa></span>
+          <span [ngClass]="{hide: selectedPage != page}" class="home pgop" (click)="setHomePage(page)" [title]="page.home ? 'Home page':'Set This page as the home page'"><fa [name]="page.home ? 'circle':'circle-o' "></fa></span>
+          <ul [ngClass]="{hide: selectedPage != page}">
+            <li *ngFor="let element of page.elements">{{element.id}} {{element.accesskey}}</li>
+          </ul>
+
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--This is the dialog box for adding pages-->
+<div [@modalDialog]="modal" class="addPageDialog">
+  <div class="panel panel-default">
+    <div class="panel-heading">Add Page
+      <fa name="close" class="pull-right pointer" (click)="hideAddPageDialog()"></fa>
+    </div>
+    <div class="panel-body">
+      <label for="pageName">Page Name</label>
+      <input type="text" id="pageName" [(ngModel)]="newPageName" class="form-control">
+      <button (click)="addPage()" class="btn btn-primary" style="margin-top: 10px;width:100%">Add</button>
+    </div>
+  </div>
+
+</div>
+
+<!--This is the dialog box for deleting pages-->
+<div [@modalDialog]="model_deletePage" class="addPageDialog">
+  <div class="panel panel-default">
+    <div class="panel-heading">Delete Page
+      <fa name="close" class="pull-right pointer" (click)="hideAddPageDialog()"></fa>
+    </div>
+    <div class="panel-body">
+      <label for="pageName">
+        Do you really need to delete this page ? It contain some elements
+        you will loose them if you continue
+      </label>
+      <button (click)="deletePageFinal()" class="btn btn-primary" style="margin-top: 10px;width:100%">Delete</button>
+      <button (click)="deletePageCancel()" class="btn btn-primary" style="margin-top: 10px;width:100%">Cancel</button>
+    </div>
+  </div>
+
+</div>

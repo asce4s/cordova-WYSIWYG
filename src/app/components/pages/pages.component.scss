@@ -1,0 +1,57 @@
+app-pages{
+  max-width: 100%;
+
+  .page-container{
+    max-width: 100%;
+
+    #addPage{
+      cursor: pointer;
+    }
+
+    ul{
+      li{
+        padding: 3px 0 0px 9px;
+        .pageCaret{
+          margin-right: 5px;
+          margin-left: -5px;
+          border-bottom: 4px solid transparent;
+          border-top: 4px solid transparent;
+          border-left: 4px solid;
+          display: inline-block;
+          height: 0;
+          vertical-align: middle;
+          width: 0;
+        }
+
+        a{
+          text-decoration: none;
+          cursor: pointer;
+          color:#464444
+        }
+      }
+
+      .selected{
+        background-color: rgba(204, 204, 204, 0.49);
+        border: 1px dashed #666;
+        span{
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+
+  .hide{
+    display:none;
+  }
+
+
+  .pgop{
+    color: #464444;
+    float:right;
+    margin: 0 6px;
+  }
+}
+
+
+

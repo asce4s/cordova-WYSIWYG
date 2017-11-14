@@ -1,0 +1,179 @@
+<form class="form-horizontal" (input)=" formChange()">
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">ID</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.id" name="id" disabled>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Link</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.link" name="link">
+    </div>
+  </div>
+
+  <hr>
+  <h4>Text</h4>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Text</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.text" name="text"
+             (keyup)="setButtonText()">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Size</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.size" name="size">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Align</label>
+    <div class="col-sm-8">
+      <select [(ngModel)]="selectedButton.text.align" class="form-control " name="align" (change)=" formChange()">
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        <option value="center" selected="selected">Center</option>
+        <option value="justify">Justify</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Color</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.text.color" name="color"
+
+             [(colorPicker)]="selectedButton.text.color"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedButton.text.color"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+      >
+    </div>
+  </div>
+
+  <hr>
+  <h4>Styles</h4>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Style</label>
+    <div class="col-sm-8">
+      <select [(ngModel)]="selectedButton.type" class="form-control" name="align" (change)="addButtonType()">
+        <option value="default">Default</option>
+        <option value="button--material">Material</option>
+
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Width</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.width" name="width">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Height</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.height" name="height">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Background</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.background"
+             name="background"
+             [(colorPicker)]="selectedButton.style.background"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedButton.style.background"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+
+
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Padding</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.padding" name="padding">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Margin</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.margin" name="margin">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Border Color</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.borderColor"
+             name="borderColor"
+             [(colorPicker)]="selectedButton.style.borderColor"
+             [cpPosition]="'bottom'"
+             [cpPositionOffset]="'10%'"
+             [value]="selectedButton.style.borderColor"
+             (colorPickerChange)="formChange()"
+             [cpWidth]="'160px'"
+
+
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Border Width</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.borderThickness" name="borderWidth">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Radius</label>
+    <div class="col-sm-8">
+
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.radius" name="radius">
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Classes</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" [(ngModel)]="selectedButton.style.class" name="class">
+    </div>
+  </div>
+
+  <hr>
+
+
+</form>
+<div class="form-group" style="text-align: center;">
+
+  <button class="btn btn-default" (click)="eventLoad()">Click here to add custom scripts</button>
+
+</div>
