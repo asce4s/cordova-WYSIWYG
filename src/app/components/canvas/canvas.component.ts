@@ -102,6 +102,8 @@ export class CanvasComponent implements OnInit {
 
   private test = '';
 
+  public xxx=true;
+
 
   text: string;
   @ViewChild('lgModal') public lgModel: ModalDirective;
@@ -1489,6 +1491,9 @@ export class CanvasComponent implements OnInit {
     this.cssModal.show();
   }
 
+  public saveScript() {
+
+  }
 
 }
 

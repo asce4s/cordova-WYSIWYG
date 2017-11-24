@@ -1,6 +1,6 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {FirebaseListObservable, AngularFire} from 'angularfire2';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {RADIO} from '../../data/radio-data';
 import * as $ from 'jquery';
 import {BUTTON} from '../../data/button-data';
@@ -43,7 +43,8 @@ export class HeaderComponent implements OnInit {
   constructor(private af: AngularFire,
               private route: ActivatedRoute,
               private  _buildService: BuildService,
-              private _pageService: PageService) {
+              private _pageService: PageService,
+              private _router:Router) {
   }
 
   ngOnInit() {
@@ -112,6 +113,11 @@ export class HeaderComponent implements OnInit {
     this._buildService.build().subscribe((v) => {
       this.downloadmodelData.emit(v);
     });
+  }
+
+  public logout(){
+    this.af.auth.logout();
+    window.location.href='/';
   }
 
 
