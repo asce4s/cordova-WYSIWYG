@@ -1,4 +1,4 @@
-# Project Title
+# cordova-WYSIWYG
 
 This project is a web application with a client-server architecture. The client is an Angular application, and the server is a Laravel application.
 
