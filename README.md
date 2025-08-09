@@ -64,6 +64,39 @@ To get a local copy up and running, follow these simple example steps.
 *   `/client`: Contains the Angular frontend application.
 *   `/server`: Contains the Laravel backend application.
 
+## Running with Docker
+
+This project is configured to run with Docker Compose. This is the recommended way to run the application for development.
+
+### Prerequisites
+
+*   [Docker](https://www.docker.com/get-started)
+*   [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Running the Application
+
+1.  **Build and start the containers:**
+    ```bash
+    docker-compose up --build -d
+    ```
+2.  **Generate the application key:**
+    ```bash
+    docker-compose exec server php artisan key:generate
+    ```
+3.  **Run database migrations:**
+    ```bash
+    docker-compose exec server php artisan migrate
+    ```
+
+The client application will be available at `http://localhost:4200`, and the server API will be available at `http://localhost:8000`.
+
+### Stopping the Application
+
+To stop the containers, run:
+```bash
+docker-compose down
+```
+
 ## Further Help
 
 *   To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

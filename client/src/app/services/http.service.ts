@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {Headers, RequestOptions, Response, Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs';
+import { environment } from '../../../environments/environment';
+
 @Injectable()
 export class HTTPService {
 
@@ -10,7 +12,7 @@ export class HTTPService {
 
   sendRequest(data, url) {
 
-    const baseURI = 'http://127.0.0.1:8000';
+    const baseURI = environment.apiEndpoint;
     const headers = new Headers({'Content-Type': 'application/X-www-form-urlencoded'});
     const options = new RequestOptions({headers: headers});
 
