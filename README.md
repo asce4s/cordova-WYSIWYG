@@ -1,4 +1,6 @@
 # cordova-WYSIWYG
+<img width="1849" height="929" alt="image" src="https://github.com/user-attachments/assets/73d95c50-8fd0-4dc5-9515-614c68516d00" />
+
 
 This project is a web application with a client-server architecture. The client is an Angular application, and the server is a Laravel application.
 
